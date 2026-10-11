@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quote desk: design mock (Part 3)</title>
+<!--
+  DESIGN MOCK. Not the app. Static HTML to show the Part 3 direction in BUILD_PLAN.md.
+  Numbers on Results and Prices are the packaging dataset's computed values from a perfect read
+  (seeded from the answer key by scripts/_shots.mjs), so a live run will show more doubts.
+  Prose in the analyst answer is placeholder copy and is labelled as such on screen.
+  Icons here are inline strokes to keep this file standalone. The app should use one icon library.
+-->
+<style>
+@font-face { font-family: "Geist"; src: url("../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0000-00FF, U+2010-2027, U+2190-21FF; }
+@font-face { font-family: "Geist"; src: url("../node_modules/@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0100-02AF, U+20A0-20CF, U+2113; }
+
+:root {
+  /* One neutral family, cool. */
+  --ink: #15171c;
+  --ink-2: #4a505c;
+  --ink-3: #737a88;
+  --line: #e3e5e9;
+  --line-2: #cfd3da;
+  --surface: #ffffff;
+  --canvas: #f4f5f7;
+  --sunk: #ebedf0;
+  /* Colour has one job each. Nothing else on screen is coloured. */
+  --need: #b4470a;        /* needs you */
+  --need-soft: #fdf1e6;
+  --need-line: #f1c9a2;
+  --stop: #b3261e;        /* cannot be used */
+  --stop-soft: #fcedeb;
+  --done: #1a7f4b;        /* you cleared it */
+  --trace: #2343a6;       /* traced to the vendor's file: highlight and selected cell, nothing else */
+  --trace-soft: #e8edfb;
+  --trace-line: #b7c5ef;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --r: 6px;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { font: 400 13px/20px "Geist", system-ui, sans-serif; color: var(--ink); background: var(--canvas); -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+::selection { background: #15171c; color: #fff; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3, p { margin: 0; }
+kbd { font: 500 11px/16px var(--mono); color: var(--ink-3); border: 1px solid var(--line-2); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--surface); }
+
+/* mock chrome (not part of the design) */
+.mockbar { display: flex; gap: 4px; align-items: center; padding: 6px 12px; background: #15171c; color: #c9cdd6; font-size: 12px; }
+.mockbar b { color: #fff; font-weight: 500; margin-right: 8px; }
+.mockbar button { padding: 2px 10px; border-radius: 4px; color: #c9cdd6; }
+.mockbar button[aria-pressed="true"] { background: #fff; color: #15171c; }
+.mockbar span { margin-left: auto; opacity: .7; }
+.screen { display: none; height: calc(100% - 32px); flex-direction: column; min-height: 0; }
+.screen.on { display: flex; }
+
+/* app header */
+.top { display: flex; align-items: center; gap: 20px; height: 48px; padding: 0 20px; background: var(--surface); border-bottom: 1px solid var(--line); flex: none; }
+.brand { font-weight: 600; letter-spacing: -0.01em; }
+.event { color: var(--ink-2); padding-left: 20px; border-left: 1px solid var(--line); }
+.event b { color: var(--ink); font-weight: 500; }
+.steps { display: flex; gap: 2px; margin-left: 8px; }
+.steps a { padding: 4px 10px; border-radius: var(--r); color: var(--ink-3); text-decoration: none; transition: background-color 120ms ease, color 120ms ease; }
+.steps a:hover { background: var(--sunk); color: var(--ink); }
+.steps a[aria-current] { color: var(--ink); font-weight: 500; background: var(--sunk); }
+.steps .n { color: var(--need); font-weight: 600; margin-left: 4px; }
+.top .right { margin-left: auto; display: flex; gap: 12px; align-items: center; color: var(--ink-3); }
+.model { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border: 1px solid var(--line); border-radius: var(--r); color: var(--ink-2); }
+
+/* buttons: one shape, three ranks */
+.btn { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: var(--r); font-weight: 500; white-space: nowrap; transition: transform 140ms var(--ease-out), background-color 120ms ease, border-color 120ms ease; }
+.btn:active { transform: scale(0.97); }
+.btn.primary { background: var(--ink); color: #fff; }
+.btn.primary:hover { background: #2a2e37; }
+.btn.primary kbd { background: transparent; border-color: #5a6070; color: #c9cdd6; }
+.btn.quiet { border: 1px solid var(--line-2); background: var(--surface); }
+.btn.quiet:hover { border-color: var(--ink-3); }
+.link { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; transition: text-decoration-color 120ms ease; }
+.link:hover { text-decoration-color: var(--ink); }
+
+/* money: the signature. Dotted = rests on something you have not confirmed. Solid = confirmed. */
+.money { font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; transition: color 240ms ease; }
+.money small { font: inherit; font-weight: 400; color: var(--ink-3); margin-left: 3px; }
+.money.open { color: var(--ink-2); text-decoration: underline dotted var(--need); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.money.inked { animation: ink 420ms var(--ease-out); }
+@keyframes ink { from { opacity: .35; filter: blur(1.5px); } }
+
+/* verdict */
+.verdict { display: grid; grid-template-columns: 380px 1fr; gap: 40px; padding: 20px 20px 16px; background: var(--surface); border-bottom: 1px solid var(--line); flex: none; }
+.verdict h1 { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.verdict .sub { margin-top: 8px; color: var(--ink-2); max-width: 36ch; }
+.verdict .sub b { color: var(--need); font-weight: 600; }
+.legend { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 4px 16px; white-space: nowrap; color: var(--ink-3); font-size: 12px; }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); margin-right: 6px; vertical-align: -0.5px; }
+.legend i.h { background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--ink-3); }
+
+.vendors { width: 100%; border-collapse: collapse; }
+.vendors th { font-weight: 400; font-size: 12px; color: var(--ink-3); text-align: left; padding: 0 12px 6px 0; white-space: nowrap; }
+.vendors td { padding: 5px 12px 5px 0; border-top: 1px solid var(--line); white-space: nowrap; }
+.vendors tr.out td { color: var(--ink-3); }
+.vendors tr.out .name { color: var(--ink-2); }
+.vendors .name { font-weight: 500; }
+.vendors .why { color: var(--ink-3); }
+.vendors .why.stop { color: var(--stop); }
+.vendors .why.need { color: var(--need); }
+.vendors td.r, .vendors th.r { text-align: right; padding-right: 0; }
+.lane { position: relative; height: 20px; width: 100%; min-width: 220px; }
+.lane::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--line); }
+.lane .ref { position: absolute; top: -6px; bottom: -6px; border-left: 1px dashed var(--line-2); }
+.lane .dot { position: absolute; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--surface); }
+.out .lane .dot { background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--ink-3), 0 0 0 2px var(--surface); }
+.axis { position: relative; height: 16px; font-size: 11px; color: var(--ink-3); }
+.axis span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.axis span:first-child { transform: none; } .axis span:last-child { transform: translateX(-100%); }
+
+/* view switch */
+.bar { display: flex; align-items: center; gap: 16px; padding: 0 20px; height: 44px; flex: none; }
+.seg { display: inline-flex; padding: 2px; background: var(--sunk); border-radius: 8px; }
+.seg button { height: 28px; padding: 0 12px; border-radius: var(--r); color: var(--ink-2); transition: color 120ms ease; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 500; box-shadow: 0 1px 2px rgb(21 23 28 / .08), 0 0 0 1px rgb(21 23 28 / .04); }
+.seg .n { color: var(--need); font-weight: 600; margin-left: 4px; }
+.bar .hint { margin-left: auto; color: var(--ink-3); display: flex; gap: 12px; align-items: center; font-size: 12px; }
+
+/* review: master and detail */
+.review { display: grid; grid-template-columns: minmax(420px, 5fr) 7fr; gap: 0; flex: 1; min-height: 0; margin: 0 20px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.queue { overflow: auto; border-right: 1px solid var(--line); }
+.queue h3 { font-size: 12px; font-weight: 500; color: var(--ink-3); padding: 14px 16px 6px; }
+.item { display: grid; grid-template-columns: 18px 1fr auto; gap: 10px; align-items: baseline; width: 100%; text-align: left; padding: 9px 16px; transition: background-color 100ms ease; }
+.item:hover { background: var(--canvas); }
+.item[aria-selected="true"] { background: var(--sunk); }
+.item .t { font-weight: 500; }
+.item .v { color: var(--ink-3); display: block; font-weight: 400; }
+.item .amt { color: var(--ink-2); text-align: right; }
+.mark { width: 8px; height: 8px; border-radius: 2px; background: var(--need); align-self: center; justify-self: center; transition: background-color 200ms ease, transform 200ms var(--ease-out); }
+.mark.stop { background: var(--stop); }
+.item.cleared .mark { background: var(--done); border-radius: 50%; transform: scale(.75); }
+.item.cleared .t, .item.cleared .amt { color: var(--ink-3); font-weight: 400; }
+.detail { overflow: auto; padding: 22px 28px 0; display: flex; flex-direction: column; min-height: 0; }
+.detail .who { color: var(--ink-3); }
+.detail h2 { font-size: 18px; line-height: 24px; font-weight: 600; letter-spacing: -0.015em; margin-top: 2px; }
+.detail .say { margin-top: 10px; color: var(--ink-2); max-width: 62ch; }
+.stake { display: flex; gap: 40px; margin-top: 18px; }
+.stake div span { display: block; font-size: 12px; color: var(--ink-3); }
+.stake .money { font-size: 22px; line-height: 28px; }
+.sect { margin-top: 22px; font-size: 12px; font-weight: 500; color: var(--ink-3); }
+/* evidence slip: the vendor's own words. Mono because it is quoted source text. */
+.slip { margin-top: 8px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; max-width: 620px; }
+.slip .from { display: flex; gap: 8px; align-items: center; padding: 6px 12px; background: var(--canvas); border-bottom: 1px solid var(--line); font-size: 12px; color: var(--ink-2); }
+.slip .fmt { font: 600 10px/16px var(--mono); letter-spacing: .04em; padding: 0 5px; border-radius: 3px; background: var(--ink); color: #fff; }
+.slip pre { margin: 0; padding: 10px 12px; font: 400 12px/20px var(--mono); white-space: pre-wrap; color: var(--ink); }
+.slip mark { background: var(--trace-soft); box-shadow: 0 0 0 1px var(--trace-line); border-radius: 3px; padding: 0 2px; color: inherit; }
+.work { margin-top: 8px; display: grid; grid-template-columns: auto auto auto 1fr; gap: 4px 14px; align-items: baseline; max-width: 620px; }
+.work .l { color: var(--ink-3); font: 400 12px/20px var(--mono); }
+.work .a { font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
+.work .arrow { color: var(--ink-3); }
+.work .b { font-weight: 600; }
+.acts { position: sticky; bottom: 0; margin: auto -28px 0; padding: 12px 28px; display: flex; gap: 10px; align-items: center; background: linear-gradient(to top, var(--surface) 70%, transparent); border-top: 1px solid var(--line); margin-top: 24px; }
+.acts .undo { margin-left: auto; color: var(--ink-3); font-size: 12px; }
+
+/* prices grid */
+.gridwrap { flex: 1; min-height: 0; margin: 0 20px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: auto; }
+.grid { width: 100%; border-collapse: separate; border-spacing: 0; }
+.grid th, .grid td { padding: 0 14px; height: 34px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--line); }
+.grid thead th { position: sticky; top: 0; background: var(--surface); height: auto; padding-top: 12px; padding-bottom: 10px; vertical-align: bottom; font-weight: 400; z-index: 1; border-bottom-color: var(--line-2); }
+.grid thead .vn { display: block; font-weight: 600; }
+.grid thead .money { display: block; font-size: 15px; line-height: 22px; margin-top: 2px; }
+.grid thead .vs { display: block; font-size: 12px; color: var(--ink-3); }
+.grid thead .vs.stop { color: var(--stop); } .grid thead .vs.need { color: var(--need); }
+.grid .l { text-align: left; }
+.grid .id { font: 400 12px/20px var(--mono); color: var(--ink-3); margin-right: 10px; }
+.grid .ref { color: var(--ink-3); }
+.grid col.out { background: var(--canvas); }
+.grid td.out { color: var(--ink-3); }
+.grid tr.group td { background: var(--canvas); font-weight: 500; height: 32px; }
+.grid tr.group .cnt { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.grid tbody tr:not(.group):hover td { background: #fafbfc; }
+.grid td.cell { cursor: pointer; }
+.grid .how { font: 400 11px/16px var(--mono); color: var(--ink-3); margin-right: 8px; }
+.grid .low { font-weight: 600; box-shadow: inset 0 -2px 0 var(--ink); padding-bottom: 1px; }
+.grid .open { text-decoration: underline dotted var(--need); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.grid .none { color: var(--ink-3); }
+.grid tfoot td { position: sticky; bottom: 0; background: var(--surface); border-top: 1px solid var(--line-2); border-bottom: 0; height: 48px; }
+.grid tfoot .money { font-size: 15px; }
+.key { display: flex; gap: 20px; padding: 0 20px 0; color: var(--ink-3); font-size: 12px; margin-left: auto; align-items: center; }
+.key .low { font-weight: 600; color: var(--ink); box-shadow: inset 0 -2px 0 var(--ink); }
+.key .open { color: var(--ink-2); text-decoration: underline dotted var(--need); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+
+/* home */
+.home { display: grid; grid-template-columns: 400px 1fr; flex: 1; min-height: 0; }
+.picker { border-right: 1px solid var(--line); background: var(--surface); padding: 28px 12px 12px; overflow: auto; }
+.picker h1 { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; padding: 0 12px; text-wrap: balance; }
+.picker p { padding: 8px 12px 20px; color: var(--ink-2); }
+.ev { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; width: 100%; text-align: left; padding: 12px; border-radius: 8px; transition: background-color 100ms ease; }
+.ev:hover { background: var(--canvas); }
+.ev[aria-selected="true"] { background: var(--sunk); }
+.ev .t { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+.ev .b { color: var(--ink-3); grid-column: 1; }
+.ev .amt { grid-row: 1 / span 2; grid-column: 2; align-self: center; text-align: right; color: var(--ink-2); }
+.ev .amt span { display: block; font-size: 12px; color: var(--ink-3); }
+.preview { padding: 28px 40px; overflow: auto; }
+.preview .kind { color: var(--ink-3); }
+.preview h2 { font-size: 28px; line-height: 34px; font-weight: 600; letter-spacing: -0.025em; margin-top: 2px; }
+.preview .lead { margin-top: 8px; color: var(--ink-2); font-size: 15px; line-height: 24px; max-width: 58ch; }
+.go { display: flex; gap: 12px; align-items: center; margin-top: 20px; }
+.go .btn { height: 36px; padding: 0 16px; }
+.go .note { color: var(--ink-3); font-size: 12px; }
+.files { margin-top: 32px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; max-width: 980px; }
+.file { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; text-align: left; display: flex; flex-direction: column; gap: 8px; min-height: 148px; transition: border-color 120ms ease, transform 140ms var(--ease-out); }
+.file:hover { border-color: var(--ink-3); }
+.file:active { transform: scale(0.98); }
+.file .fmt { align-self: flex-start; font: 600 10px/16px var(--mono); letter-spacing: .04em; padding: 0 5px; border-radius: 3px; background: var(--ink); color: #fff; }
+.file .vn { font-weight: 500; line-height: 18px; }
+.file .odd { color: var(--ink-2); font-size: 12px; line-height: 18px; margin-top: auto; }
+.asks { margin-top: 32px; max-width: 980px; }
+.asks h3 { font-size: 12px; font-weight: 500; color: var(--ink-3); }
+.asks ol { margin: 8px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.asks li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 22px; }
+
+/* ask */
+.ask { display: grid; grid-template-columns: 1fr 340px; flex: 1; min-height: 0; }
+.thread { overflow: auto; padding: 28px 0 0; display: flex; flex-direction: column; }
+.col { width: min(720px, 100% - 48px); margin: 0 auto; }
+.q { color: var(--ink-2); font-size: 15px; line-height: 22px; padding-left: 12px; border-left: 1px solid var(--line-2); }
+.ans { margin-top: 20px; }
+.ans h2 { font-size: 22px; line-height: 30px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.ans ul { margin: 12px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 15px; line-height: 24px; }
+.split { margin-top: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px 14px; }
+.split .hd { display: flex; align-items: baseline; gap: 12px; }
+.split .hd .nm { font-weight: 500; } .split .hd .tag { color: var(--ink-3); font-size: 12px; }
+.split .hd .money { margin-left: auto; font-size: 22px; line-height: 28px; }
+.share { display: flex; gap: 2px; height: 10px; margin-top: 14px; }
+.share i { display: block; border-radius: 3px; background: var(--ink); }
+.share i + i { background: var(--ink-3); }
+.shares { display: grid; grid-template-columns: 1fr 1fr; margin-top: 8px; gap: 12px; }
+.shares div b { font-weight: 500; display: block; } .shares div span { color: var(--ink-3); }
+.split .rest { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--need); display: flex; }
+.split .rest a { margin-left: auto; }
+.caveat { margin-top: 14px; color: var(--ink-2); padding-left: 12px; border-left: 1px solid var(--need); }
+.next { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { height: 30px; padding: 0 12px; border: 1px solid var(--line-2); border-radius: 15px; background: var(--surface); color: var(--ink-2); transition: border-color 120ms ease, color 120ms ease, transform 140ms var(--ease-out); }
+.chip:hover { border-color: var(--ink-3); color: var(--ink); } .chip:active { transform: scale(0.97); }
+.compose { margin-top: auto; padding: 16px 0 20px; position: sticky; bottom: 0; background: linear-gradient(to top, var(--canvas) 80%, transparent); }
+.box { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 10px; padding: 6px 6px 6px 14px; box-shadow: 0 1px 2px rgb(21 23 28 / .05); }
+.box span { color: var(--ink-3); flex: 1; }
+.tray { border-left: 1px solid var(--line); background: var(--surface); padding: 20px 20px; overflow: auto; }
+.tray h3 { font-size: 12px; font-weight: 500; color: var(--ink-3); }
+.cmp { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.cmp th { text-align: right; font-weight: 500; padding: 6px 0 6px 8px; vertical-align: bottom; line-height: 16px; }
+.cmp th:first-child, .cmp td:first-child { text-align: left; padding-left: 0; color: var(--ink-3); font-weight: 400; }
+.cmp td { text-align: right; padding: 7px 0 7px 8px; border-top: 1px solid var(--line); }
+.cmp .money { font-size: 15px; }
+.ph { display: inline-block; font: 500 11px/16px var(--mono); color: var(--ink-3); border: 1px dashed var(--line-2); border-radius: 4px; padding: 0 6px; margin-bottom: 10px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; } }
+</style>
+</head>
+<body>
+
+<div class="mockbar"><b>Design mock</b>
+  <button data-go="home" aria-pressed="false">Home</button>
+  <button data-go="results" aria-pressed="true">Results: review</button>
+  <button data-go="prices" aria-pressed="false">Results: prices</button>
+  <button data-go="ask" aria-pressed="false">Ask</button>
+  <span>Static mock for BUILD_PLAN.md Part 3. Perfect-read numbers. Try J, K and A on the review screen.</span>
+</div>
+
+<!-- ============ HOME ============ -->
+<section class="screen" id="home">
+  <header class="top"><span class="brand">Quote desk</span>
+    <div class="right"><span>No model connected</span><button class="btn quiet">Connect a model</button></div>
+  </header>
+  <div class="home">
+    <nav class="picker" aria-label="Sourcing events">
+      <h1>Pick a sourcing event</h1>
+      <p>Each has an RFx with 30 lines and five vendor replies in five different shapes.</p>
+      <button class="ev" aria-selected="true"><span class="t">Corrugated packaging</span><span class="b">Nimbus Home Care · annual rate contract</span><span class="amt">₹4 crore<span>a year</span></span></button>
+      <button class="ev" aria-selected="false"><span class="t">IT hardware refresh</span><span class="b">Lumen Analytics · one-time purchase</span><span class="amt">₹4 crore<span>one time</span></span></button>
+      <button class="ev" aria-selected="false"><span class="t">Road freight lanes</span><span class="b">Suryodaya Appliances · annual rate contract</span><span class="amt">₹4 crore<span>a year</span></span></button>
+      <button class="ev" aria-selected="false"><span class="t">MRO spares</span><span class="b">Fourth dataset, plan section 16.3</span><span class="amt">to build</span></button>
+    </nav>
+    <main class="preview">
+      <div class="kind">Annual rate contract · Nimbus Home Care Pvt Ltd</div>
+      <h2>Corrugated packaging</h2>
+      <p class="lead">30 carton and mailer sizes for a D2C home-care brand. Five vendors replied. No two replies have the same shape, and the cheapest one is not the one you can use.</p>
+      <div class="go">
+        <button class="btn primary">Read all five and compare</button>
+        <button class="btn quiet">Open the RFx</button>
+        <span class="note">Reading takes a live model call per file, on your own key.</span>
+      </div>
+      <div class="files">
+        <button class="file"><span class="fmt">XLSX</span><span class="vn">Shree Balaji Packaging</span><span class="odd">Own item codes. Some prices per 100.</span></button>
+        <button class="file"><span class="fmt">PDF</span><span class="vn">Kraftline Industries</span><span class="odd">A 4% discount hidden in a footnote.</span></button>
+        <button class="file"><span class="fmt">DOCX</span><span class="vn">PackGlobal Exports</span><span class="odd">Quoted in USD, prices inside paragraphs.</span></button>
+        <button class="file"><span class="fmt">JPG</span><span class="vn">Maruti Corrugators</span><span class="odd">Angled photo of a rate card. 27 of 30 lines.</span></button>
+        <button class="file"><span class="fmt">EML</span><span class="vn">Sai Cartons</span><span class="odd">Three lines: per kg, "rest same as last year".</span></button>
+      </div>
+      <div class="asks">
+        <h3>Questions this event can answer</h3>
+        <ol>
+          <li>What came back, and what can't I trust yet?</li>
+          <li>What if we split it, cheapest per line, but only among vendors who cleared the quality questionnaire?</li>
+          <li>What does that cost versus giving it all to one vendor?</li>
+        </ol>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ============ RESULTS: REVIEW ============ -->
+<section class="screen on" id="results">
+  <header class="top"><span class="brand">Quote desk</span>
+    <span class="event"><b>Corrugated packaging</b> · Nimbus Home Care</span>
+    <nav class="steps"><a href="#">RFx</a><a href="#">Replies</a><a href="#" aria-current="page">Results<span class="n" data-count>6</span></a><a href="#">Ask</a></nav>
+    <div class="right"><span class="model">Claude Opus 5.5</span></div>
+  </header>
+
+  <div class="verdict">
+    <div>
+      <h1>The three lowest totals come from vendors you can't award yet.</h1>
+      <p class="sub">Two of five cleared the quality gate. <b><span data-count>6</span> conversions</b> still need your yes before any total is firm.</p>
+      <div class="legend"><span><i></i>Can be awarded</span><span><i class="h"></i>Cannot yet</span><span>Dashed line: last year, ₹3.64 crore</span></div>
+    </div>
+    <div>
+      <table class="vendors">
+        <colgroup><col style="width:210px"><col style="width:190px"><col><col style="width:120px"></colgroup>
+        <thead><tr><th>Vendor</th><th>Standing</th><th>
+          <div class="axis"><span style="left:0">₹3.40 crore</span><span style="left:68.6%">last year</span><span style="left:100%">₹3.75 crore</span></div>
+        </th><th class="r">27 shared lines, a year</th></tr></thead>
+        <tbody>
+          <tr><td class="name">PackGlobal Exports</td><td class="why">Gate passed · freight in</td><td><div class="lane"><span class="ref" style="left:68.6%"></span><span class="dot" style="left:71.4%"></span></div></td><td class="r"><span class="money open" data-v="C">₹3.65<small>crore</small></span></td></tr>
+          <tr><td class="name">Shree Balaji Packaging</td><td class="why">Gate passed · freight in</td><td><div class="lane"><span class="ref" style="left:68.6%"></span><span class="dot" style="left:82.9%"></span></div></td><td class="r"><span class="money open" data-v="A">₹3.69<small>crore</small></span></td></tr>
+          <tr class="out"><td class="name">Kraftline Industries</td><td class="why stop">Failed gate: ISO expired</td><td><div class="lane"><span class="ref" style="left:68.6%"></span><span class="dot" style="left:54.3%"></span></div></td><td class="r"><span class="money open" data-v="B">₹3.59<small>crore</small></span></td></tr>
+          <tr class="out"><td class="name">Sai Cartons</td><td class="why need">No questionnaire · freight extra</td><td><div class="lane"><span class="ref" style="left:68.6%"></span><span class="dot" style="left:40%"></span></div></td><td class="r"><span class="money open" data-v="E">₹3.54<small>crore</small></span></td></tr>
+          <tr class="out"><td class="name">Maruti Corrugators</td><td class="why need">No questionnaire · 27 of 30 lines</td><td><div class="lane"><span class="ref" style="left:68.6%"></span><span class="dot" style="left:20%"></span></div></td><td class="r"><span class="money open" data-v="D">₹3.47<small>crore</small></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div class="seg"><button aria-pressed="true">To confirm<span class="n" data-count>6</span></button><button aria-pressed="false" data-go="prices">Prices</button><button aria-pressed="false">Questionnaire and terms</button></div>
+    <div class="hint"><span><kbd>J</kbd> <kbd>K</kbd> move</span><span><kbd>A</kbd> accept</span><span><kbd>O</kbd> open the file</span></div>
+  </div>
+
+  <div class="review">
+    <div class="queue" role="listbox" aria-label="To confirm" id="queue"></div>
+    <div class="detail" id="detail"></div>
+  </div>
+</section>
+
+<!-- ============ RESULTS: PRICES ============ -->
+<section class="screen" id="prices">
+  <header class="top"><span class="brand">Quote desk</span>
+    <span class="event"><b>Corrugated packaging</b> · Nimbus Home Care</span>
+    <nav class="steps"><a href="#">RFx</a><a href="#">Replies</a><a href="#" aria-current="page">Results<span class="n">6</span></a><a href="#">Ask</a></nav>
+    <div class="right"><span class="model">Claude Opus 5.5</span></div>
+  </header>
+  <div class="bar">
+    <div class="seg"><button aria-pressed="false" data-go="results">To confirm<span class="n">6</span></button><button aria-pressed="true">Prices</button><button aria-pressed="false">Questionnaire and terms</button></div>
+    <div class="key"><span><span class="low">₹8.01</span>&nbsp; lowest you can award</span><span><span class="open">₹4.03</span>&nbsp; rests on a rule you haven't accepted</span><span>Grey column: vendor can't be awarded yet</span></div>
+    <button class="btn quiet">Export</button>
+  </div>
+  <div class="gridwrap">
+    <table class="grid">
+      <colgroup><col><col><col><col><col class="out"><col><col class="out"><col class="out"></colgroup>
+      <thead><tr>
+        <th class="l"><span class="vn">27 shared lines, a year</span><span class="vs">Line</span></th><th><span class="vs">Volume a year</span></th><th><span class="money" style="color:var(--ink-3);font-weight:400">₹3.64<small>crore</small></span><span class="vs">Last year</span></th>
+        <th><span class="vn">Shree Balaji</span><span class="money open">₹3.69<small>crore</small></span><span class="vs">Gate passed</span></th>
+        <th><span class="vn">Kraftline</span><span class="money open">₹3.59<small>crore</small></span><span class="vs stop">Failed gate</span></th>
+        <th><span class="vn">PackGlobal</span><span class="money open">₹3.65<small>crore</small></span><span class="vs">Gate passed</span></th>
+        <th><span class="vn">Maruti</span><span class="money open">₹3.47<small>crore</small></span><span class="vs need">No questionnaire</span></th>
+        <th><span class="vn">Sai Cartons</span><span class="money open">₹3.54<small>crore</small></span><span class="vs need">No questionnaire</span></th>
+      </tr></thead>
+      <tbody>
+        <tr class="group"><td class="l" colspan="2">3-ply cartons<span class="cnt">12 lines, subtotal a year</span></td><td class="ref">₹84 lakh</td><td>₹86 lakh</td><td class="out">₹82 lakh</td><td>₹85 lakh</td><td class="out">₹79 lakh</td><td class="out">₹82 lakh</td></tr>
+        <tr><td class="l"><span class="id">L01</span>200 x 150 x 100 mm</td><td>76,050</td><td class="ref">₹3.94</td><td class="cell"><span class="how">÷100</span><span class="open">₹4.03</span></td><td class="cell out">₹3.94</td><td class="cell"><span class="how">USD</span><span class="open low">₹3.96</span></td><td class="cell out">₹3.90</td><td class="cell out"><span class="how">per kg</span><span class="open">₹3.61</span></td></tr>
+        <tr><td class="l"><span class="id">L02</span>250 x 200 x 150 mm</td><td>92,950</td><td class="ref">₹6.08</td><td class="cell"><span class="how">÷100</span><span class="open low">₹6.23</span></td><td class="cell out">₹5.89</td><td class="cell"><span class="how">USD</span><span class="open">₹6.34</span></td><td class="cell out">₹5.60</td><td class="cell out"><span class="how">per kg</span><span class="open">₹5.70</span></td></tr>
+        <tr><td class="l"><span class="id">L03</span>300 x 200 x 150 mm</td><td>1,01,400</td><td class="ref">₹6.80</td><td class="cell"><span class="how">÷100</span><span class="open">₹7.04</span></td><td class="cell out">₹6.58</td><td class="cell"><span class="how">USD</span><span class="open low">₹6.95</span></td><td class="cell out">₹6.20</td><td class="cell out"><span class="how">per kg</span><span class="open">₹6.46</span></td></tr>
+        <tr><td class="l"><span class="id">L04</span>300 x 250 x 200 mm</td><td>80,275</td><td class="ref">₹8.69</td><td class="cell"><span class="how">÷100</span><span class="open">₹8.98</span></td><td class="cell out">₹8.40</td><td class="cell"><span class="how">USD</span><span class="open low">₹8.01</span></td><td class="cell out">₹8.50</td><td class="cell out"><span class="how">per kg</span><span class="open">₹8.36</span></td></tr>
+        <tr><td class="l"><span class="id">L05</span>350 x 250 x 150 mm</td><td>71,825</td><td class="ref">₹8.39</td><td class="cell"><span class="how">÷100</span><span class="open">₹8.98</span></td><td class="cell out">₹8.22</td><td class="cell"><span class="how">USD</span><span class="open low">₹8.36</span></td><td class="cell out">₹8.10</td><td class="cell out"><span class="how">per kg</span><span class="open">₹8.17</span></td></tr>
+        <tr><td class="l"><span class="id">L06</span>350 x 300 x 200 mm</td><td>67,600</td><td class="ref">₹10.86</td><td class="cell"><span class="low">₹11.14</span></td><td class="cell out">₹11.09</td><td class="cell"><span class="how">USD</span><span class="open">₹11.44</span></td><td class="cell out">₹10.30</td><td class="cell out"><span class="how">per kg</span><span class="open">₹10.45</span></td></tr>
+        <tr><td class="l none" colspan="8">6 more lines in this group</td></tr>
+        <tr class="group"><td class="l" colspan="2">5-ply cartons<span class="cnt">10 lines, subtotal a year</span></td><td class="ref">₹226 lakh</td><td>₹226 lakh</td><td class="out">₹223 lakh</td><td>₹224 lakh</td><td class="out">₹215 lakh</td><td class="out">₹217 lakh</td></tr>
+        <tr class="group"><td class="l" colspan="2">7-ply cartons<span class="cnt">4 lines, subtotal a year</span></td><td class="ref">₹63 lakh</td><td>₹65 lakh</td><td class="out">₹61 lakh</td><td>₹64 lakh</td><td class="out">₹33 lakh <span class="how" style="margin:0 0 0 4px">2 of 4</span></td><td class="out">₹63 lakh</td></tr>
+        <tr class="group"><td class="l" colspan="2">Mailers<span class="cnt">4 lines, subtotal a year</span></td><td class="ref">₹28 lakh</td><td>₹29 lakh</td><td class="out">₹28 lakh</td><td>₹29 lakh</td><td class="out">₹20 lakh <span class="how" style="margin:0 0 0 4px">3 of 4</span></td><td class="out">₹28 lakh</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ ASK ============ -->
+<section class="screen" id="ask">
+  <header class="top"><span class="brand">Quote desk</span>
+    <span class="event"><b>Corrugated packaging</b> · Nimbus Home Care</span>
+    <nav class="steps"><a href="#">RFx</a><a href="#">Replies</a><a href="#">Results<span class="n">6</span></a><a href="#" aria-current="page">Ask</a></nav>
+    <div class="right"><span class="model">Claude Opus 5.5</span></div>
+  </header>
+  <div class="ask">
+    <div class="thread">
+      <div class="col">
+        <p class="q">What if we split it, cheapest per line, but only among vendors who cleared the quality questionnaire?</p>
+        <div class="ans">
+          <span class="ph">placeholder wording, real computed numbers</span>
+          <h2>A two-vendor split comes to ₹3.98 crore a year, about ₹2.13 lakh under last year.</h2>
+          <ul><li>PackGlobal takes 18 lines and Shree Balaji takes 12. Every line is covered.</li><li>Giving it all to PackGlobal costs ₹3.91 lakh more.</li></ul>
+          <div class="split">
+            <div class="hd"><span class="nm">Split among gate-cleared vendors</span><span class="tag">computed scenario, not an award</span><span class="money open">₹3.98<small>crore a year</small></span></div>
+            <div class="share" role="img" aria-label="PackGlobal 53 percent, Shree Balaji 47 percent"><i style="width:52.74%"></i><i style="width:47.26%"></i></div>
+            <div class="shares"><div><b>PackGlobal Exports</b><span>₹2.10 crore · 18 lines · 53%</span></div><div><b>Shree Balaji Packaging</b><span>₹1.88 crore · 12 lines · 47%</span></div></div>
+            <div class="rest"><span>Uses 19 prices under rules you haven't accepted.</span><a class="link" href="#">Review them</a></div>
+          </div>
+          <p class="caveat">Sai Cartons is ₹8.11 lakh cheaper than this split, but did not answer the questionnaire and quotes freight extra.</p>
+          <div class="next"><button class="chip">Cap it at two vendors</button><button class="chip">What if Kraftline renews its ISO?</button><button class="chip">Show the 18 lines PackGlobal wins</button></div>
+        </div>
+      </div>
+      <div class="compose"><div class="col"><div class="box"><span>Ask about the comparison</span><button class="btn primary">Ask <kbd>↵</kbd></button></div></div></div>
+    </div>
+    <aside class="tray">
+      <h3>Scenarios side by side</h3>
+      <table class="cmp">
+        <thead><tr><th></th><th>Split,<br>gate-cleared</th><th>One vendor,<br>PackGlobal</th></tr></thead>
+        <tbody>
+          <tr><td>Total a year</td><td><span class="money open">₹3.98<small>cr</small></span></td><td><span class="money open">₹4.02<small>cr</small></span></td></tr>
+          <tr><td>Against last year</td><td>₹2.13 lakh less</td><td>₹1.78 lakh more</td></tr>
+          <tr><td>Vendors</td><td>2</td><td>1</td></tr>
+          <tr><td>Lines covered</td><td>30 of 30</td><td>30 of 30</td></tr>
+          <tr><td>Unconfirmed prices</td><td style="color:var(--need)">19</td><td style="color:var(--need)">30</td></tr>
+        </tbody>
+      </table>
+    </aside>
+  </div>
+</section>
+
+<script>
+// Review queue content: the packaging dataset's six rules and three notices, as the current build words them.
+const items = [
+  { id: 'C-usd', v: 'C', vendor: 'PackGlobal Exports LLP', group: 'rule', t: 'Quoted in USD, converted to INR', amt: '₹4.02 crore', say: 'Prices on all 30 lines are in USD. Code converted them at a fixed 1 USD = ₹88, which is not a live rate.', lines: '30 lines', fmt: 'DOCX', file: 'vendor-c-packglobal-offer.docx', quote: '200 x 150 x 100 mm carton ... <mark>USD 0.045 each</mark>', work: [['L01', '$0.045 each', '₹3.96'], ['L04', '$0.091 each', '₹8.01']] },
+  { id: 'E-kg', v: 'E', vendor: 'Sai Cartons', group: 'rule', t: 'Quoted per kg, converted to per piece', amt: '₹2.99 crore', say: 'Prices on 22 lines (L01 to L22) are per kg. Code multiplied each by that line\'s kg per piece from the RFx (0.095 to 1.29 kg).', lines: '22 lines', fmt: 'EML', file: 'vendor-e-sai-cartons-email.txt', quote: '3 ply <mark>Rs 38 per kg</mark> ...', work: [['L01', '₹38 per kg x 0.095 kg', '₹3.61'], ['L02', '₹38 per kg x 0.15 kg', '₹5.70']] },
+  { id: 'E-ly', v: 'E', vendor: 'Sai Cartons', group: 'rule', t: 'Filled from last year\'s price', amt: '₹91.29 lakh', say: 'The vendor wrote no price for 8 lines (L23 to L30). Code used your last year price on file. These are not numbers the vendor wrote.', lines: '8 lines', fmt: 'EML', file: 'vendor-e-sai-cartons-email.txt', quote: '<mark>rest same as last year</mark>', work: [['L27', 'last year, on file', '₹4.34']] },
+  { id: 'A-100', v: 'A', vendor: 'Shree Balaji Packaging Pvt Ltd', group: 'rule', t: 'Quoted per 100, converted to per piece', amt: '₹59.11 lakh', say: 'Prices on 9 lines (L01 to L05, L27 to L30) are written "per 100 Nos". Code divided each by 100.', lines: '9 lines', fmt: 'XLSX', file: 'vendor-a-shree-balaji-quote.xlsx', quote: 'L01   403   <mark>per 100 Nos</mark>', work: [['L01', '403 per 100 Nos', '₹4.03'], ['L02', '623 per 100 Nos', '₹6.23']] },
+  { id: 'D-25', v: 'D', vendor: 'Maruti Corrugators', group: 'rule', t: 'Quoted per box of 25, converted to per piece', amt: '₹19.84 lakh', say: 'Prices on 3 lines (L27 to L29) are written "per box of 25 pcs". Code divided each by 25.', lines: '3 lines', fmt: 'JPG', file: 'vendor-d-maruti-rate-card.jpg', quote: 'L27   102   <mark>per box of 25 pcs</mark>', work: [['L27', '102 per box of 25', '₹4.08']] },
+  { id: 'B-disc', v: 'B', vendor: 'Kraftline Industries', group: 'rule', choice: true, t: '4% discount with a condition', amt: '₹15.75 lakh', say: 'The vendor offers 4% off, only if annual offtake value exceeds Rs 50 lakh, passed by credit note at quarter end. Prices show the list price until you choose.', lines: 'all lines', fmt: 'PDF', file: 'vendor-b-kraftline-quotation.pdf', quote: '<mark>4% discount</mark> only if annual offtake value exceeds Rs 50 lakh, passed by credit note at quarter end', work: [['List', 'a year', '₹3.94 crore'], ['With 4% off', 'a year', '₹3.78 crore']] },
+  { id: 'B-gate', v: 'B', vendor: 'Kraftline Industries', group: 'block', stop: true, t: 'Failed the quality gate', amt: '', say: 'Q1 asks for a currently valid ISO 9001:2015 certificate. The vendor\'s answer says it expired. This does not change a price. It changes whether the price can be used.', lines: 'Q1', fmt: 'PDF', file: 'vendor-b-kraftline-quotation.pdf', quote: 'Our ISO 9001:2015 certificate <mark>expired on 31 March 2026</mark>. Recertification audit is scheduled for November 2026.', work: [] },
+  { id: 'D-q', v: 'D', vendor: 'Maruti Corrugators', group: 'block', t: 'No questionnaire, freight extra, 27 of 30 lines', amt: '', say: 'The rate card photo has prices only. Nothing on the eight questions, freight is not in the price, and three lines have no price.', lines: '', fmt: 'JPG', file: 'vendor-d-maruti-rate-card.jpg', quote: '(no text on the questionnaire in this file)', work: [] },
+  { id: 'E-q', v: 'E', vendor: 'Sai Cartons', group: 'block', t: 'No questionnaire, freight extra', amt: '', say: 'The email has three lines. Nothing on the eight questions, and freight is not in the price.', lines: '', fmt: 'EML', file: 'vendor-e-sai-cartons-email.txt', quote: '(no text on the questionnaire in this file)', work: [] },
+];
+const cleared = new Set();
+let sel = 0;
+const q = document.getElementById('queue'), d = document.getElementById('detail');
+const short = (s) => s.replace(/ (Pvt Ltd|LLP|Industries)$/,'');
+
+function renderQueue() {
+  const row = (it, i) => `<button class="item ${cleared.has(it.id) ? 'cleared' : ''}" role="option" aria-selected="${i === sel}" data-i="${i}"><span class="mark ${it.stop ? 'stop' : ''}"></span><span><span class="t">${it.t}</span><span class="v">${short(it.vendor)}${it.lines ? ' · ' + it.lines : ''}</span></span><span class="amt">${it.amt}</span></button>`;
+  const rules = items.map((it, i) => it.group === 'rule' ? row(it, i) : '').join('');
+  const blocks = items.map((it, i) => it.group === 'block' ? row(it, i) : '').join('');
+  q.innerHTML = `<h3>Conversions to accept, largest first</h3>${rules}<h3>Stops an award, nothing to accept</h3>${blocks}`;
+}
+function renderDetail() {
+  const it = items[sel], done = cleared.has(it.id);
+  const work = it.work.length ? `<div class="sect">${it.choice ? 'What it changes' : 'How code worked it out'}</div><div class="work">${it.work.map(w => `<span class="l">${w[0]}</span><span class="a">${w[1]}</span><span class="arrow">→</span><span class="b">${w[2]}</span>`).join('')}</div>` : '';
+  const acts = it.group === 'block'
+    ? `<button class="btn quiet">Open the file <kbd>O</kbd></button><button class="btn quiet">Draft a note to the vendor</button>`
+    : done ? `<span style="color:var(--done);font-weight:500">Accepted</span><button class="btn quiet" data-undo>Undo</button><span class="undo">Totals that rested on this are now firm.</span>`
+    : it.choice ? `<button class="btn primary" data-accept>Keep the list price <kbd>A</kbd></button><button class="btn quiet" data-accept>Apply the 4%</button><button class="btn quiet">Open the file <kbd>O</kbd></button>`
+    : `<button class="btn primary" data-accept>Accept for ${it.lines} <kbd>A</kbd></button><button class="btn quiet">Open the file <kbd>O</kbd></button><button class="btn quiet">It's wrong</button>`;
+  d.innerHTML = `<div class="who">${it.vendor}</div><h2>${it.t}</h2><p class="say">${it.say}</p>
+    ${it.amt ? `<div class="stake"><div><span>${it.choice ? 'The difference, a year' : 'Rests on this, a year'}</span><span class="money ${done ? '' : 'open'}">${it.amt.replace(/ (crore|lakh)/, '<small>$1</small>')}</span></div><div><span>Covers</span><span style="font-size:22px;line-height:28px;font-weight:600;letter-spacing:-0.01em">${it.lines}</span></div></div>` : ''}
+    <div class="sect">The vendor's own words</div>
+    <div class="slip"><div class="from"><span class="fmt">${it.fmt}</span>${it.file}</div><pre>${it.quote}</pre></div>
+    ${work}<div class="acts">${acts}</div>`;
+}
+function sync() {
+  const open = items.filter(it => it.group === 'rule' && !cleared.has(it.id));
+  document.querySelectorAll('#results [data-count]').forEach(n => n.textContent = open.length || '');
+  document.querySelectorAll('#results .money[data-v]').forEach(m => {
+    const firm = !open.some(it => it.v === m.dataset.v);
+    if (firm && m.classList.contains('open')) { m.classList.remove('open'); m.classList.add('inked'); m.addEventListener('animationend', () => m.classList.remove('inked'), { once: true }); }
+    if (!firm) m.classList.add('open');
+  });
+}
+function accept() { const it = items[sel]; if (it.group !== 'rule' || cleared.has(it.id)) return; cleared.add(it.id); renderQueue(); renderDetail(); sync(); }
+function move(n) { sel = Math.max(0, Math.min(items.length - 1, sel + n)); renderQueue(); renderDetail(); }
+q.addEventListener('click', e => { const b = e.target.closest('.item'); if (b) { sel = +b.dataset.i; renderQueue(); renderDetail(); } });
+d.addEventListener('click', e => { if (e.target.closest('[data-accept]')) accept(); if (e.target.closest('[data-undo]')) { cleared.delete(items[sel].id); renderQueue(); renderDetail(); sync(); } });
+document.addEventListener('keydown', e => { if (!document.getElementById('results').classList.contains('on')) return; if (e.key === 'j') move(1); if (e.key === 'k') move(-1); if (e.key === 'a') accept(); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (!b) return; document.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.id === b.dataset.go)); document.querySelectorAll('.mockbar [data-go]').forEach(x => x.setAttribute('aria-pressed', x.dataset.go === b.dataset.go)); });
+renderQueue(); renderDetail();
+</script>
+</body>
+</html>

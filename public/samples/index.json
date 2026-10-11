@@ -1,0 +1,117 @@
+[
+  {
+    "id": "packaging",
+    "title": "Corrugated packaging",
+    "buyer": "Nimbus Home Care Pvt Ltd",
+    "kind": "Annual rate contract",
+    "value": "₹4 crore",
+    "valueNote": "a year",
+    "summary": "30 carton and mailer sizes for a D2C home-care brand, about ₹4 crore a year.",
+    "whyCheapestIsWrong": "The cheapest vendor fails the quality gate.",
+    "edges": [
+      "Excel with its own item codes, some prices per 100",
+      "PDF with a 4% discount hidden in a footnote",
+      "Word doc quoting in USD, prices inside paragraphs",
+      "Angled photo of a rate card, 27 of 30 lines, mailers per box of 25",
+      "Three-line email: per kg, and \"rest same as last year\""
+    ],
+    "questions": [
+      "What came back, and what can't I trust yet?",
+      "What if we split it, cheapest per line, but only among vendors who cleared the quality questionnaire?",
+      "What does that cost versus giving it all to one vendor?",
+      "Cap it at two vendors.",
+      "Where are prices up most against last year? Show a chart.",
+      "Which vendor has the best on-time delivery?"
+    ],
+    "rfxId": "RFQ-2026-PKG-014",
+    "lines": 30,
+    "vendors": 5,
+    "questionCount": 8
+  },
+  {
+    "id": "it-hardware",
+    "title": "IT hardware refresh",
+    "buyer": "Lumen Analytics Pvt Ltd",
+    "kind": "One-time purchase",
+    "value": "₹4 crore",
+    "valueNote": "one time",
+    "summary": "Laptops, desktops, monitors, docks, peripherals, network gear and UPS for a new Bengaluru office, about ₹4 crore.",
+    "whyCheapestIsWrong": "The cheapest prices are for substitute models.",
+    "edges": [
+      "Excel with several sheets and price breaks by quantity",
+      "PDF where the 3-year warranty is a separate add-on per item",
+      "Word doc in USD that offers \"equivalent\" models on some lines",
+      "Photo of a printed price list, 22 of 30 lines, some priced per pack of 10",
+      "Short email: \"10% off our last PO rates for laptops\""
+    ],
+    "questions": [
+      "Cheapest per line among vendors who cleared the quality gate, counting only exact-match models.",
+      "Which lines got a substitute, and what does the exact model cost elsewhere?",
+      "What changes if everything has to arrive in 21 days?",
+      "What does a 3-year warranty add, by vendor?",
+      "If we buy 600 standard laptops instead of 400, does the winner on that line change?",
+      "Which vendor has the fewest warranty claims?"
+    ],
+    "rfxId": "RFQ-2026-IT-031",
+    "lines": 30,
+    "vendors": 5,
+    "questionCount": 8
+  },
+  {
+    "id": "freight",
+    "title": "Road freight lanes",
+    "buyer": "Suryodaya Appliances Ltd",
+    "kind": "Annual rate contract",
+    "value": "₹4 crore",
+    "valueNote": "a year",
+    "summary": "30 full-truckload lanes out of the Pune and Hosur plants, about ₹4 crore a year.",
+    "whyCheapestIsWrong": "The cheapest carrier cannot supply enough trucks.",
+    "edges": [
+      "Excel with clean per-trip rates and a trucks-a-month limit on each lane",
+      "PDF priced per tonne, with a diesel clause in a footnote",
+      "Word doc priced per km, one paragraph per region, tolls extra",
+      "Screenshot of a WhatsApp chat, 18 of 30 lanes, vehicle size missing on some",
+      "Email: \"current contract rates plus 6%\", and no south lanes"
+    ],
+    "questions": [
+      "Cheapest per lane among carriers who cleared the quality gate, but nobody gets more trucks than they said they can supply.",
+      "Which lanes have only one bidder?",
+      "What happens to that award if diesel goes up ₹5?",
+      "Where is the fastest carrier more than 10% dearer than the cheapest?",
+      "What does it cost to give everything to one carrier?",
+      "What will tolls add on Deccan Express's lanes?"
+    ],
+    "rfxId": "RFQ-2026-FRT-007",
+    "lines": 30,
+    "vendors": 5,
+    "questionCount": 8
+  },
+  {
+    "id": "mro-spares",
+    "title": "MRO spares",
+    "buyer": "Trishul Forgings Ltd",
+    "kind": "Annual rate contract",
+    "value": "₹25 lakh",
+    "valueNote": "a year",
+    "summary": "30 maintenance spares for a forging plant at Chakan: bearings, belts, seals, filters, switchgear, hoses and consumables, about ₹25 lakh a year.",
+    "whyCheapestIsWrong": "No vendor covers the whole list, and some of the lowest prices are for an equivalent brand.",
+    "edges": [
+      "Excel price list with their own part codes and a minimum order column",
+      "PDF quotation with \"equivalent\" makes and lead times in the remarks",
+      "Word offer priced per pack, per carton and per metre",
+      "Photo of a handwritten counter quote, 12 of 30 lines",
+      "Short email: \"list less 32%\" and \"as attached last month\", no prices"
+    ],
+    "questions": [
+      "What is the smallest set of vendors that covers all 30 lines?",
+      "What do the minimum order quantities cost us in the first year?",
+      "Which lines only have an equivalent, not the brand we asked for?",
+      "What changes if everything has to arrive in 3 weeks?",
+      "Which equivalent brands has maintenance approved?"
+    ],
+    "rfxId": "RFQ-2026-MRO-052",
+    "lines": 30,
+    "vendors": 5,
+    "questionCount": 8
+  }
+]

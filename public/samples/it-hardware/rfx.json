@@ -1,0 +1,375 @@
+{
+  "id": "RFQ-2026-IT-031",
+  "title": "Office refresh: laptops, desktops, monitors, network and power, Bengaluru",
+  "buyer": "Lumen Analytics Pvt Ltd",
+  "scope": "One-time supply of end-user computing, network and power equipment for our new 450-seat office at Outer Ring Road, Bengaluru. Delivered and unboxed on site. Quote the exact specification on each line.",
+  "currency": "INR",
+  "period": "once",
+  "quantityLabel": "Quantity",
+  "refLabel": "last PO",
+  "attributes": [
+    {
+      "key": "lead_time_days",
+      "label": "Lead time",
+      "unit": "days",
+      "better": "lower"
+    },
+    {
+      "key": "warranty_years",
+      "label": "Warranty",
+      "unit": "years",
+      "better": "higher"
+    }
+  ],
+  "lineItems": [
+    {
+      "id": "L01",
+      "description": "Business laptop 14 inch, Intel Core Ultra 5, 16 GB RAM, 512 GB SSD, Windows 11 Pro",
+      "spec": "14 in, Ultra 5, 16 GB, 512 GB",
+      "category": "Laptops",
+      "measures": {},
+      "quantity": 400,
+      "unit": "unit",
+      "refPrice": 46000
+    },
+    {
+      "id": "L02",
+      "description": "Performance laptop 14 inch, Intel Core Ultra 7, 32 GB RAM, 1 TB SSD, Windows 11 Pro",
+      "spec": "14 in, Ultra 7, 32 GB, 1 TB",
+      "category": "Laptops",
+      "measures": {},
+      "quantity": 60,
+      "unit": "unit",
+      "refPrice": 98000
+    },
+    {
+      "id": "L03",
+      "description": "Developer laptop 16 inch, Intel Core Ultra 9, 32 GB RAM, 1 TB SSD, 8 GB discrete graphics, Windows 11 Pro",
+      "spec": "16 in, Ultra 9, 32 GB, 1 TB, dGPU",
+      "category": "Laptops",
+      "measures": {},
+      "quantity": 20,
+      "unit": "unit",
+      "refPrice": 165000
+    },
+    {
+      "id": "L04",
+      "description": "Small form factor desktop, Intel Core i5, 16 GB RAM, 512 GB SSD, Windows 11 Pro",
+      "spec": "SFF, i5, 16 GB, 512 GB",
+      "category": "Desktops",
+      "measures": {},
+      "quantity": 27,
+      "unit": "unit",
+      "refPrice": 52000
+    },
+    {
+      "id": "L05",
+      "description": "Tower workstation, Intel Xeon W, 64 GB RAM, 2 TB SSD, 16 GB professional graphics",
+      "spec": "Tower, Xeon W, 64 GB, 2 TB",
+      "category": "Desktops",
+      "measures": {},
+      "quantity": 5,
+      "unit": "unit",
+      "refPrice": 160000
+    },
+    {
+      "id": "L06",
+      "description": "Mini PC for meeting rooms, Intel Core i5, 16 GB RAM, 256 GB SSD",
+      "spec": "Mini PC, i5, 16 GB, 256 GB",
+      "category": "Desktops",
+      "measures": {},
+      "quantity": 10,
+      "unit": "unit",
+      "refPrice": 38000
+    },
+    {
+      "id": "L07",
+      "description": "Monitor 24 inch, Full HD IPS, height adjustable, HDMI and DisplayPort",
+      "spec": "24 in FHD IPS",
+      "category": "Monitors",
+      "measures": {},
+      "quantity": 169,
+      "unit": "unit",
+      "refPrice": 11500
+    },
+    {
+      "id": "L08",
+      "description": "Monitor 27 inch, QHD IPS, height adjustable, USB hub",
+      "spec": "27 in QHD IPS",
+      "category": "Monitors",
+      "measures": {},
+      "quantity": 54,
+      "unit": "unit",
+      "refPrice": 24000
+    },
+    {
+      "id": "L09",
+      "description": "Monitor 34 inch ultrawide, WQHD, curved",
+      "spec": "34 in ultrawide WQHD",
+      "category": "Monitors",
+      "measures": {},
+      "quantity": 8,
+      "unit": "unit",
+      "refPrice": 42000
+    },
+    {
+      "id": "L10",
+      "description": "Monitor 27 inch, 4K, USB-C with 90 W power delivery",
+      "spec": "27 in 4K USB-C",
+      "category": "Monitors",
+      "measures": {},
+      "quantity": 14,
+      "unit": "unit",
+      "refPrice": 36000
+    },
+    {
+      "id": "L11",
+      "description": "USB-C docking station, 100 W power delivery, dual display",
+      "spec": "USB-C dock, 100 W",
+      "category": "Docks",
+      "measures": {},
+      "quantity": 135,
+      "unit": "unit",
+      "refPrice": 9500
+    },
+    {
+      "id": "L12",
+      "description": "Thunderbolt 4 docking station, 96 W, triple display",
+      "spec": "Thunderbolt 4 dock",
+      "category": "Docks",
+      "measures": {},
+      "quantity": 41,
+      "unit": "unit",
+      "refPrice": 19500
+    },
+    {
+      "id": "L13",
+      "description": "Wireless optical mouse, 2.4 GHz",
+      "spec": "Wireless mouse",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 271,
+      "unit": "unit",
+      "refPrice": 650
+    },
+    {
+      "id": "L14",
+      "description": "Wired USB keyboard, full size",
+      "spec": "Wired keyboard",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 271,
+      "unit": "unit",
+      "refPrice": 700
+    },
+    {
+      "id": "L15",
+      "description": "Wireless keyboard and mouse combo",
+      "spec": "Wireless combo",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 54,
+      "unit": "unit",
+      "refPrice": 1900
+    },
+    {
+      "id": "L16",
+      "description": "USB stereo headset with noise-cancelling microphone",
+      "spec": "USB headset",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 169,
+      "unit": "unit",
+      "refPrice": 2800
+    },
+    {
+      "id": "L17",
+      "description": "Webcam 1080p with privacy shutter",
+      "spec": "Webcam 1080p",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 68,
+      "unit": "unit",
+      "refPrice": 3900
+    },
+    {
+      "id": "L18",
+      "description": "Laptop backpack, 15.6 inch, padded",
+      "spec": "Backpack 15.6 in",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 203,
+      "unit": "unit",
+      "refPrice": 1400
+    },
+    {
+      "id": "L19",
+      "description": "USB-C to HDMI adapter, 4K 60 Hz",
+      "spec": "USB-C to HDMI",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 81,
+      "unit": "unit",
+      "refPrice": 900
+    },
+    {
+      "id": "L20",
+      "description": "Laptop cable lock, keyed",
+      "spec": "Cable lock",
+      "category": "Peripherals",
+      "measures": {},
+      "quantity": 101,
+      "unit": "unit",
+      "refPrice": 1300
+    },
+    {
+      "id": "L21",
+      "description": "Managed switch, 48 port PoE+, 4 x 10G SFP+ uplinks",
+      "spec": "48-port PoE+ switch",
+      "category": "Network",
+      "measures": {},
+      "quantity": 4,
+      "unit": "unit",
+      "refPrice": 145000
+    },
+    {
+      "id": "L22",
+      "description": "Managed switch, 24 port gigabit, 4 x SFP uplinks",
+      "spec": "24-port switch",
+      "category": "Network",
+      "measures": {},
+      "quantity": 4,
+      "unit": "unit",
+      "refPrice": 62000
+    },
+    {
+      "id": "L23",
+      "description": "Wi-Fi 6E access point, tri-band, ceiling mount, PoE",
+      "spec": "Wi-Fi 6E access point",
+      "category": "Network",
+      "measures": {},
+      "quantity": 20,
+      "unit": "unit",
+      "refPrice": 21000
+    },
+    {
+      "id": "L24",
+      "description": "Next-generation firewall appliance, 2 Gbps threat protection, 3-year subscription",
+      "spec": "Firewall, 2 Gbps",
+      "category": "Network",
+      "measures": {},
+      "quantity": 1,
+      "unit": "unit",
+      "refPrice": 310000
+    },
+    {
+      "id": "L25",
+      "description": "10G SFP+ short-range transceiver module",
+      "spec": "10G SFP+ SR module",
+      "category": "Network",
+      "measures": {},
+      "quantity": 16,
+      "unit": "unit",
+      "refPrice": 4200
+    },
+    {
+      "id": "L26",
+      "description": "Cat6A patch cord, 3 metre, LSZH",
+      "spec": "Cat6A cord 3 m",
+      "category": "Network",
+      "measures": {},
+      "quantity": 541,
+      "unit": "unit",
+      "refPrice": 240
+    },
+    {
+      "id": "L27",
+      "description": "UPS 1 kVA line-interactive, tower",
+      "spec": "UPS 1 kVA",
+      "category": "Power",
+      "measures": {},
+      "quantity": 14,
+      "unit": "unit",
+      "refPrice": 9800
+    },
+    {
+      "id": "L28",
+      "description": "UPS 3 kVA online double-conversion, rack mount",
+      "spec": "UPS 3 kVA online",
+      "category": "Power",
+      "measures": {},
+      "quantity": 3,
+      "unit": "unit",
+      "refPrice": 78000
+    },
+    {
+      "id": "L29",
+      "description": "UPS 6 kVA online double-conversion, rack mount, with battery pack",
+      "spec": "UPS 6 kVA online",
+      "category": "Power",
+      "measures": {},
+      "quantity": 1,
+      "unit": "unit",
+      "refPrice": 195000
+    },
+    {
+      "id": "L30",
+      "description": "Rack PDU, 16 A, 12 outlets, metered",
+      "spec": "Rack PDU 16 A",
+      "category": "Power",
+      "measures": {},
+      "quantity": 4,
+      "unit": "unit",
+      "refPrice": 14500
+    }
+  ],
+  "questionnaire": [
+    {
+      "id": "Q1",
+      "gate": true,
+      "text": "Are you an OEM-authorised reseller for every brand you are quoting? Attach or cite the authorisation letter."
+    },
+    {
+      "id": "Q2",
+      "gate": true,
+      "text": "Do you provide on-site, next-business-day warranty service in Bengaluru for laptops and desktops?"
+    },
+    {
+      "id": "Q3",
+      "gate": true,
+      "text": "Do you offer e-waste take-back of the replaced equipment under the E-Waste (Management) Rules, with a certificate?"
+    },
+    {
+      "id": "Q4",
+      "gate": false,
+      "text": "Will you image the laptops with our build and asset-tag them before delivery?"
+    },
+    {
+      "id": "Q5",
+      "gate": false,
+      "text": "Do you accept payment 45 days from delivery?"
+    },
+    {
+      "id": "Q6",
+      "gate": false,
+      "text": "How long are the quoted prices valid?"
+    },
+    {
+      "id": "Q7",
+      "gate": false,
+      "text": "What is your dead-on-arrival replacement policy?"
+    },
+    {
+      "id": "Q8",
+      "gate": false,
+      "text": "How many seats have you delivered in a single order in the last 12 months?"
+    }
+  ],
+  "terms": {
+    "priceBasis": "Per unit, in INR, delivered to site (freight included), GST shown separately",
+    "delivery": "Within 30 days of purchase order, single drop, Outer Ring Road, Bengaluru",
+    "warranty": "State the warranty included in the price. Price a 3-year on-site option separately if it is not included.",
+    "payment": "45 days from delivery",
+    "responseDue": "2026-10-24"
+  }
+}

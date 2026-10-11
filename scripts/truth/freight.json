@@ -1,0 +1,930 @@
+{
+  "vendors": {
+    "A": {
+      "id": "A",
+      "name": "TransIndia Roadlines Pvt Ltd",
+      "file": "vendor-a-transindia-lane-rates.xlsx",
+      "format": "Excel",
+      "hard": "Clean rates, but read the other columns too. One of them limits how much of the work this carrier can take.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 8500,
+          "unitInr": 8500,
+          "trucksPerMonth": 3,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 17400,
+          "unitInr": 17400,
+          "trucksPerMonth": 1,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 26200,
+          "unitInr": 26200,
+          "trucksPerMonth": 2,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 20400,
+          "unitInr": 20400,
+          "trucksPerMonth": 1,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 24300,
+          "unitInr": 24300,
+          "trucksPerMonth": 1,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 37000,
+          "unitInr": 37000,
+          "trucksPerMonth": 1,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 44000,
+          "unitInr": 44000,
+          "trucksPerMonth": 1,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 72500,
+          "unitInr": 72500,
+          "trucksPerMonth": 2,
+          "transitDays": 6
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 52400,
+          "unitInr": 52400,
+          "trucksPerMonth": 1,
+          "transitDays": 6
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 64400,
+          "unitInr": 64400,
+          "trucksPerMonth": 1,
+          "transitDays": 7
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 22900,
+          "unitInr": 22900,
+          "trucksPerMonth": 2,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 43200,
+          "unitInr": 43200,
+          "trucksPerMonth": 2,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 45700,
+          "unitInr": 45700,
+          "trucksPerMonth": 1,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 52300,
+          "unitInr": 52300,
+          "trucksPerMonth": 1,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 4000,
+          "unitInr": 4000,
+          "trucksPerMonth": 4,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 18900,
+          "unitInr": 18900,
+          "trucksPerMonth": 3,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 13100,
+          "unitInr": 13100,
+          "trucksPerMonth": 1,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 21300,
+          "unitInr": 21300,
+          "trucksPerMonth": 1,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 17600,
+          "unitInr": 17600,
+          "trucksPerMonth": 1,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 18500,
+          "unitInr": 18500,
+          "trucksPerMonth": 1,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 30700,
+          "unitInr": 30700,
+          "trucksPerMonth": 2,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 27000,
+          "unitInr": 27000,
+          "trucksPerMonth": 1,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 39900,
+          "unitInr": 39900,
+          "trucksPerMonth": 1,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 43400,
+          "unitInr": 43400,
+          "trucksPerMonth": 1,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 49200,
+          "unitInr": 49200,
+          "trucksPerMonth": 2,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 57600,
+          "unitInr": 57600,
+          "trucksPerMonth": 1,
+          "transitDays": 6
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 43000,
+          "unitInr": 43000,
+          "trucksPerMonth": 1,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 103100,
+          "unitInr": 103100,
+          "trucksPerMonth": 1,
+          "transitDays": 8
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "12 months"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "Yes. All vehicles have GPS and we will share a live tracking login."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes. Open transit policy, cover of Rs 75 lakh per consignment."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "Yes. National permits valid, renewed every March."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "62 owned vehicles. We do not use market vehicles on contract lanes."
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "Agreed, 45 days from POD."
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "Rs 1,500 per day after 24 hours."
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "7 days."
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "0.3%"
+        }
+      }
+    },
+    "B": {
+      "id": "B",
+      "name": "Bharat Cargo Movers Ltd",
+      "file": "vendor-b-bharat-cargo-offer.pdf",
+      "format": "PDF",
+      "hard": "The rate column is not per trip. And a footnote lets the rate move with the price of diesel.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 1030,
+          "unitInr": 9270,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 2200,
+          "unitInr": 19800,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 3180,
+          "unitInr": 28620,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 2480,
+          "unitInr": 22320,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 2960,
+          "unitInr": 26640,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 2550,
+          "unitInr": 40800,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 5570,
+          "unitInr": 50130,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 4880,
+          "unitInr": 78080,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 6370,
+          "unitInr": 57330,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 7930,
+          "unitInr": 71370,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 6290,
+          "unitInr": 100640,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 2830,
+          "unitInr": 25470,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 2950,
+          "unitInr": 47200,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 5650,
+          "unitInr": 50850,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 6150,
+          "unitInr": 55350,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 490,
+          "unitInr": 4410,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 1250,
+          "unitInr": 20000,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 1630,
+          "unitInr": 14670,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 2510,
+          "unitInr": 22590,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 2090,
+          "unitInr": 18810,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 2280,
+          "unitInr": 20520,
+          "transitDays": 2
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 2140,
+          "unitInr": 34240,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 3350,
+          "unitInr": 30150,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 4770,
+          "unitInr": 42930,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 2980,
+          "unitInr": 47680,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 3500,
+          "unitInr": 56000,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 7140,
+          "unitInr": 64260,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 5160,
+          "unitInr": 46440,
+          "transitDays": 4
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 7220,
+          "unitInr": 115520,
+          "transitDays": 6
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 6130,
+          "unitInr": 98080,
+          "transitDays": 5
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "12 months",
+        "indexName": "diesel",
+        "indexPercentPerUnit": 0.45
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "Yes. Every vehicle is GPS enabled and visible on our customer portal in real time."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes. Transit insurance of Rs 1 crore per consignment is in force."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "Yes. All vehicles carry a valid national permit."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "410 owned vehicles and about 150 attached market vehicles."
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "We request 30 days. 45 days is acceptable for this volume."
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "Rs 2,000 per day for 9 tonne and Rs 2,800 per day for 16 tonne vehicles after 24 hours."
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "Scanned POD in 48 hours, hard copy in 10 days."
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "0.2%"
+        }
+      }
+    },
+    "C": {
+      "id": "C",
+      "name": "Deccan Express Logistics",
+      "file": "vendor-c-deccan-express-proposal.docx",
+      "format": "Word",
+      "hard": "No table. Each region gets one rate in a sentence, and it is not a rate per trip. One cost is left outside the rate.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 46,
+          "unitInr": 6900,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 46,
+          "unitInr": 19320,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 46,
+          "unitInr": 30360,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 46,
+          "unitInr": 20700,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 40.5,
+          "unitInr": 24300,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 52,
+          "unitInr": 37440,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 40.5,
+          "unitInr": 47790,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 52,
+          "unitInr": 75400,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 40.5,
+          "unitInr": 56700,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 40.5,
+          "unitInr": 70875,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 47.5,
+          "unitInr": 26600,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 56,
+          "unitInr": 47040,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 47.5,
+          "unitInr": 56050,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 47.5,
+          "unitInr": 61750,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 47.5,
+          "unitInr": 1900,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 56,
+          "unitInr": 17360,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 47.5,
+          "unitInr": 13300,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 47.5,
+          "unitInr": 22800,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 47.5,
+          "unitInr": 18525,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 47.5,
+          "unitInr": 18525,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 56,
+          "unitInr": 33600,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 47.5,
+          "unitInr": 30875,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 47.5,
+          "unitInr": 47500,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 54,
+          "unitInr": 47520,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 54,
+          "unitInr": 55080,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 46,
+          "unitInr": 70840,
+          "transitDays": 3
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 40.5,
+          "unitInr": 44550,
+          "transitDays": 5
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 52,
+          "unitInr": 114400,
+          "transitDays": 5
+        }
+      ],
+      "terms": {
+        "freight": "extra",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "6 months"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "all our vehicles are fitted with GPS and you will have live access"
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "we hold transit insurance of Rs 50 lakh per consignment"
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "the vehicles have national permits valid through the contract year"
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "85 vehicles of our own and a panel of market vehicles for peaks"
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "45 days from proof of delivery is fine"
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "Rs 1,800 per day after the first 24 hours"
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "within 10 days of delivery"
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "under 0.5%"
+        }
+      }
+    },
+    "D": {
+      "id": "D",
+      "name": "Jai Ambe Transport",
+      "file": "vendor-d-jai-ambe-whatsapp.png",
+      "format": "Photo",
+      "hard": "A screenshot of a chat. Rates come in several messages, some lanes are left out, and the vehicle is not always named.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 8500,
+          "unitInr": 8500,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 18300,
+          "unitInr": 18300,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 27100,
+          "unitInr": 27100,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 21300,
+          "unitInr": 21300,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 25400,
+          "unitInr": 25400,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 38900,
+          "unitInr": 38900,
+          "vehicleNotStated": true
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 45600,
+          "unitInr": 45600,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 76400,
+          "unitInr": 76400,
+          "vehicleNotStated": true
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 56000,
+          "unitInr": 56000,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 23600,
+          "unitInr": 23600,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 44800,
+          "unitInr": 44800,
+          "vehicleNotStated": true
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 46500,
+          "unitInr": 46500,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 4100,
+          "unitInr": 4100,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 18900,
+          "unitInr": 18900,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 13600,
+          "unitInr": 13600,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 31800,
+          "unitInr": 31800,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 44900,
+          "unitInr": 44900,
+          "vehicleNotStated": false
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 53300,
+          "unitInr": 53300,
+          "vehicleNotStated": true
+        }
+      ],
+      "terms": {
+        "freight": "extra",
+        "gst": "not stated",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": null
+    },
+    "E": {
+      "id": "E",
+      "name": "Shakti Logistics",
+      "file": "vendor-e-shakti-email.txt",
+      "format": "Email",
+      "hard": "Two sentences from the current carrier. No rates are written, and part of the work is turned down.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "fromCurrent": true,
+          "unitInr": 9858
+        },
+        {
+          "lineId": "L02",
+          "fromCurrent": true,
+          "unitInr": 20882
+        },
+        {
+          "lineId": "L03",
+          "fromCurrent": true,
+          "unitInr": 30740
+        },
+        {
+          "lineId": "L04",
+          "fromCurrent": true,
+          "unitInr": 23850
+        },
+        {
+          "lineId": "L05",
+          "fromCurrent": true,
+          "unitInr": 28620
+        },
+        {
+          "lineId": "L06",
+          "fromCurrent": true,
+          "unitInr": 44308
+        },
+        {
+          "lineId": "L07",
+          "fromCurrent": true,
+          "unitInr": 52576
+        },
+        {
+          "lineId": "L08",
+          "fromCurrent": true,
+          "unitInr": 84588
+        },
+        {
+          "lineId": "L09",
+          "fromCurrent": true,
+          "unitInr": 62328
+        },
+        {
+          "lineId": "L10",
+          "fromCurrent": true,
+          "unitInr": 76108
+        },
+        {
+          "lineId": "L11",
+          "fromCurrent": true,
+          "unitInr": 108756
+        },
+        {
+          "lineId": "L25",
+          "fromCurrent": true,
+          "unitInr": 52258
+        },
+        {
+          "lineId": "L26",
+          "fromCurrent": true,
+          "unitInr": 59466
+        },
+        {
+          "lineId": "L27",
+          "fromCurrent": true,
+          "unitInr": 68582
+        },
+        {
+          "lineId": "L28",
+          "fromCurrent": true,
+          "unitInr": 50138
+        },
+        {
+          "lineId": "L29",
+          "fromCurrent": true,
+          "unitInr": 123596
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "not stated",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "GPS on all vehicles as today."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Transit insurance as per current contract, Rs 50 lakh."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "National permits valid till March 2028."
+        }
+      }
+    }
+  }
+}

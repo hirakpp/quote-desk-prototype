@@ -1,0 +1,41 @@
+From: Rohit Nair <rohit.nair@nexait.example>
+To: it-procurement@lumenanalytics.example
+Date: Thu, 22 Oct 2026 21:07:44 +0530
+Subject: Re: RFQ-2026-IT-031 office refresh
+
+Hi,
+10% off our last PO rates for laptops. Rest as per attached list.
+Delivery 3 weeks for everything. Freight included, GST extra.
+We are authorised partner for all brands, letters attached. NBD onsite in Bengaluru, yes. We do not do e-waste take-back, you will need a separate recycler.
+
+Rohit
+Nexa IT Solutions
+
+--- Attached: Nexa_pricelist_Lumen.txt (rates per unit, Rs) ---
+SFF, i5, 16 GB, 512 GB - Rs 51,000
+Tower, Xeon W, 64 GB, 2 TB - Rs 1,64,400
+Mini PC, i5, 16 GB, 256 GB - Rs 37,900
+24 in FHD IPS - Rs 11,580
+27 in QHD IPS - Rs 23,950
+34 in ultrawide WQHD - Rs 42,000
+27 in 4K USB-C - Rs 36,650
+USB-C dock, 100 W - Rs 9,370
+Thunderbolt 4 dock - Rs 19,600
+Wireless mouse - Rs 665
+Wired keyboard - Rs 725
+Wireless combo - Rs 1,875
+USB headset - Rs 2,760
+Webcam 1080p - Rs 3,950
+Backpack 15.6 in - Rs 1,365
+USB-C to HDMI - Rs 925
+Cable lock - Rs 1,280
+48-port PoE+ switch - Rs 1,43,000
+24-port switch - Rs 63,250
+Wi-Fi 6E access point - Rs 20,900
+Firewall, 2 Gbps - Rs 3,09,200
+10G SFP+ SR module - Rs 4,220
+Cat6A cord 3 m - Rs 240
+UPS 1 kVA - Rs 9,720
+UPS 3 kVA online - Rs 78,050
+UPS 6 kVA online - Rs 1,96,400
+Rack PDU 16 A - Rs 14,780

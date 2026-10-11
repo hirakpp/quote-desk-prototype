@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quote desk: the other pages</title>
+<!--
+  Design reference only. Never import from src/, never deploy.
+  Home, RFx and Replies in the frosted graphite language, with a text colour for each kind of
+  thing and one type scale. Keys 1 to 9 and 0 switch pages (Home, RFx, Replies, Compare, Ask, Key, Questionnaire and
+  terms, the source sheet, the reading state, empty and error states).
+  Decide is in vp-dark-colour.html. Numbers on Compare and Ask are the real computed packaging
+  values from a perfect read. The analyst's sentences on Ask are placeholder wording. Content is the real sample data as it
+  appears in the build on 2026-10-10. Controls do nothing.
+-->
+<style>
+:root{
+  --ink:#f5f6fa; --ink-2:#b8c1d6; --ink-3:#8791a8; --hair:rgba(255,255,255,.09); --hair-2:rgba(255,255,255,.16);
+  --ground:#1c1d22; --glass:rgba(58,60,68,.46); --glass-solid:#2a2b31; --well:rgba(255,255,255,.07);
+  --accent:#3d9bff; --accent-press:#63afff; --accent-soft:rgba(61,155,255,.16); --on-accent:#0b1420;
+  --wait:#f0b45a; --stop:#ff8279; --ok:#5fd08a;
+  --red-glass:rgba(255,80,68,.2); --red-line:rgba(255,130,121,.38); --red-ink:#ffffff;
+  --green-glass:rgba(52,190,110,.2); --green-line:rgba(95,208,138,.38); --green-ink:#ffffff;
+  --sky:#9cc7ff; --gold:#e8d3a0; --lilac:#c5b8f7; --lilac-2:#9d93cc;
+  --r-card:22px; --r-ctl:11px;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",system-ui,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0}
+html{color-scheme:dark}
+body{font:400 15px/22px var(--font);color:var(--ink-2);background:var(--ground);-webkit-font-smoothing:antialiased;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(900px 640px at 10% -8%,rgba(86,118,178,.38),transparent 64%),
+  radial-gradient(780px 560px at 98% 6%,rgba(120,98,160,.3),transparent 62%),
+  radial-gradient(940px 700px at 60% 112%,rgba(70,128,118,.3),transparent 62%),var(--ground)}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+:focus-visible{outline:3px solid rgba(61,155,255,.6);outline-offset:2px;border-radius:8px}
+::selection{background:rgba(61,155,255,.35)}
+.num{font-variant-numeric:tabular-nums}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(40px) saturate(150%);backdrop-filter:blur(40px) saturate(150%);border:1px solid rgba(255,255,255,.1);box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 30px 60px -28px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.2);border-radius:var(--r-card)}
+
+/* chooser, not part of the design */
+.pick{position:fixed;left:14px;bottom:14px;z-index:9;display:flex;flex-wrap:wrap;max-width:calc(100% - 28px);gap:4px;padding:5px;border-radius:12px;background:#000;font:500 12px/1 var(--font)}
+.pick button{padding:7px 11px;border-radius:8px;color:#aaa}.pick button[aria-pressed="true"]{background:#fff;color:#111}
+
+/* the product name is on every page */
+.mast{text-align:center;padding:30px 0 4px}
+/* brushed silver: light catches the top of the letters, a darker band sits just under the middle */
+.brand{display:inline-block;font-size:40px;line-height:46px;font-weight:600;letter-spacing:-.03em;
+  background:linear-gradient(180deg,#ffffff 0%,#eef0f5 26%,#b9bfcc 50%,#8f96a6 58%,#d6dae3 78%,#f6f7fa 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.18)) drop-shadow(0 10px 22px rgba(0,0,0,.45))}
+.brand{display:inline-block;font-size:40px;line-height:46px;font-weight:600;letter-spacing:-.03em}
+.wrap{width:min(1240px,calc(100% - 48px));margin:0 auto}
+.bar{position:sticky;top:14px;z-index:5;margin-top:16px;height:58px;border-radius:18px;display:flex;align-items:center;padding:0 12px 0 14px;gap:14px}
+.bar>.l,.bar>.r{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.bar>.r{justify-content:flex-end;font-size:13px;color:var(--ink-2)}
+.back{width:32px;height:32px;border-radius:10px;display:grid;place-items:center}
+.back:hover{background:var(--well)}
+svg.i{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+/* the event name is a title, not a caption */
+.evt{display:flex;align-items:center;gap:7px;font-size:17px;font-weight:600;letter-spacing:-.012em;color:var(--ink)}
+.evt svg{color:var(--ink-3)}
+.seg{display:flex;padding:3px;border-radius:12px;background:var(--well)}
+.seg button{padding:7px 18px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2)}
+.seg button[disabled]{color:var(--ink-3);opacity:.6;cursor:default}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+
+.page{padding:36px 0 72px;display:none}
+[data-page="home"] #home,[data-page="rfx"] #rfx,[data-page="replies"] #replies,[data-page="compare"] #compare,[data-page="ask"] #ask,[data-page="key"] #key,[data-page="terms"] #terms,[data-page="reading"] #reading,[data-page="states"] #states{display:grid}
+
+/* one type scale, every page */
+.ctx{font-size:14px;line-height:20px;font-weight:500;color:var(--ink-3)}
+.ctx .id{font:500 13px/20px var(--mono);color:var(--lilac)}
+h1{margin-top:8px;font-size:40px;line-height:44px;font-weight:600;letter-spacing:-.024em;color:var(--ink);text-wrap:balance}
+.lede{margin-top:12px;font-size:19px;line-height:28px;letter-spacing:-.008em;color:var(--ink-2);max-width:34em}
+h2{font-size:22px;line-height:28px;font-weight:600;letter-spacing:-.018em;color:var(--sky)}
+h2.w{color:var(--ink)}
+h2 small{font-size:13px;font-weight:400;letter-spacing:0;color:var(--ink-3);margin-left:10px}
+.sec{margin-top:36px}
+.note{font-size:13px;line-height:19px;color:var(--ink-3)}
+.money{color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font:600 11px/18px var(--mono);letter-spacing:.04em;padding:0 6px;border-radius:5px;color:var(--lilac);background:rgba(197,184,247,.14)}
+.link{color:var(--accent);font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 20px;border-radius:20px;font-size:15px;font-weight:600;white-space:nowrap;transition:transform 120ms var(--ease),background-color 160ms var(--ease)}
+.btn:active{transform:scale(.96)}
+.btn.p{background:#fff;color:#1c1d22}.btn.p:hover{background:#e9ebf2}
+.btn.s{background:var(--well);color:var(--ink);box-shadow:0 0 0 1px var(--hair-2) inset}.btn.s:hover{background:rgba(255,255,255,.12)}
+.btn.t{padding:0 10px;color:var(--ink-2)}.btn.t:hover{color:var(--ink)}
+.btn.sm{height:34px;padding:0 15px;font-size:14px}
+.rows>*{position:relative}
+.rows>*+*::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--hair)}
+
+/* home */
+#home{grid-template-columns:400px minmax(0,1fr);gap:28px;align-items:start}
+.list{padding:22px 10px 12px}
+.list h2,.list .note{padding:0 14px}.list .note{margin:4px 0 12px;font-size:14px;line-height:20px;color:var(--ink-2)}
+.ev{display:grid;grid-template-columns:1fr auto;gap:1px 14px;width:100%;padding:13px 14px;border-radius:14px}
+.ev[aria-selected="true"]{background:rgba(255,255,255,.1)}
+.ev .n{font-size:17px;line-height:24px;font-weight:600;letter-spacing:-.012em;color:var(--ink)}
+.ev .s{font-size:13px;line-height:18px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev .m{font-size:17px;line-height:24px;text-align:right}.ev .p{font-size:13px;line-height:18px;color:var(--ink-3);text-align:right}
+.list .foot{padding:14px 14px 6px;font-size:14px;color:var(--ink-3)}
+.main{padding:30px 34px 34px}
+.acts{display:flex;align-items:center;gap:10px;margin-top:24px;flex-wrap:wrap}
+.acts+.note{margin-top:12px}
+.reply{display:grid;grid-template-columns:54px 280px 1fr;gap:14px;align-items:baseline;padding:12px 0}
+.reply .n{font-size:16px;font-weight:500;color:var(--ink)}
+.reply .d{font-size:14px;line-height:20px;color:var(--ink-2)}
+.q{display:flex;justify-content:space-between;align-items:center;width:100%;padding:13px 0;font-size:16px;color:var(--ink)}
+.q svg{color:var(--ink-3)}.q:hover svg{color:var(--accent)}
+.sec h2+.rows{margin-top:8px}
+
+/* rfx */
+#rfx{grid-template-columns:420px minmax(0,1fr);gap:28px;align-items:start}
+.chat{padding:24px 22px 22px;display:flex;flex-direction:column;min-height:560px;position:sticky;top:92px}
+.chat p{margin-top:6px;font-size:14px;line-height:20px;color:var(--ink-2)}
+.eg{margin-top:10px;padding:12px 14px;border-radius:14px;background:var(--well);font-size:15px;line-height:21px;color:var(--ink-2)}
+.eg:hover{color:var(--ink)}
+.box{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 16px;border-radius:18px;background:rgba(0,0,0,.24);box-shadow:0 0 0 1px var(--hair-2) inset;font-size:15px;color:var(--ink-3)}
+.box span{flex:1}
+.head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+th{font-size:13px;font-weight:500;color:var(--ink-3);text-align:left;padding:8px 0}
+td{padding:11px 0;border-top:1px solid var(--hair);vertical-align:top;line-height:21px}
+th.r,td.r{text-align:right}
+td.id{width:52px;font:500 13px/21px var(--mono);color:var(--lilac)}
+td.d{color:var(--ink);padding-right:24px}
+td.c{width:120px;color:var(--sky)}
+td.qy{width:110px;color:var(--ink)}td.qy span{color:var(--ink-3);margin-left:5px}
+td.po{width:110px}
+.qs{display:grid;grid-template-columns:44px 1fr;gap:10px 0;margin-top:12px;font-size:15px;line-height:21px;color:var(--ink)}
+.qs b{font:500 13px/21px var(--mono);color:var(--lilac)}
+.gate{display:inline-block;margin-left:8px;font-size:12px;line-height:18px;font-weight:600;padding:0 8px;border-radius:9px;color:var(--sky);background:rgba(156,199,255,.14)}
+.terms{display:grid;grid-template-columns:170px 1fr;gap:10px 0;margin-top:12px;font-size:15px;line-height:21px}
+.terms dt{color:var(--ink-3)}.terms dd{color:var(--ink)}
+
+/* replies */
+#replies{grid-template-columns:minmax(0,1040px);justify-content:center}
+.file{display:grid;grid-template-columns:54px 1fr auto;gap:2px 14px;padding:18px 0;align-items:start}
+.file .n{font-size:17px;line-height:24px;font-weight:600;letter-spacing:-.012em;color:var(--ink)}
+.file .f{font:400 13px/20px var(--mono);color:var(--lilac-2)}
+.file .d{margin-top:6px;font-size:15px;line-height:22px;color:var(--ink-2);max-width:46em}
+.file .a{display:flex;align-items:center;gap:4px}
+.file .tag{margin-top:3px}
+
+/* compare */
+#compare,#ask{grid-template-columns:minmax(0,1fr)}
+.sub{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px}
+.seg.sm button{padding:6px 14px;font-size:14px}
+.seg button[aria-selected="true"]{background:rgba(255,255,255,.16);color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 1px 3px rgba(0,0,0,.3)}
+.key{margin-left:auto;display:flex;gap:18px;font-size:13px;color:var(--ink-3)}
+.key i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--stop);margin-right:6px;vertical-align:2px}
+.key b{color:var(--ink);font-weight:600}
+.gridw{margin-top:16px;overflow-x:auto}
+table.g{min-width:980px;margin:0;font-size:15px}
+.g th{vertical-align:bottom;padding:0 0 12px 18px;text-align:right}
+.g th:first-child,.g th:nth-child(2){text-align:left;padding-left:0}
+.g th .vn{display:block;font-size:17px;line-height:24px;font-weight:600;letter-spacing:-.012em;color:var(--ink)}
+.g th .vt{display:block;font-size:17px;line-height:24px;font-weight:600;color:var(--gold);font-variant-numeric:tabular-nums}
+.g th .vt small{font-size:13px;font-weight:400;margin-left:4px}
+.g th .vs{display:block;font-size:13px;line-height:18px;font-weight:500}
+.g th .vs.ok{color:var(--ok)}.g th .vs.no{color:var(--stop)}
+.g th.out .vn,.g th.out .vt{color:var(--ink-3)}
+.g td{padding:11px 0 11px 18px;text-align:right;white-space:nowrap;color:var(--gold);font-variant-numeric:tabular-nums}
+.g td:first-child{padding-left:0}
+.g td.id{text-align:left;width:48px;font:500 13px/21px var(--mono);color:var(--lilac)}.g td.d{text-align:left;color:var(--ink);white-space:normal;padding-left:0}
+.g td.vol{color:var(--ink-2)}.g td.ly{color:var(--ink-3)}
+.g td.out{color:var(--ink-3)}
+.g td.low{color:var(--ink);font-weight:600}
+.g td.open::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--stop);margin-left:6px;vertical-align:2px}
+.g td:not(.open):not(.id):not(.d)::after{content:"";display:inline-block;width:12px}
+.g tr.grp td{padding-top:16px;color:var(--sky);font-weight:600;font-size:15px}
+.g tr.grp td.d small{font-size:13px;font-weight:400;color:var(--ink-3);margin-left:8px}
+.g tr.grp td.out,.g tr.grp td.ly{color:var(--ink-3);font-weight:400}
+.g tbody tr:not(.grp):hover td{background:rgba(255,255,255,.03)}
+
+/* ask */
+.thread{max-width:860px;margin:0 auto;width:100%}
+.asked{font-size:17px;line-height:26px;color:var(--ink-2)}
+.asked::before{content:"You asked";display:block;font-size:13px;line-height:19px;color:var(--ink-3)}
+.ans{margin-top:20px;padding:30px 34px 28px}
+.ans h1{margin:0;font-size:30px;line-height:38px;letter-spacing:-.02em}
+.ans h1 .money{font-weight:600}
+.pts{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:16px;line-height:24px;color:var(--ink-2)}
+.pts li{padding-left:18px;position:relative}.pts li::before{content:"";position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--ink-3)}
+.strip{display:flex;gap:12px;align-items:center;margin-top:20px;padding:12px 14px;border-radius:14px;background:var(--red-glass);border:1px solid var(--red-line);color:#fff;font-size:15px}
+.strip .pill{flex:none;height:26px;padding:0 11px;border-radius:13px;font-size:13px;line-height:26px;font-weight:600;background:rgba(255,255,255,.16)}
+.scn{margin-top:26px;padding-top:22px;border-top:1px solid var(--hair)}
+.cmp{width:100%;margin-top:10px;font-size:15px}
+.cmp th{padding:8px 0 8px 18px;text-align:right}.cmp th:first-child{text-align:left;padding-left:0}
+.cmp td{padding:11px 0 11px 18px;text-align:right;color:var(--ink)}.cmp td:first-child{text-align:left;padding-left:0;color:var(--ink-2)}
+.cmp td.money{color:var(--gold)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.chip{height:36px;padding:0 15px;border-radius:18px;background:var(--well);box-shadow:0 0 0 1px var(--hair-2) inset;font-size:14px;font-weight:500;color:var(--ink)}
+.compose{margin-top:20px;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 20px;border-radius:22px;font-size:16px;color:var(--ink-3)}
+.compose span{flex:1}
+.mockn{margin-top:14px;text-align:center}
+
+/* key */
+#key{grid-template-columns:minmax(0,560px);justify-content:center}
+.field{margin-top:22px}
+.field label{display:block;font-size:13px;line-height:19px;font-weight:500;color:var(--ink-3);margin-bottom:6px}
+.input{display:flex;align-items:center;height:44px;padding:0 14px;border-radius:12px;background:rgba(0,0,0,.24);box-shadow:0 0 0 1px var(--hair-2) inset;font:400 14px/1 var(--mono);color:var(--lilac)}
+.input.plain{font:400 15px/1 var(--font);color:var(--ink)}
+
+/* questionnaire and terms */
+#terms{grid-template-columns:minmax(0,1fr)}
+table.m{min-width:1040px;margin:0;font-size:15px;table-layout:fixed}
+.m th{vertical-align:bottom;padding:0 0 12px 18px;text-align:left}
+.m th:first-child{padding-left:0;width:300px}
+.m th .vn{display:block;font-size:17px;line-height:24px;font-weight:600;letter-spacing:-.012em;color:var(--ink)}
+.m th .vs{display:block;font-size:13px;line-height:18px;font-weight:500}
+.m th .vs.ok{color:var(--ok)}.m th .vs.no{color:var(--stop)}
+.m th.out .vn{color:var(--ink-3)}
+.m td{padding:13px 0 13px 18px;vertical-align:top;border-top:1px solid var(--hair)}
+.m td:first-child{padding-left:0;color:var(--ink);line-height:21px;padding-right:10px}
+.m td:first-child b{display:block;font:500 13px/19px var(--mono);color:var(--lilac)}
+.m .w{display:block;font-size:15px;line-height:21px;font-weight:600}
+.m .w.y{color:var(--ok)}.m .w.n{color:var(--stop)}.m .w.x{color:var(--ink-3);font-weight:400}.m .w.v{color:var(--ink);font-weight:500}
+.m .a{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px;font-size:13px;line-height:19px;color:var(--ink-2)}
+.m tr.grp td{border-top:0;padding-top:22px;padding-bottom:8px;font-size:17px;line-height:24px;font-weight:600;color:var(--sky)}
+.m tr.grp td small{font-size:13px;font-weight:400;color:var(--ink-3);margin-left:10px}
+
+/* the vendor's words, as a sheet over Compare */
+.sheet{display:none;position:fixed;z-index:6;top:14px;right:14px;bottom:14px;width:min(460px,calc(100% - 28px));padding:26px 26px 22px;overflow:auto;flex-direction:column;background:rgba(44,46,54,.78)}
+[data-page="sheet"] .sheet{display:flex}
+[data-page="sheet"] #compare{display:grid}
+.sheet .x{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:var(--ink-2)}
+.sheet h2{margin-top:6px}
+.sheet .fig{margin-top:14px;font-size:40px;line-height:44px;font-weight:600;letter-spacing:-.024em;color:var(--gold);font-variant-numeric:tabular-nums}
+.sheet .fig small{font-size:17px;font-weight:500;color:var(--ink-3);letter-spacing:0;margin-left:8px}
+.lab{margin-top:24px;font-size:17px;line-height:24px;font-weight:600;color:var(--sky)}
+.slip{margin-top:8px;padding:12px 14px;border-radius:14px;background:rgba(0,0,0,.26);font:400 13px/21px var(--mono);color:var(--ink)}
+.slip .f{display:block;font:400 13px/19px var(--mono);color:var(--lilac-2);margin-bottom:6px}
+mark{background:rgba(255,204,0,.3);border-radius:4px;padding:1px 3px;color:inherit}
+.steps{margin-top:8px;display:grid;grid-template-columns:1fr auto;gap:0;font-size:15px}
+.steps>*{padding:9px 0;border-top:1px solid var(--hair)}.steps>*:nth-child(-n+2){border-top:0}
+.steps span{color:var(--ink-2)}.steps b{text-align:right;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.steps b.money{color:var(--gold)}
+.tile{margin-top:24px;padding:14px 16px;border-radius:16px;background:var(--red-glass);border:1px solid var(--red-line);color:#fff}
+.tile .t{font-size:17px;line-height:24px;font-weight:600}.tile .s{margin-top:1px;font-size:14px;line-height:20px;color:rgba(255,255,255,.82)}
+.tile .acts{margin-top:12px}
+.btn.o{color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset}
+.sheet .end{margin-top:auto;padding-top:20px}
+.g td.sel{box-shadow:0 0 0 2px var(--accent) inset;border-radius:8px}
+
+/* reading, empty and error states */
+#reading{grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:28px 56px;align-items:start}
+#reading h1{font-size:46px;line-height:50px;letter-spacing:-.026em}
+.sk{border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,.06),rgba(255,255,255,.11),rgba(255,255,255,.06));background-size:200% 100%;animation:sk 1.6s linear infinite}
+@keyframes sk{to{background-position:-200% 0}}
+.wait{margin-top:32px;padding:28px 30px}
+.wait .note{margin-top:18px;font-size:15px;line-height:22px;color:var(--ink-2)}
+.vp{padding:8px 8px 12px}
+.vp>h2{padding:18px 18px 12px}
+.grp2{display:flex;align-items:center;gap:9px;margin:4px 18px 2px;font-size:17px;line-height:24px;font-weight:600}
+.grp2::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.grp2.g{color:var(--ok)}.grp2.b{color:var(--sky);margin-top:18px}
+.vr{display:grid;grid-template-columns:1fr auto;gap:1px 16px;align-items:center;padding:11px 18px 11px 35px;position:relative}
+.vr+.vr::before{content:"";position:absolute;left:35px;right:18px;top:0;height:1px;background:var(--hair)}
+.vr .n{font-size:15px;font-weight:500;color:var(--ink)}.vr .y{grid-column:1;font-size:13px;line-height:18px;color:var(--ink-3)}
+.vr .y.ok{color:#8fcfa8}
+.vr .amt{grid-row:1/3;grid-column:2;font-size:17px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.vr .amt small{font-size:13px;font-weight:400;color:var(--ink-3);margin-left:4px}
+.vr .sk{grid-row:1/3;grid-column:2;width:92px;height:20px}
+.vr.rd .n{color:var(--ink-2)}
+#states{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+.st>.cap{font-size:13px;line-height:19px;font-weight:500;color:var(--ink-3);margin-bottom:10px}
+.st .main{padding:28px 30px}
+.st h1{font-size:30px;line-height:36px;letter-spacing:-.02em;margin-top:0}
+.st .lede{font-size:17px;line-height:25px;margin-top:8px}
+.input.bad{box-shadow:0 0 0 1.5px var(--stop) inset}
+.err{margin-top:8px;font-size:14px;line-height:20px;color:var(--stop)}
+.egs{display:grid;gap:8px;margin-top:18px}
+@media (max-width:1040px){#reading,#states{grid-template-columns:1fr}#reading h1{font-size:34px;line-height:38px}.key{margin-left:0}.ans{padding:24px 20px}.ans h1{font-size:24px;line-height:31px}#home,#rfx{grid-template-columns:1fr}.chat{position:static;min-height:0}.box{margin-top:16px}.seg{display:none}h1{font-size:32px;line-height:36px}.reply{grid-template-columns:54px 1fr}.reply .d{grid-column:2}.head{flex-direction:column}td.c,th:nth-child(3){display:none}}
+@media (max-width:520px){td.qy,th:nth-child(4){display:none}td.d{padding-right:12px}.main{padding:24px 20px 26px}.bar>.r{display:none}.brand{font-size:32px;line-height:38px}.file{grid-template-columns:54px 1fr}.file .a{grid-column:2;margin-top:8px}.terms{grid-template-columns:1fr;gap:2px 0}.terms dd{margin-bottom:8px}}
+@media (prefers-reduced-transparency:reduce){.glass{background:var(--glass-solid);backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media (prefers-contrast:more){.glass{background:#24252a;border-color:var(--hair-2);backdrop-filter:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body data-page="home">
+<div class="pick"><button data-p="home">1 · Home</button><button data-p="rfx">2 · RFx</button><button data-p="replies">3 · Replies</button><button data-p="compare">4 · Compare</button><button data-p="ask">5 · Ask</button><button data-p="key">6 · Key</button><button data-p="terms">7 · Terms</button><button data-p="sheet">8 · Source</button><button data-p="reading">9 · Reading</button><button data-p="states">0 · States</button></div>
+<div class="mast"><span class="brand">Quote desk</span></div>
+<div class="wrap">
+<header class="bar glass">
+  <div class="l"><button class="back" aria-label="Back"><svg class="i" viewBox="0 0 14 14"><path d="M9 2.5L4.5 7 9 11.5"/></svg></button><button class="evt"><span id="evt">Sourcing events</span><svg class="i" viewBox="0 0 14 14"><path d="M3.5 5.5L7 9l3.5-3.5"/></svg></button></div>
+  <div class="seg" id="tabs"><button data-t="decide">Decide</button><button data-t="compare">Compare</button><button data-t="ask">Ask</button></div>
+  <div class="r" id="model"><i class="dot"></i>Claude connected</div>
+</header>
+
+<main class="page" id="home">
+  <section class="list glass">
+    <h2 class="w">Sourcing events</h2>
+    <p class="note">Each has an RFx with 30 lines and five vendor replies in five different shapes.</p>
+    <div>
+      <button class="ev" aria-selected="true"><span class="n">Corrugated packaging</span><span class="m money">₹4 crore</span><span class="s">Nimbus Home Care · annual rate contract</span><span class="p">a year</span></button>
+      <button class="ev"><span class="n">IT hardware refresh</span><span class="m money">₹4 crore</span><span class="s">Lumen Analytics · one-time purchase</span><span class="p">one time</span></button>
+      <button class="ev"><span class="n">Road freight lanes</span><span class="m money">₹4 crore</span><span class="s">Suryodaya Appliances · annual rate contract</span><span class="p">a year</span></button>
+      <button class="ev"><span class="n">MRO spares</span><span class="m money">₹25 lakh</span><span class="s">Trishul Forgings · annual rate contract</span><span class="p">a year</span></button>
+    </div>
+    <div class="foot">Or <button class="link">draft your own RFx</button> by talking to the co-pilot.</div>
+  </section>
+  <section class="main glass">
+    <div class="ctx">Nimbus Home Care · annual rate contract</div>
+    <h1>Corrugated packaging</h1>
+    <p class="lede">30 carton and mailer sizes for a D2C home-care brand, about <span class="money">₹4 crore</span> a year. The cheapest vendor fails the quality gate.</p>
+    <div class="acts"><button class="btn p">Open the decision</button><button class="btn s">Open the RFx</button><button class="btn t">Read again from scratch</button></div>
+    <p class="note">Reading takes a live model call per file, on your own key. The email is simulated.</p>
+    <div class="sec"><h2>The five replies</h2><div class="rows">
+      <div class="reply"><span><span class="tag">XLSX</span></span><span class="n">Shree Balaji Packaging Pvt Ltd</span><span class="d">Excel with its own item codes, some prices per 100</span></div>
+      <div class="reply"><span><span class="tag">PDF</span></span><span class="n">Kraftline Industries</span><span class="d">PDF with a 4% discount hidden in a footnote</span></div>
+      <div class="reply"><span><span class="tag">DOCX</span></span><span class="n">PackGlobal Exports LLP</span><span class="d">Word doc quoting in USD, prices inside paragraphs</span></div>
+      <div class="reply"><span><span class="tag">JPG</span></span><span class="n">Maruti Corrugators</span><span class="d">Angled photo of a rate card, 27 of 30 lines, mailers per box of 25</span></div>
+      <div class="reply"><span><span class="tag">EML</span></span><span class="n">Sai Cartons</span><span class="d">Three-line email: per kg, and "rest same as last year"</span></div>
+    </div></div>
+    <div class="sec"><h2>Questions this event can answer</h2><div class="rows">
+      <button class="q"><span>What came back, and what can't I trust yet?</span><svg class="i" viewBox="0 0 14 14"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+      <button class="q"><span>What if we split it, cheapest per line, but only among vendors who cleared the quality questionnaire?</span><svg class="i" viewBox="0 0 14 14"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+      <button class="q"><span>What does that cost versus giving it all to one vendor?</span><svg class="i" viewBox="0 0 14 14"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+      <button class="q"><span>Cap it at two vendors.</span><svg class="i" viewBox="0 0 14 14"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+      <button class="q"><span>Where are prices up most against last year? Show a chart.</span><svg class="i" viewBox="0 0 14 14"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+      <button class="q"><span>Which vendor has the best on-time delivery?</span><svg class="i" viewBox="0 0 14 14"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+    </div></div>
+  </section>
+</main>
+
+<main class="page" id="rfx">
+  <section class="chat glass">
+    <h2 class="w">Say what you need to buy</h2>
+    <p>The draft on the right fills in as you talk. For example:</p>
+    <button class="eg">I need annual rates for corrugated shipper cartons, about 30 sizes, delivered to Bhiwandi.</button>
+    <button class="eg">Draft an RFx for an office laptop refresh: 400 laptops in three configurations, plus docks and monitors.</button>
+    <button class="eg">I want to tender 30 full-truckload lanes out of our Pune and Hosur plants for a year.</button>
+    <div class="box"><span>Describe the category, the items and the quantities</span><button class="btn s sm">Send</button></div>
+  </section>
+  <section class="main glass">
+    <div class="head"><div>
+      <div class="ctx"><span class="id">RFQ-2026-IT-031</span> · Lumen Analytics Pvt Ltd</div>
+      <h1>Office refresh: laptops, desktops, monitors, network and power, Bengaluru</h1>
+    </div><button class="btn p">Send to vendors</button></div>
+    <p class="lede">One-time supply of end-user computing, network and power equipment for our new 450-seat office at Outer Ring Road, Bengaluru. Delivered and unboxed on site. Quote the exact specification on each line.</p>
+    <div class="sec"><h2>30 line items</h2>
+    <table><thead><tr><th>Line</th><th>Description</th><th>Category</th><th class="r">Quantity</th><th class="r">Last PO</th></tr></thead><tbody class="num">
+      <tr><td class="id">L01</td><td class="d">Business laptop 14 inch, Intel Core Ultra 5, 16 GB RAM, 512 GB SSD, Windows 11 Pro</td><td class="c">Laptops</td><td class="qy r">400<span>unit</span></td><td class="po r money">₹46,000</td></tr>
+      <tr><td class="id">L02</td><td class="d">Performance laptop 14 inch, Intel Core Ultra 7, 32 GB RAM, 1 TB SSD, Windows 11 Pro</td><td class="c">Laptops</td><td class="qy r">60<span>unit</span></td><td class="po r money">₹98,000</td></tr>
+      <tr><td class="id">L04</td><td class="d">Small form factor desktop, Intel Core i5, 16 GB RAM, 512 GB SSD, Windows 11 Pro</td><td class="c">Desktops</td><td class="qy r">27<span>unit</span></td><td class="po r money">₹52,000</td></tr>
+      <tr><td class="id">L07</td><td class="d">Monitor 24 inch, Full HD IPS, height adjustable, HDMI and DisplayPort</td><td class="c">Monitors</td><td class="qy r">169<span>unit</span></td><td class="po r money">₹11,500</td></tr>
+      <tr><td class="id">L29</td><td class="d">UPS 6 kVA online double-conversion, rack mount, with battery pack</td><td class="c">Power</td><td class="qy r">1<span>unit</span></td><td class="po r money">₹1,95,000</td></tr>
+      <tr><td class="id">L30</td><td class="d">Rack PDU, 16 A, 12 outlets, metered</td><td class="c">Power</td><td class="qy r">4<span>unit</span></td><td class="po r money">₹14,500</td></tr>
+    </tbody></table><p class="note" style="margin-top:10px">This mock shows 6 of the 30 lines.</p></div>
+    <div class="sec"><h2>8 questions for the supplier</h2><div class="qs">
+      <b>Q1</b><span>Are you an OEM-authorised reseller for every brand you are quoting? Attach or cite the authorisation letter.<span class="gate">Quality gate</span></span>
+      <b>Q2</b><span>Do you provide on-site, next-business-day warranty service in Bengaluru for laptops and desktops?<span class="gate">Quality gate</span></span>
+      <b>Q4</b><span>Will you image the laptops with our build and asset-tag them before delivery?</span>
+      <b>Q5</b><span>Do you accept payment 45 days from delivery?</span>
+    </div></div>
+    <div class="sec"><h2>Terms</h2><dl class="terms">
+      <dt>Price basis</dt><dd>Per unit, in INR, delivered to site (freight included), GST shown separately</dd>
+      <dt>Delivery</dt><dd>Within 30 days of purchase order, single drop, Outer Ring Road, Bengaluru</dd>
+      <dt>Payment</dt><dd>45 days from delivery</dd>
+      <dt>Replies due</dt><dd>24 October 2026</dd>
+    </dl></div>
+  </section>
+</main>
+
+<main class="page" id="replies">
+  <section class="main glass">
+    <div class="head"><div><div class="ctx">Lumen Analytics · one-time purchase</div><h1>5 replies came back</h1></div>
+      <div class="acts" style="margin-top:6px"><button class="btn s">Upload a vendor file</button><button class="btn p">Read all 5 and compare</button></div></div>
+    <p class="lede">The email is simulated. Every file opens without a model. None is read yet.</p>
+    <div class="sec rows" style="margin-top:24px">
+      <div class="file"><span><span class="tag">XLSX</span></span><div><div class="n">Vertex Infosystems Pvt Ltd</div><div class="f">vendor-a-vertex-commercial-bid.xlsx · sample file</div><p class="d">A workbook with a sheet per category. Every item has three prices, and which one applies depends on how many you buy.</p></div><div class="a"><button class="btn s sm">Open the file</button><button class="btn t sm">Read</button></div></div>
+      <div class="file"><span><span class="tag">PDF</span></span><div><div class="n">Dataline Systems and Services</div><div class="f">vendor-b-dataline-quotation.pdf · sample file</div><p class="d">Two price columns per item. One is the price, the other is an optional extra, and they must not be added together by default.</p></div><div class="a"><button class="btn s sm">Open the file</button><button class="btn t sm">Read</button></div></div>
+      <div class="file"><span><span class="tag">DOCX</span></span><div><div class="n">Orbis Technologies FZ-LLC</div><div class="f">vendor-c-orbis-proposal.docx · sample file</div><p class="d">Prices are inside paragraphs and not in rupees. Read what is being offered on each line, not just the price.</p></div><div class="a"><button class="btn s sm">Open the file</button><button class="btn t sm">Read</button></div></div>
+      <div class="file"><span><span class="tag">JPG</span></span><div><div class="n">Sri Venkateshwara Computers</div><div class="f">vendor-d-svc-price-list.jpg · sample file</div><p class="d">A phone photo of a printed price list. Some lines are missing, and two items are priced by the pack.</p></div><div class="a"><button class="btn s sm">Open the file</button><button class="btn t sm">Read</button></div></div>
+      <div class="file"><span><span class="tag">EML</span></span><div><div class="n">Nexa IT Solutions</div><div class="f">vendor-e-nexa-email.txt · sample file</div><p class="d">A short email. The laptop prices are not written, they point at your last purchase order.</p></div><div class="a"><button class="btn s sm">Open the file</button><button class="btn t sm">Read</button></div></div>
+    </div>
+    <p class="note" style="margin-top:6px">Reading a file again clears anything you confirmed for that vendor, so a changed reading never inherits a confirmation.</p>
+  </section>
+</main>
+
+<main class="page" id="compare">
+  <section class="main glass">
+    <div class="ctx">Nimbus Home Care · annual rate contract</div>
+    <h1>Every price, side by side</h1>
+    <p class="lede">Same lines, same unit, rupees per piece. Totals are for the 27 lines all five quoted.</p>
+    <div class="sub"><div class="seg sm"><button aria-selected="true">Prices</button><button>Questionnaire and terms</button></div>
+      <div class="key"><span><b>₹3.96</b>&nbsp; lowest you can award</span><span><i></i>not confirmed yet</span><span>Grey: vendor can't be awarded</span></div></div>
+    <div class="gridw"><table class="g"><thead><tr><th>Line</th><th>Size</th><th>Annual volume</th><th>Last year</th><th class=""><span class="vn">Shree Balaji Packaging</span><span class="vt">₹3.69<small>crore</small></span><span class="vs ok">Can award</span></th><th class="out"><span class="vn">Kraftline Industries</span><span class="vt">₹3.59<small>crore</small></span><span class="vs no">Failed gate</span></th><th class=""><span class="vn">PackGlobal Exports</span><span class="vt">₹3.65<small>crore</small></span><span class="vs ok">Can award</span></th><th class="out"><span class="vn">Maruti Corrugators</span><span class="vt">₹3.47<small>crore</small></span><span class="vs no">No questionnaire</span></th><th class="out"><span class="vn">Sai Cartons</span><span class="vt">₹3.54<small>crore</small></span><span class="vs no">No questionnaire</span></th></tr></thead>
+    <tbody><tr class="grp"><td class="id"></td><td class="d">3-ply cartons<small>12 lines, subtotal a year</small></td><td></td><td class="ly">₹84 lakh</td><td class="">₹86 lakh</td><td class="out">₹82 lakh</td><td class="">₹85 lakh</td><td class="out">₹79 lakh</td><td class="out">₹82 lakh</td></tr><tr><td class="id">L01</td><td class="d">200 x 150 x 100 mm</td><td class="vol">76,050</td><td class="ly">₹3.94</td><td class="open">₹4.03</td><td class="out">₹3.94</td><td class="low open">₹3.96</td><td class="out">₹3.90</td><td class="out">₹3.61</td></tr><tr><td class="id">L02</td><td class="d">250 x 200 x 150 mm</td><td class="vol">92,950</td><td class="ly">₹6.08</td><td class="low open">₹6.23</td><td class="out">₹5.89</td><td class="open">₹6.34</td><td class="out">₹5.60</td><td class="out">₹5.70</td></tr><tr><td class="id">L03</td><td class="d">300 x 200 x 150 mm</td><td class="vol">1,01,400</td><td class="ly">₹6.80</td><td class="open">₹7.04</td><td class="out">₹6.58</td><td class="low open">₹6.95</td><td class="out">₹6.20</td><td class="out">₹6.46</td></tr><tr><td class="id">L04</td><td class="d">300 x 250 x 200 mm</td><td class="vol">80,275</td><td class="ly">₹8.69</td><td class="open">₹8.98</td><td class="out">₹8.40</td><td class="low open">₹8.01</td><td class="out">₹8.50</td><td class="out">₹8.36</td></tr><tr><td class="id">L05</td><td class="d">350 x 250 x 150 mm</td><td class="vol">71,825</td><td class="ly">₹8.39</td><td class="open">₹8.98</td><td class="out">₹8.22</td><td class="low open">₹8.36</td><td class="out">₹8.10</td><td class="out">₹8.17</td></tr><tr><td class="id">L06</td><td class="d">350 x 300 x 200 mm</td><td class="vol">67,600</td><td class="ly">₹10.86</td><td class="low">₹11.14</td><td class="out">₹11.09</td><td class="open">₹11.44</td><td class="out">₹10.30</td><td class="out">₹10.45</td></tr><tr><td class="id">L07</td><td class="d">400 x 300 x 200 mm</td><td class="vol">84,500</td><td class="ly">₹11.55</td><td class="low">₹11.09</td><td class="out">₹11.38</td><td class="low open">₹11.09</td><td class="out">₹11.00</td><td class="out">₹11.40</td></tr><tr><td class="id">L08</td><td class="d">400 x 300 x 300 mm</td><td class="vol">59,150</td><td class="ly">₹13.87</td><td class="">₹14.21</td><td class="out">₹13.92</td><td class="low open">₹14.08</td><td class="out">₹13.00</td><td class="out">₹13.87</td></tr></tbody></table></div>
+    <p class="note" style="margin-top:12px">This mock shows 8 of the 30 lines. Click a price to see the vendor's words.</p>
+  </section>
+</main>
+
+<main class="page" id="ask">
+  <div class="thread">
+    <p class="asked">What if we split it, cheapest per line, but only among vendors who cleared the quality questionnaire?</p>
+    <section class="ans glass">
+      <h1>Splitting between the two cleared vendors costs <span class="money">₹3.98 crore</span> a year, <span style="color:var(--ok)">₹2.13 lakh under</span> last year.</h1>
+      <ul class="pts">
+        <li>PackGlobal Exports takes 18 lines and Shree Balaji Packaging takes 12.</li>
+        <li>Giving all 30 lines to PackGlobal alone costs <span class="money">₹4.02 crore</span>, which is <span class="money">₹3.91 lakh</span> more.</li>
+      </ul>
+      <div class="strip"><span class="pill">Not firm yet</span>19 of these 30 prices rest on conversions you haven't confirmed.</div>
+      <div class="scn"><h2>The two options</h2>
+        <table class="cmp num"><thead><tr><th></th><th>Split, two vendors</th><th>PackGlobal alone</th></tr></thead><tbody>
+          <tr><td>Cost a year</td><td class="money">₹3.98 crore</td><td class="money">₹4.02 crore</td></tr>
+          <tr><td>Against last year</td><td style="color:var(--ok)">₹2.13 lakh under</td><td>₹1.78 lakh over</td></tr>
+          <tr><td>PackGlobal Exports</td><td>18 lines · <span class="money">₹2.10 crore</span></td><td>30 lines</td></tr>
+          <tr><td>Shree Balaji Packaging</td><td>12 lines · <span class="money">₹1.88 crore</span></td><td>0 lines</td></tr>
+          <tr><td>Prices not confirmed</td><td>19</td><td>30</td></tr>
+        </tbody></table></div>
+      <div class="chips"><button class="chip">Cap it at two vendors.</button><button class="chip">Where are prices up most against last year?</button><button class="chip">Export this</button></div>
+    </section>
+    <div class="compose glass"><span>Ask about these quotes</span><button class="btn p sm">Ask</button></div>
+    <p class="note mockn">The figures are computed. The sentences above are placeholder wording, not a model's answer.</p>
+  </div>
+</main>
+
+<main class="page" id="key">
+  <section class="main glass">
+    <h1>Connect a model</h1>
+    <p class="lede">Quote desk reads vendor files with your own key.</p>
+    <div class="field"><label>Provider</label><div class="seg sm" style="display:inline-flex"><button aria-selected="true">Anthropic</button><button>OpenAI</button></div></div>
+    <div class="field"><label>API key</label><div class="input">sk-ant-••••••••••••••••••••</div></div>
+    <div class="field"><label>Model</label><div class="input plain">claude-opus-5-5</div></div>
+    <div class="acts"><button class="btn p">Connect and test</button></div>
+    <p class="note">The key stays in this browser and goes only to the provider you picked.</p>
+  </section>
+</main>
+
+<main class="page" id="terms">
+  <section class="main glass">
+    <div class="ctx">Nimbus Home Care · annual rate contract</div>
+    <h1>What each vendor answered</h1>
+    <p class="lede">Three of the eight questions are the quality gate. A vendor has to meet all three to be awarded.</p>
+    <div class="sub"><div class="seg sm"><button>Prices</button><button aria-selected="true">Questionnaire and terms</button></div></div>
+    <div class="gridw"><table class="m"><thead><tr><th></th><th class=""><span class="vn">Shree Balaji Packaging</span><span class="vs ok">Can award</span></th><th class=""><span class="vn">PackGlobal Exports</span><span class="vs ok">Can award</span></th><th class="out"><span class="vn">Kraftline Industries</span><span class="vs no">Failed gate</span></th><th class="out"><span class="vn">Maruti Corrugators</span><span class="vs no">No questionnaire</span></th><th class="out"><span class="vn">Sai Cartons</span><span class="vs no">No questionnaire</span></th></tr></thead><tbody>
+      <tr class="grp"><td colspan="6">Quality gate<small>3 questions, all must be met</small></td></tr><tr><td><b>Q1</b>Do you hold a currently valid ISO 9001:2015 certificate for the plant that will supply us? Give the expiry date.</td><td><span class="w y">Meets it</span><span class="a">Yes. ISO 9001:2015, certificate valid up to 14 Aug 2028 (TUV).</span></td><td><span class="w y">Meets it</span><span class="a">ISO 9001:2015 certified, valid until 30 June 2027.</span></td><td><span class="w n">Does not meet it</span><span class="a">Our ISO 9001:2015 certificate expired on 31 March 2026. Recertification audit is scheduled for November 2026.</span></td><td><span class="w x">Not sent</span></td><td><span class="w x">Not sent</span></td></tr><tr><td><b>Q2</b>Do you test every lot in-house for bursting strength, ECT and BCT, and share the test report with each dispatch?</td><td><span class="w y">Meets it</span><span class="a">Yes, in-house lab. BS, ECT and BCT tested per lot, COA sent with every dispatch.</span></td><td><span class="w y">Meets it</span><span class="a">Every lot is tested in our own laboratory for bursting strength, ECT and BCT. Reports accompany each dispatch.</span></td><td><span class="w y">Meets it</span><span class="a">Yes. BS, ECT and BCT are tested in our lab for every lot and the report travels with the consignment.</span></td><td><span class="w x">Not sent</span></td><td><span class="w x">Not sent</span></td></tr><tr><td><b>Q3</b>Is your kraft paper FSC-certified or at least 70% recycled content, with documents available on request?</td><td><span class="w y">Meets it</span><span class="a">FSC Mix certified kraft. Chain of custody certificate available.</span></td><td><span class="w y">Meets it</span><span class="a">Kraft liner is FSC certified. Certificate copies are available on request.</span></td><td><span class="w y">Meets it</span><span class="a">We use 80% recycled kraft. Mill declarations can be shared.</span></td><td><span class="w x">Not sent</span></td><td><span class="w x">Not sent</span></td></tr>
+      <tr class="grp"><td colspan="6">Other questions<small>3 of 5 shown in this mock</small></td></tr><tr><td><b>Q4</b>What is your lead time from purchase order to delivery, in days?</td><td><span class="w v">10 days from PO</span></td><td><span class="w v">12 to 14 days</span></td><td><span class="w v">7 working days</span></td><td><span class="w x">Not sent</span></td><td><span class="w x">Not sent</span></td></tr><tr><td><b>Q6</b>Do you accept payment terms of 60 days from invoice?</td><td><span class="w v">Agreed, 60 days</span></td><td><span class="w v">60 days is acceptable</span></td><td><span class="w v">We request 45 days. 60 days can be discussed.</span></td><td><span class="w x">Not sent</span></td><td><span class="w x">Not sent</span></td></tr><tr><td><b>Q8</b>What was your customer rejection rate over the last 12 months, in percent?</td><td><span class="w v">0.6%</span></td><td><span class="w v">below 0.5%</span></td><td><span class="w v">0.9%</span></td><td><span class="w x">Not sent</span></td><td><span class="w x">Not sent</span></td></tr>
+      <tr class="grp"><td colspan="6">Commercial terms</td></tr><tr><td>Freight</td><td><span class="w y">Included</span></td><td><span class="w y">Included</span></td><td><span class="w y">Included</span></td><td><span class="w n">Extra</span></td><td><span class="w n">Extra</span></td></tr><tr><td>GST</td><td><span class="w v">Extra</span></td><td><span class="w v">Extra</span></td><td><span class="w v">Extra</span></td><td><span class="w v">Extra</span></td><td><span class="w x">Not stated</span></td></tr><tr><td>Discount</td><td><span class="w x">None</span></td><td><span class="w x">None</span></td><td><span class="w v">4%, with a condition</span></td><td><span class="w x">None</span></td><td><span class="w x">None</span></td></tr><tr><td>Prices valid for</td><td><span class="w v">12 months</span></td><td><span class="w v">90 days</span></td><td><span class="w v">6 months</span></td><td><span class="w x">Not stated</span></td><td><span class="w x">Not stated</span></td></tr>
+    </tbody></table></div>
+    <p class="note" style="margin-top:12px">Click an answer to see the vendor's words in full.</p>
+  </section>
+</main>
+
+<main class="page" id="reading">
+  <section>
+    <div class="ctx">Nimbus Home Care · annual rate contract</div>
+    <h1>Reading five replies. <span style="color:var(--ok)">Two are done.</span></h1>
+    <p class="lede">Each vendor fills in as its file lands. Reading takes a live model call per file, on your own key.</p>
+    <div class="wait glass">
+      <div class="sk" style="width:46%;height:18px"></div>
+      <div class="sk" style="width:38%;height:62px;margin-top:14px;border-radius:12px"></div>
+      <div class="sk" style="width:30%;height:18px;margin-top:12px"></div>
+      <div class="sk" style="width:100%;height:8px;margin-top:26px;border-radius:4px"></div>
+      <p class="note">The lowest award appears here once all five are read.</p>
+    </div>
+  </section>
+  <aside class="vp glass">
+    <h2 class="w">Vendors</h2>
+    <div class="grp2 g">Read</div>
+    <div class="vr"><span class="n">Shree Balaji Packaging</span><span class="amt">₹3.69<small>crore</small></span><span class="y ok">Cleared the quality gate</span></div>
+    <div class="vr"><span class="n">Kraftline Industries</span><span class="amt" style="color:var(--ink-3)">₹3.59<small>crore</small></span><span class="y" style="color:#e39a93">Failed the gate: ISO 9001 expired 31 March 2026</span></div>
+    <div class="grp2 b">Being read</div>
+    <div class="vr rd"><span class="n">PackGlobal Exports</span><span class="sk"></span><span class="y">Reading, 9 s</span></div>
+    <div class="vr rd"><span class="n">Maruti Corrugators</span><span class="sk"></span><span class="y">Reading, 9 s</span></div>
+    <div class="vr rd"><span class="n">Sai Cartons</span><span class="sk"></span><span class="y">Reading, 9 s</span></div>
+  </aside>
+</main>
+
+<main class="page" id="states">
+  <div class="st"><div class="cap">Empty: Decide before any file is read</div>
+    <section class="main glass"><h1>Nothing to decide yet.</h1><p class="lede">Five replies came back and none is read yet.</p>
+      <div class="acts"><button class="btn p">Read all 5 and compare</button><button class="btn s">See the replies</button></div></section></div>
+  <div class="st"><div class="cap">No award possible: every vendor is blocked</div>
+    <section class="main glass"><h1><span style="color:var(--stop)">No vendor</span> can be awarded yet.</h1><p class="lede">Three sent no quality questionnaire and two failed the gate. You can still look at the prices.</p>
+      <div class="acts"><button class="btn p">Open Compare</button><button class="btn s">See the replies</button></div></section></div>
+  <div class="st"><div class="cap">Error you can clear: a file could not be read</div>
+    <section class="main glass"><div class="ctx"><span class="tag">JPG</span></div><h2 class="w" style="margin-top:8px">Maruti Corrugators</h2>
+      <div class="tile" style="margin-top:14px"><div class="t">This file could not be read</div><div class="s">Rate limit reached for this key. Wait a minute and try again.</div><div class="acts"><button class="btn p sm">Try again</button><button class="btn o sm">Open the file</button></div></div>
+      <p class="note" style="margin-top:12px">The other four vendors are unaffected. Nothing is filled in for this one.</p></section></div>
+  <div class="st"><div class="cap">Error in a field: the key was rejected</div>
+    <section class="main glass"><h2 class="w">Connect a model</h2>
+      <div class="field" style="margin-top:14px"><label>API key</label><div class="input bad">sk-ant-••••••••••••••••••••</div><p class="err">That Anthropic API key was rejected. Check it and paste it again.</p></div>
+      <div class="acts"><button class="btn p">Connect and test</button></div></section></div>
+  <div class="st"><div class="cap">Empty: Ask before a question</div>
+    <section class="main glass"><h1>Ask about these quotes.</h1><p class="lede">Answers use the prices on Compare. Every figure is computed, not guessed.</p>
+      <div class="egs"><button class="eg" style="margin:0">What if we split it, cheapest per line, but only among vendors who cleared the quality questionnaire?</button><button class="eg" style="margin:0">What does that cost versus giving it all to one vendor?</button></div></section></div>
+  <div class="st"><div class="cap">Empty: a filter on Compare that matches nothing</div>
+    <section class="main glass"><h2 class="w">No lines are missing a price.</h2><p class="lede" style="font-size:17px;line-height:25px;margin-top:6px">All five vendors quoted every line in this group.</p>
+      <div class="acts"><button class="btn s">Show all lines</button></div></section></div>
+</main>
+</div>
+
+<aside class="sheet glass" aria-label="The vendor's words">
+  <button class="x" aria-label="Close"><svg class="i" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8"/></svg></button>
+  <div class="ctx"><span class="id">L01</span> · 200 x 150 x 100 mm</div>
+  <h2 class="w">PackGlobal Exports</h2>
+  <div class="fig">₹3.96<small>a piece</small></div>
+  <div class="lab">The vendor's words</div>
+  <div class="slip"><span class="f">vendor-c-packglobal-offer.docx</span>200 x 150 x 100 mm carton ... <mark>USD 0.045 each</mark></div>
+  <div class="lab">How code worked it out</div>
+  <div class="steps"><span>Price as written</span><b>0.045 USD</b><span>Fixed rate, 1 USD</span><b>× ₹88</b><span>Price per piece</span><b class="money">₹3.96</b><span>Last year</span><b>₹3.94</b></div>
+  <div class="tile"><div class="t">Not confirmed yet</div><div class="s">PackGlobal quoted in US dollars. Confirming covers all 30 of their lines.</div>
+    <div class="acts"><button class="btn p sm">Confirm</button><button class="btn o sm">It's wrong</button></div></div>
+  <div class="end"><button class="btn s sm">Open the file</button></div>
+</aside>
+<script>
+const names = { home: 'Sourcing events', rfx: 'IT hardware refresh', replies: 'IT hardware refresh', compare: 'Corrugated packaging', ask: 'Corrugated packaging', key: 'Sourcing events', terms: 'Corrugated packaging', sheet: 'Corrugated packaging', reading: 'Corrugated packaging', states: 'Corrugated packaging' };
+function go(p) { document.body.dataset.page = p; document.getElementById('evt').textContent = names[p]; document.querySelectorAll('.pick button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.p === p)); document.getElementById('model').innerHTML = p === 'key' ? 'No model connected' : '<i class="dot"></i>Claude connected'; const live = ['compare', 'ask', 'terms', 'sheet', 'reading'].includes(p); const tab = p === 'ask' ? 'ask' : p === 'reading' ? 'decide' : 'compare'; document.querySelectorAll('#tabs button').forEach((b) => { b.disabled = !live; b.setAttribute('aria-selected', live && b.dataset.t === tab); }); document.querySelectorAll('.g td.sel').forEach((c) => c.classList.remove('sel')); if (p === 'sheet') document.querySelector('.g tbody tr:not(.grp) td:nth-child(7)').classList.add('sel'); scrollTo(0, 0); }
+document.querySelector('.pick').addEventListener('click', (e) => { const b = e.target.closest('[data-p]'); if (b) go(b.dataset.p); });
+addEventListener('keydown', (e) => { if (e.key === '1') go('home'); if (e.key === '2') go('rfx'); if (e.key === '3') go('replies'); if (e.key === '4') go('compare'); if (e.key === '5') go('ask'); if (e.key === '6') go('key'); if (e.key === '7') go('terms'); if (e.key === '8') go('sheet'); if (e.key === '9') go('reading'); if (e.key === '0') go('states'); });
+document.querySelector('.sheet .x').addEventListener('click', () => go('compare'));
+document.getElementById('tabs').addEventListener('click', (e) => { const b = e.target.closest('[data-t]'); if (b && !b.disabled && b.dataset.t !== 'decide') go(b.dataset.t); });
+go(new URLSearchParams(location.search).get('p') || 'home');
+</script>
+</body>
+</html>

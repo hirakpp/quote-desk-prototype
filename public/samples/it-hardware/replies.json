@@ -1,0 +1,37 @@
+[
+  {
+    "vendorId": "A",
+    "vendorName": "Vertex Infosystems Pvt Ltd",
+    "file": "vendor-a-vertex-commercial-bid.xlsx",
+    "format": "Excel",
+    "hard": "A workbook with a sheet per category. Every item has three prices, and which one applies depends on how many you buy."
+  },
+  {
+    "vendorId": "B",
+    "vendorName": "Dataline Systems and Services",
+    "file": "vendor-b-dataline-quotation.pdf",
+    "format": "PDF",
+    "hard": "Two price columns per item. One is the price, the other is an optional extra, and they must not be added together by default."
+  },
+  {
+    "vendorId": "C",
+    "vendorName": "Orbis Technologies FZ-LLC",
+    "file": "vendor-c-orbis-proposal.docx",
+    "format": "Word",
+    "hard": "Prices are inside paragraphs and not in rupees. Read what is being offered on each line, not just the price."
+  },
+  {
+    "vendorId": "D",
+    "vendorName": "Sri Venkateshwara Computers",
+    "file": "vendor-d-svc-price-list.jpg",
+    "format": "Photo",
+    "hard": "A phone photo of a printed price list. Some lines are missing, and two items are priced by the pack."
+  },
+  {
+    "vendorId": "E",
+    "vendorName": "Nexa IT Solutions",
+    "file": "vendor-e-nexa-email.txt",
+    "format": "Email",
+    "hard": "A short email. The laptop prices are not written, they point at your last purchase order."
+  }
+]

@@ -1,0 +1,469 @@
+{
+  "id": "RFQ-2026-FRT-007",
+  "title": "Annual road freight contract: full truckload lanes from Pune and Hosur, FY 2026-27",
+  "buyer": "Suryodaya Appliances Ltd",
+  "scope": "Full-truckload movement of packed home appliances from our Chakan (Pune) and Hosur plants to regional warehouses for 12 months. Trips are annual estimates, placed weekly. Quote an all-in rate per trip for the vehicle named on each lane.",
+  "currency": "INR",
+  "period": "year",
+  "quantityLabel": "Trips a year",
+  "refLabel": "current contract",
+  "extrasLabel": "Tolls and extras",
+  "attributes": [
+    {
+      "key": "transit_days",
+      "label": "Transit time",
+      "unit": "days",
+      "better": "lower"
+    },
+    {
+      "key": "trucks_per_month",
+      "label": "Trucks a month",
+      "unit": "trucks a month",
+      "better": "higher",
+      "capacity": {
+        "periodsPerYear": 12
+      }
+    }
+  ],
+  "lineItems": [
+    {
+      "id": "L01",
+      "description": "Pune to Mumbai, 150 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Mumbai",
+      "category": "West lanes",
+      "measures": {
+        "km": 150,
+        "tonne": 9
+      },
+      "quantity": 78,
+      "unit": "trip",
+      "refPrice": 9300
+    },
+    {
+      "id": "L02",
+      "description": "Pune to Surat, 420 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Surat",
+      "category": "West lanes",
+      "measures": {
+        "km": 420,
+        "tonne": 9
+      },
+      "quantity": 42,
+      "unit": "trip",
+      "refPrice": 19700
+    },
+    {
+      "id": "L03",
+      "description": "Pune to Ahmedabad, 660 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Ahmedabad",
+      "category": "West lanes",
+      "measures": {
+        "km": 660,
+        "tonne": 9
+      },
+      "quantity": 48,
+      "unit": "trip",
+      "refPrice": 29000
+    },
+    {
+      "id": "L04",
+      "description": "Pune to Goa, 450 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Goa",
+      "category": "West lanes",
+      "measures": {
+        "km": 450,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 22500
+    },
+    {
+      "id": "L05",
+      "description": "Pune to Indore, 600 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Indore",
+      "category": "North lanes",
+      "measures": {
+        "km": 600,
+        "tonne": 9
+      },
+      "quantity": 30,
+      "unit": "trip",
+      "refPrice": 27000
+    },
+    {
+      "id": "L06",
+      "description": "Pune to Nagpur, 720 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Pune to Nagpur",
+      "category": "North lanes",
+      "measures": {
+        "km": 720,
+        "tonne": 16
+      },
+      "quantity": 42,
+      "unit": "trip",
+      "refPrice": 41800
+    },
+    {
+      "id": "L07",
+      "description": "Pune to Jaipur, 1180 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Jaipur",
+      "category": "North lanes",
+      "measures": {
+        "km": 1180,
+        "tonne": 9
+      },
+      "quantity": 30,
+      "unit": "trip",
+      "refPrice": 49600
+    },
+    {
+      "id": "L08",
+      "description": "Pune to Delhi NCR, 1450 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Pune to Delhi NCR",
+      "category": "North lanes",
+      "measures": {
+        "km": 1450,
+        "tonne": 16
+      },
+      "quantity": 60,
+      "unit": "trip",
+      "refPrice": 79800
+    },
+    {
+      "id": "L09",
+      "description": "Pune to Lucknow, 1400 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Lucknow",
+      "category": "North lanes",
+      "measures": {
+        "km": 1400,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 58800
+    },
+    {
+      "id": "L10",
+      "description": "Pune to Ludhiana, 1750 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Ludhiana",
+      "category": "North lanes",
+      "measures": {
+        "km": 1750,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 71800
+    },
+    {
+      "id": "L11",
+      "description": "Pune to Kolkata, 1900 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Pune to Kolkata",
+      "category": "East lanes",
+      "measures": {
+        "km": 1900,
+        "tonne": 16
+      },
+      "quantity": 24,
+      "unit": "trip",
+      "refPrice": 102600
+    },
+    {
+      "id": "L12",
+      "description": "Pune to Hyderabad, 560 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Hyderabad",
+      "category": "South lanes",
+      "measures": {
+        "km": 560,
+        "tonne": 9
+      },
+      "quantity": 48,
+      "unit": "trip",
+      "refPrice": 25200
+    },
+    {
+      "id": "L13",
+      "description": "Pune to Bengaluru, 840 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Pune to Bengaluru",
+      "category": "South lanes",
+      "measures": {
+        "km": 840,
+        "tonne": 16
+      },
+      "quantity": 60,
+      "unit": "trip",
+      "refPrice": 47900
+    },
+    {
+      "id": "L14",
+      "description": "Pune to Chennai, 1180 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Chennai",
+      "category": "South lanes",
+      "measures": {
+        "km": 1180,
+        "tonne": 9
+      },
+      "quantity": 30,
+      "unit": "trip",
+      "refPrice": 50700
+    },
+    {
+      "id": "L15",
+      "description": "Pune to Kochi, 1300 km, 32 ft single-axle, 9 tonne",
+      "spec": "Pune to Kochi",
+      "category": "South lanes",
+      "measures": {
+        "km": 1300,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 57200
+    },
+    {
+      "id": "L16",
+      "description": "Hosur to Bengaluru, 40 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Bengaluru",
+      "category": "South lanes",
+      "measures": {
+        "km": 40,
+        "tonne": 9
+      },
+      "quantity": 102,
+      "unit": "trip",
+      "refPrice": 4400
+    },
+    {
+      "id": "L17",
+      "description": "Hosur to Chennai, 310 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Hosur to Chennai",
+      "category": "South lanes",
+      "measures": {
+        "km": 310,
+        "tonne": 16
+      },
+      "quantity": 78,
+      "unit": "trip",
+      "refPrice": 20500
+    },
+    {
+      "id": "L18",
+      "description": "Hosur to Coimbatore, 280 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Coimbatore",
+      "category": "South lanes",
+      "measures": {
+        "km": 280,
+        "tonne": 9
+      },
+      "quantity": 42,
+      "unit": "trip",
+      "refPrice": 14600
+    },
+    {
+      "id": "L19",
+      "description": "Hosur to Kochi, 480 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Kochi",
+      "category": "South lanes",
+      "measures": {
+        "km": 480,
+        "tonne": 9
+      },
+      "quantity": 30,
+      "unit": "trip",
+      "refPrice": 23500
+    },
+    {
+      "id": "L20",
+      "description": "Hosur to Madurai, 390 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Madurai",
+      "category": "South lanes",
+      "measures": {
+        "km": 390,
+        "tonne": 9
+      },
+      "quantity": 24,
+      "unit": "trip",
+      "refPrice": 19500
+    },
+    {
+      "id": "L21",
+      "description": "Hosur to Mangaluru, 390 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Mangaluru",
+      "category": "South lanes",
+      "measures": {
+        "km": 390,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 20300
+    },
+    {
+      "id": "L22",
+      "description": "Hosur to Hyderabad, 600 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Hosur to Hyderabad",
+      "category": "South lanes",
+      "measures": {
+        "km": 600,
+        "tonne": 16
+      },
+      "quantity": 48,
+      "unit": "trip",
+      "refPrice": 34800
+    },
+    {
+      "id": "L23",
+      "description": "Hosur to Vijayawada, 650 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Vijayawada",
+      "category": "South lanes",
+      "measures": {
+        "km": 650,
+        "tonne": 9
+      },
+      "quantity": 24,
+      "unit": "trip",
+      "refPrice": 29900
+    },
+    {
+      "id": "L24",
+      "description": "Hosur to Visakhapatnam, 1000 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Visakhapatnam",
+      "category": "South lanes",
+      "measures": {
+        "km": 1000,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 44000
+    },
+    {
+      "id": "L25",
+      "description": "Hosur to Pune, 880 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Hosur to Pune",
+      "category": "West lanes",
+      "measures": {
+        "km": 880,
+        "tonne": 16
+      },
+      "quantity": 42,
+      "unit": "trip",
+      "refPrice": 49300
+    },
+    {
+      "id": "L26",
+      "description": "Hosur to Mumbai, 1020 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Hosur to Mumbai",
+      "category": "West lanes",
+      "measures": {
+        "km": 1020,
+        "tonne": 16
+      },
+      "quantity": 48,
+      "unit": "trip",
+      "refPrice": 56100
+    },
+    {
+      "id": "L27",
+      "description": "Hosur to Ahmedabad, 1540 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Ahmedabad",
+      "category": "West lanes",
+      "measures": {
+        "km": 1540,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 64700
+    },
+    {
+      "id": "L28",
+      "description": "Hosur to Nagpur, 1100 km, 32 ft single-axle, 9 tonne",
+      "spec": "Hosur to Nagpur",
+      "category": "North lanes",
+      "measures": {
+        "km": 1100,
+        "tonne": 9
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": 47300
+    },
+    {
+      "id": "L29",
+      "description": "Hosur to Delhi NCR, 2200 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Hosur to Delhi NCR",
+      "category": "North lanes",
+      "measures": {
+        "km": 2200,
+        "tonne": 16
+      },
+      "quantity": 30,
+      "unit": "trip",
+      "refPrice": 116600
+    },
+    {
+      "id": "L30",
+      "description": "Hosur to Kolkata, 1900 km, 32 ft multi-axle, 16 tonne",
+      "spec": "Hosur to Kolkata",
+      "category": "East lanes",
+      "measures": {
+        "km": 1900,
+        "tonne": 16
+      },
+      "quantity": 18,
+      "unit": "trip",
+      "refPrice": null
+    }
+  ],
+  "questionnaire": [
+    {
+      "id": "Q1",
+      "gate": true,
+      "text": "Is every vehicle you will place on our lanes fitted with GPS tracking that we can view live?"
+    },
+    {
+      "id": "Q2",
+      "gate": true,
+      "text": "Do you carry transit insurance covering our goods up to Rs 50 lakh per consignment?"
+    },
+    {
+      "id": "Q3",
+      "gate": true,
+      "text": "Do the vehicles hold a valid national permit for the full contract year?"
+    },
+    {
+      "id": "Q4",
+      "gate": false,
+      "text": "How many vehicles do you own, and how many do you take from the market?"
+    },
+    {
+      "id": "Q5",
+      "gate": false,
+      "text": "Do you accept payment 45 days from proof of delivery?"
+    },
+    {
+      "id": "Q6",
+      "gate": false,
+      "text": "What do you charge for detention beyond 24 hours at loading or unloading?"
+    },
+    {
+      "id": "Q7",
+      "gate": false,
+      "text": "How many days after delivery do you return the signed proof of delivery?"
+    },
+    {
+      "id": "Q8",
+      "gate": false,
+      "text": "What was your damage claim ratio over the last 12 months, in percent of consignments?"
+    }
+  ],
+  "terms": {
+    "priceBasis": "Per trip, in INR, all-in: tolls, loading supervision and 24 hours of free detention included. GST shown separately",
+    "vehicle": "As named on each lane. Closed body, not older than 6 years",
+    "payment": "45 days from proof of delivery",
+    "fuel": "State any diesel escalation clause, with the base price and the rate of change",
+    "responseDue": "2026-10-22"
+  }
+}

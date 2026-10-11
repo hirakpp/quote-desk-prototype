@@ -1,0 +1,422 @@
+{
+  "id": "RFQ-2026-PKG-014",
+  "title": "Annual rate contract: corrugated shipper cartons and mailer boxes, FY 2026-27",
+  "buyer": "Nimbus Home Care Pvt Ltd",
+  "scope": "Supply of corrugated shipper cartons and e-commerce mailer boxes for 12 months to our fulfilment centre at Bhiwandi, Maharashtra. Volumes are annual estimates, called off monthly.",
+  "currency": "INR",
+  "period": "year",
+  "quantityLabel": "Annual volume",
+  "refLabel": "last year",
+  "attributes": [],
+  "lineItems": [
+    {
+      "id": "L01",
+      "description": "3-ply RSC shipper carton, 200 x 150 x 100 mm, brown kraft",
+      "spec": "200 x 150 x 100 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.095
+      },
+      "quantity": 76050,
+      "unit": "piece",
+      "refPrice": 3.94
+    },
+    {
+      "id": "L02",
+      "description": "3-ply RSC shipper carton, 250 x 200 x 150 mm, brown kraft",
+      "spec": "250 x 200 x 150 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.15
+      },
+      "quantity": 92950,
+      "unit": "piece",
+      "refPrice": 6.08
+    },
+    {
+      "id": "L03",
+      "description": "3-ply RSC shipper carton, 300 x 200 x 150 mm, brown kraft",
+      "spec": "300 x 200 x 150 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.17
+      },
+      "quantity": 101400,
+      "unit": "piece",
+      "refPrice": 6.8
+    },
+    {
+      "id": "L04",
+      "description": "3-ply RSC shipper carton, 300 x 250 x 200 mm, brown kraft",
+      "spec": "300 x 250 x 200 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.22
+      },
+      "quantity": 80275,
+      "unit": "piece",
+      "refPrice": 8.69
+    },
+    {
+      "id": "L05",
+      "description": "3-ply RSC shipper carton, 350 x 250 x 150 mm, brown kraft",
+      "spec": "350 x 250 x 150 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.215
+      },
+      "quantity": 71825,
+      "unit": "piece",
+      "refPrice": 8.39
+    },
+    {
+      "id": "L06",
+      "description": "3-ply RSC shipper carton, 350 x 300 x 200 mm, brown kraft",
+      "spec": "350 x 300 x 200 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.275
+      },
+      "quantity": 67600,
+      "unit": "piece",
+      "refPrice": 10.86
+    },
+    {
+      "id": "L07",
+      "description": "3-ply RSC shipper carton, 400 x 300 x 200 mm, brown kraft",
+      "spec": "400 x 300 x 200 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.3
+      },
+      "quantity": 84500,
+      "unit": "piece",
+      "refPrice": 11.55
+    },
+    {
+      "id": "L08",
+      "description": "3-ply RSC shipper carton, 400 x 300 x 300 mm, brown kraft",
+      "spec": "400 x 300 x 300 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.365
+      },
+      "quantity": 59150,
+      "unit": "piece",
+      "refPrice": 13.87
+    },
+    {
+      "id": "L09",
+      "description": "3-ply RSC shipper carton, 450 x 300 x 250 mm, brown kraft",
+      "spec": "450 x 300 x 250 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.36
+      },
+      "quantity": 50700,
+      "unit": "piece",
+      "refPrice": 13.5
+    },
+    {
+      "id": "L10",
+      "description": "3-ply RSC shipper carton, 450 x 350 x 300 mm, brown kraft",
+      "spec": "450 x 350 x 300 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.44
+      },
+      "quantity": 46475,
+      "unit": "piece",
+      "refPrice": 16.94
+    },
+    {
+      "id": "L11",
+      "description": "3-ply RSC shipper carton, 500 x 350 x 300 mm, brown kraft",
+      "spec": "500 x 350 x 300 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.47
+      },
+      "quantity": 42250,
+      "unit": "piece",
+      "refPrice": 17.63
+    },
+    {
+      "id": "L12",
+      "description": "3-ply RSC shipper carton, 500 x 400 x 300 mm, brown kraft",
+      "spec": "500 x 400 x 300 mm",
+      "category": "3-ply cartons",
+      "measures": {
+        "kg": 0.52
+      },
+      "quantity": 38025,
+      "unit": "piece",
+      "refPrice": 19.76
+    },
+    {
+      "id": "L13",
+      "description": "5-ply RSC shipper carton, 350 x 250 x 200 mm, brown kraft",
+      "spec": "350 x 250 x 200 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 0.4
+      },
+      "quantity": 76050,
+      "unit": "piece",
+      "refPrice": 18.2
+    },
+    {
+      "id": "L14",
+      "description": "5-ply RSC shipper carton, 400 x 300 x 250 mm, brown kraft",
+      "spec": "400 x 300 x 250 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 0.52
+      },
+      "quantity": 92950,
+      "unit": "piece",
+      "refPrice": 23.4
+    },
+    {
+      "id": "L15",
+      "description": "5-ply RSC shipper carton, 450 x 300 x 300 mm, brown kraft",
+      "spec": "450 x 300 x 300 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 0.61
+      },
+      "quantity": 84500,
+      "unit": "piece",
+      "refPrice": 27.15
+    },
+    {
+      "id": "L16",
+      "description": "5-ply RSC shipper carton, 450 x 350 x 300 mm, brown kraft",
+      "spec": "450 x 350 x 300 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 0.68
+      },
+      "quantity": 80275,
+      "unit": "piece",
+      "refPrice": 29.92
+    },
+    {
+      "id": "L17",
+      "description": "5-ply RSC shipper carton, 500 x 350 x 350 mm, brown kraft",
+      "spec": "500 x 350 x 350 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 0.79
+      },
+      "quantity": 71825,
+      "unit": "piece",
+      "refPrice": 34.37
+    },
+    {
+      "id": "L18",
+      "description": "5-ply RSC shipper carton, 500 x 400 x 350 mm, brown kraft",
+      "spec": "500 x 400 x 350 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 0.85
+      },
+      "quantity": 67600,
+      "unit": "piece",
+      "refPrice": 37.4
+    },
+    {
+      "id": "L19",
+      "description": "5-ply RSC shipper carton, 550 x 400 x 400 mm, brown kraft",
+      "spec": "550 x 400 x 400 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 0.99
+      },
+      "quantity": 59150,
+      "unit": "piece",
+      "refPrice": 42.57
+    },
+    {
+      "id": "L20",
+      "description": "5-ply RSC shipper carton, 600 x 400 x 400 mm, brown kraft",
+      "spec": "600 x 400 x 400 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 1.05
+      },
+      "quantity": 54925,
+      "unit": "piece",
+      "refPrice": 44.63
+    },
+    {
+      "id": "L21",
+      "description": "5-ply RSC shipper carton, 600 x 450 x 400 mm, brown kraft",
+      "spec": "600 x 450 x 400 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 1.13
+      },
+      "quantity": 46475,
+      "unit": "piece",
+      "refPrice": 48.59
+    },
+    {
+      "id": "L22",
+      "description": "5-ply RSC shipper carton, 650 x 450 x 450 mm, brown kraft",
+      "spec": "650 x 450 x 450 mm",
+      "category": "5-ply cartons",
+      "measures": {
+        "kg": 1.29
+      },
+      "quantity": 38025,
+      "unit": "piece",
+      "refPrice": 54.83
+    },
+    {
+      "id": "L23",
+      "description": "7-ply RSC shipper carton, 600 x 400 x 400 mm, brown kraft",
+      "spec": "600 x 400 x 400 mm",
+      "category": "7-ply cartons",
+      "measures": {
+        "kg": 1.48
+      },
+      "quantity": 23660,
+      "unit": "piece",
+      "refPrice": 71.04
+    },
+    {
+      "id": "L24",
+      "description": "7-ply RSC shipper carton, 650 x 450 x 450 mm, brown kraft",
+      "spec": "650 x 450 x 450 mm",
+      "category": "7-ply cartons",
+      "measures": {
+        "kg": 1.81
+      },
+      "quantity": 20280,
+      "unit": "piece",
+      "refPrice": 85.98
+    },
+    {
+      "id": "L25",
+      "description": "7-ply RSC shipper carton, 700 x 500 x 500 mm, brown kraft",
+      "spec": "700 x 500 x 500 mm",
+      "category": "7-ply cartons",
+      "measures": {
+        "kg": 2.18
+      },
+      "quantity": 15210,
+      "unit": "piece",
+      "refPrice": 102.46
+    },
+    {
+      "id": "L26",
+      "description": "7-ply RSC shipper carton, 800 x 600 x 500 mm, brown kraft",
+      "spec": "800 x 600 x 500 mm",
+      "category": "7-ply cartons",
+      "measures": {
+        "kg": 2.76
+      },
+      "quantity": 10140,
+      "unit": "piece",
+      "refPrice": 128.34
+    },
+    {
+      "id": "L27",
+      "description": "E-flute die-cut mailer box, self-locking, 220 x 160 x 50 mm, brown kraft",
+      "spec": "220 x 160 x 50 mm",
+      "category": "Mailers",
+      "measures": {
+        "kg": 0.07
+      },
+      "quantity": 126750,
+      "unit": "piece",
+      "refPrice": 4.34
+    },
+    {
+      "id": "L28",
+      "description": "E-flute die-cut mailer box, self-locking, 260 x 200 x 60 mm, brown kraft",
+      "spec": "260 x 200 x 60 mm",
+      "category": "Mailers",
+      "measures": {
+        "kg": 0.098
+      },
+      "quantity": 118300,
+      "unit": "piece",
+      "refPrice": 5.98
+    },
+    {
+      "id": "L29",
+      "description": "E-flute die-cut mailer box, self-locking, 320 x 240 x 80 mm, brown kraft",
+      "spec": "320 x 240 x 80 mm",
+      "category": "Mailers",
+      "measures": {
+        "kg": 0.145
+      },
+      "quantity": 92950,
+      "unit": "piece",
+      "refPrice": 8.7
+    },
+    {
+      "id": "L30",
+      "description": "E-flute die-cut mailer box, self-locking, 380 x 280 x 100 mm, brown kraft",
+      "spec": "380 x 280 x 100 mm",
+      "category": "Mailers",
+      "measures": {
+        "kg": 0.195
+      },
+      "quantity": 67600,
+      "unit": "piece",
+      "refPrice": 11.51
+    }
+  ],
+  "questionnaire": [
+    {
+      "id": "Q1",
+      "gate": true,
+      "text": "Do you hold a currently valid ISO 9001:2015 certificate for the plant that will supply us? Give the expiry date."
+    },
+    {
+      "id": "Q2",
+      "gate": true,
+      "text": "Do you test every lot in-house for bursting strength, ECT and BCT, and share the test report with each dispatch?"
+    },
+    {
+      "id": "Q3",
+      "gate": true,
+      "text": "Is your kraft paper FSC-certified or at least 70% recycled content, with documents available on request?"
+    },
+    {
+      "id": "Q4",
+      "gate": false,
+      "text": "What is your lead time from purchase order to delivery, in days?"
+    },
+    {
+      "id": "Q5",
+      "gate": false,
+      "text": "What is your monthly production capacity, in tonnes?"
+    },
+    {
+      "id": "Q6",
+      "gate": false,
+      "text": "Do you accept payment terms of 60 days from invoice?"
+    },
+    {
+      "id": "Q7",
+      "gate": false,
+      "text": "How long are the quoted prices valid?"
+    },
+    {
+      "id": "Q8",
+      "gate": false,
+      "text": "What was your customer rejection rate over the last 12 months, in percent?"
+    }
+  ],
+  "terms": {
+    "priceBasis": "Per piece, in INR, delivered to Bhiwandi (freight included), GST shown separately",
+    "delivery": "Monthly call-offs, delivered to Nimbus fulfilment centre, Bhiwandi",
+    "payment": "60 days from invoice",
+    "validity": "Prices firm for 12 months from award",
+    "responseDue": "2026-10-20"
+  }
+}

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quote desk: decision view, graphite</title>
+<!--
+  Design reference only. Never import from src/, never deploy.
+  The Results screen rethought for the person who decides: one answer, who can be awarded,
+  and only the confirmations that change that answer. Everything else is one click away.
+  Numbers are the real computed packaging values from a perfect read (awardScenario and the
+  27-line like-for-like totals). Quote text is assembled from each cell's raw text, not copied
+  from the vendor files.
+-->
+<style>
+:root{
+  --ink:#f5f5f7; --ink-2:#c9c9cf; --ink-3:#9a9aa3; --hair:rgba(255,255,255,.09); --hair-2:rgba(255,255,255,.16);
+  --ground:#1c1d22; --glass:rgba(58,60,68,.46); --glass-solid:#2a2b31; --well:rgba(255,255,255,.07);
+  --accent:#3d9bff; --accent-press:#63afff; --accent-soft:rgba(61,155,255,.16); --on-accent:#0b1420;
+  --wait:#f0b45a; --stop:#ff7b72; --ok:#5fd08a;
+  --r-card:22px; --r-ctl:11px;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",system-ui,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body{font:400 15px/22px var(--font);color:var(--ink);background:var(--ground);-webkit-font-smoothing:antialiased;font-optical-sizing:auto;caret-color:var(--accent)}
+/* soft light behind the glass, far quieter than a gradient hero */
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(900px 640px at 10% -8%,rgba(86,118,178,.38),transparent 64%),
+  radial-gradient(780px 560px at 98% 6%,rgba(120,98,160,.3),transparent 62%),
+  radial-gradient(940px 700px at 60% 112%,rgba(70,128,118,.3),transparent 62%),var(--ground)}
+html{color-scheme:dark}
+::selection{background:rgba(61,155,255,.35)}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+:focus-visible{outline:3px solid rgba(61,155,255,.6);outline-offset:2px;border-radius:8px}
+.num{font-variant-numeric:tabular-nums}
+
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(40px) saturate(150%);backdrop-filter:blur(40px) saturate(150%);border:1px solid rgba(255,255,255,.1);box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 30px 60px -28px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.2)}
+
+/* toolbar floats; content scrolls under it */
+.bar{position:sticky;top:14px;z-index:5;margin:14px auto 0;width:min(1240px,calc(100% - 48px));height:54px;border-radius:18px;display:flex;align-items:center;padding:0 10px 0 20px;gap:16px}
+.brand{font-weight:600;font-size:15px;letter-spacing:-.01em}
+.bar>*{white-space:nowrap}
+.evt{display:flex;align-items:center;gap:6px;color:var(--ink-2);font-size:14px;padding:0 0 0 16px;border-left:1px solid var(--hair-2)}
+.evt svg{width:10px;height:10px;stroke:var(--ink-3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.seg{margin:0 auto;display:flex;padding:3px;border-radius:12px;background:var(--well)}
+.seg button{padding:6px 18px;border-radius:9px;font-size:14px;font-weight:500;color:var(--ink-2);transition:background-color 160ms var(--ease)}
+.seg button[aria-selected="true"]{background:rgba(255,255,255,.16);color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 1px 3px rgba(0,0,0,.3)}
+.model{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);padding:7px 12px;border-radius:10px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+
+.page{width:min(1240px,calc(100% - 48px));margin:0 auto;padding:44px 0 56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:28px 56px;align-items:start}
+.lede{padding-top:6px}
+.lede .ctx{font-size:14px;color:var(--ink-3);font-weight:500}
+h1{margin-top:12px;font-size:46px;line-height:50px;font-weight:600;letter-spacing:-.026em;text-wrap:balance}
+.lede p{margin-top:16px;font-size:19px;line-height:28px;color:var(--ink-2);letter-spacing:-.008em;max-width:30em}
+
+.card{border-radius:var(--r-card)}
+.award{margin-top:36px;padding:28px 30px 26px}
+.k{font-size:13px;font-weight:500;color:var(--ink-3)}
+.big{display:flex;align-items:baseline;gap:10px;margin-top:6px}
+.big .n{font-size:68px;line-height:72px;font-weight:600;letter-spacing:-.035em}
+.big .u{font-size:26px;font-weight:500;color:var(--ink-2);letter-spacing:-.015em}
+.vs{margin-top:4px;font-size:16px;color:var(--ink-2)}
+.vs b{font-weight:600;color:var(--ok)}
+.split{margin-top:24px}
+.track{display:flex;gap:3px;height:8px}
+.track i{border-radius:4px;background:var(--accent)} .track i+i{background:rgba(61,155,255,.38)}
+.legend{display:grid;grid-template-columns:52.74fr 47.26fr;gap:3px;margin-top:10px;font-size:14px;line-height:20px}
+.legend b{display:block;font-weight:600} .legend span{color:var(--ink-3)}
+.state{display:flex;align-items:center;gap:12px;margin-top:24px;padding-top:18px;border-top:1px solid var(--hair);font-size:15px;color:var(--ink-2)}
+.state .pill{flex:none;display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 11px;border-radius:13px;font-size:13px;font-weight:600;background:rgba(240,180,90,.15);color:var(--wait);transition:background-color 300ms var(--ease),color 300ms var(--ease)}
+.state .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.state.firm .pill{background:rgba(95,208,138,.15);color:var(--ok)}
+.alt{margin-top:14px;font-size:14px;color:var(--ink-3)}
+.link{color:var(--accent);font-weight:500}
+.link:hover{text-decoration:underline}
+
+.side{display:grid;gap:22px}
+.panel{padding:8px 8px 10px}
+.panel>h2{font-size:13px;font-weight:600;color:var(--ink-3);padding:14px 18px 8px;display:flex;justify-content:space-between}
+.panel>h2 span{font-weight:400}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:13px 18px;border-radius:14px}
+.row+.row,.ask+.ask{position:relative}
+.row+.row::before,.ask+.ask::before{content:"";position:absolute;left:18px;right:18px;top:0;height:1px;background:var(--hair)}
+.row .nm{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.row .why{grid-column:1;font-size:14px;line-height:19px;color:var(--ink-3);display:flex;align-items:center;gap:7px}
+.row .why::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.row .amt{grid-row:1/3;grid-column:2;font-size:19px;font-weight:600;letter-spacing:-.015em;text-align:right}
+.row .amt small{font-size:14px;font-weight:400;color:var(--ink-3);margin-left:4px;letter-spacing:0}
+.row.no .nm,.row.no .amt{color:var(--ink-3);font-weight:500}
+.row.no .why::before{background:var(--stop)}
+.gap{height:1px;margin:6px 18px;background:var(--hair)}
+.cap{font-size:12.5px;color:var(--ink-3);padding:6px 18px 8px}
+
+.ask{padding:15px 18px;border-radius:14px}
+.ask .hd{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.ask .t{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.ask .s{font-size:14px;line-height:20px;color:var(--ink-2);margin-top:1px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 16px;border-radius:17px;font-size:14px;font-weight:600;background:var(--accent);color:var(--on-accent);transition:transform 120ms var(--ease),background-color 160ms var(--ease)}
+.btn:hover{background:var(--accent-press)} .btn:active{transform:scale(.96)}
+.btn.done{background:rgba(95,208,138,.15);color:var(--ok)}
+.more{margin-top:8px;font-size:13.5px}
+.proof{display:grid;grid-template-rows:0fr;transition:grid-template-rows 320ms var(--ease)}
+.ask[aria-expanded="true"] .proof{grid-template-rows:1fr}
+.proof>div{overflow:hidden}
+.slip{margin-top:12px;padding:12px 14px;border-radius:12px;background:var(--well);font:400 13px/20px var(--mono);color:var(--ink)}
+.slip .f{display:block;font:500 12px/16px var(--font);color:var(--ink-3);margin-bottom:6px}
+mark{background:rgba(255,204,0,.3);border-radius:4px;padding:1px 3px;color:inherit}
+.calc{margin-top:8px;font-size:13.5px;color:var(--ink-2)}
+.calc code{font:400 13px/20px var(--mono);color:var(--ink)}
+.rest{padding:10px 18px 8px;font-size:14px;color:var(--ink-3)}
+
+@media (max-width:1040px){.page{grid-template-columns:1fr}.seg{display:none}.model{margin-left:auto}h1{font-size:36px;line-height:40px}.big .n{font-size:52px;line-height:56px}}
+@media (max-width:520px){.model{display:none}.legend span{display:block}}
+@media (prefers-reduced-transparency:reduce){.glass{background:var(--glass-solid);backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media (prefers-contrast:more){.glass{background:#24252a;border-color:var(--hair-2);backdrop-filter:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<header class="bar glass">
+  <span class="brand">Quote desk</span>
+  <button class="evt">Corrugated packaging <svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></button>
+  <div class="seg" role="tablist"><button role="tab" aria-selected="true">Decide</button><button role="tab">Compare</button><button role="tab">Ask</button></div>
+  <span class="model"><i class="dot"></i>Claude connected</span>
+</header>
+
+<main class="page">
+  <section class="lede">
+    <div class="ctx">Nimbus Home Care · annual rate contract · 5 replies read</div>
+    <h1>Two of five vendors can be awarded today.</h1>
+    <p>The three cheapest replies can't be used yet. Two sent no quality questionnaire and one failed the gate.</p>
+
+    <div class="award card glass">
+      <div class="k">Lowest award you can make, all 30 lines, a year</div>
+      <div class="big num"><span class="n">₹3.98</span><span class="u">crore</span></div>
+      <div class="vs num"><b>₹2.13 lakh under</b> last year</div>
+      <div class="split">
+        <div class="track"><i style="flex:52.74"></i><i style="flex:47.26"></i></div>
+        <div class="legend num"><div><b>PackGlobal Exports</b><span>18 lines · ₹2.10 crore</span></div><div><b>Shree Balaji Packaging</b><span>12 lines · ₹1.88 crore</span></div></div>
+      </div>
+      <div class="state" id="state"><span class="pill" id="pill">Not firm yet</span><span id="stateText"></span></div>
+      <div class="alt num">One vendor instead: PackGlobal at ₹4.02 crore, ₹3.91 lakh more. <button class="link">Compare the two</button></div>
+    </div>
+  </section>
+
+  <aside class="side">
+    <section class="panel card glass" id="asks">
+      <h2><span style="font-weight:600" id="askHead"></span></h2>
+      <div id="askList"></div>
+      <div class="rest">4 more conversions sit on vendors you can't award. <button class="link">Show them</button></div>
+    </section>
+
+    <section class="panel card glass">
+      <h2>Vendors <span>on the 27 lines all five quoted</span></h2>
+      <div class="row"><span class="nm">PackGlobal Exports</span><span class="amt num">₹3.65<small>crore</small></span><span class="why">Cleared the quality gate</span></div>
+      <div class="row"><span class="nm">Shree Balaji Packaging</span><span class="amt num">₹3.69<small>crore</small></span><span class="why">Cleared the quality gate</span></div>
+      <div class="gap"></div>
+      <div class="row no"><span class="nm">Maruti Corrugators</span><span class="amt num">₹3.47<small>crore</small></span><span class="why">No questionnaire, quoted 27 of 30 lines</span></div>
+      <div class="row no"><span class="nm">Sai Cartons</span><span class="amt num">₹3.54<small>crore</small></span><span class="why">No questionnaire</span></div>
+      <div class="row no"><span class="nm">Kraftline Industries</span><span class="amt num">₹3.59<small>crore</small></span><span class="why">Failed the gate: ISO 9001 expired 31 March 2026</span></div>
+      <div class="cap num">Last year, same 27 lines: ₹3.64 crore</div>
+    </section>
+  </aside>
+</main>
+
+<script>
+const asks = [
+  { id: 'usd', t: 'PackGlobal quoted in US dollars', s: 'Converted at a fixed ₹88 to the dollar, not a live rate.', n: 18, file: 'vendor-c-packglobal-offer.docx', q: '200 x 150 x 100 mm carton ... <mark>USD 0.045 each</mark>', calc: '<code>0.045 USD × 88 = ₹3.96</code> a piece, and the same way on every line.' },
+  { id: 'per100', t: 'Shree Balaji priced some lines per 100', s: 'Divided by 100 to get a price per piece.', n: 1, file: 'vendor-a-shree-balaji-quote.xlsx', q: 'L01   403   <mark>per 100 Nos</mark>', calc: '<code>403 ÷ 100 = ₹4.03</code> a piece.' },
+];
+const done = new Set(), open = new Set();
+const $ = (id) => document.getElementById(id);
+function draw() {
+  const left = asks.filter((a) => !done.has(a.id)).length;
+  $('askHead').textContent = left ? `${left} thing${left > 1 ? 's' : ''} to confirm before this is firm` : 'Nothing left to confirm';
+  $('askList').innerHTML = asks.map((a) => `<div class="ask" aria-expanded="${open.has(a.id)}">
+    <div class="hd"><div><div class="t">${a.t}</div><div class="s">${a.s}</div></div><button class="btn ${done.has(a.id) ? 'done' : ''}" data-ok="${a.id}">${done.has(a.id) ? 'Confirmed' : 'Confirm'}</button></div>
+    <button class="link more" data-open="${a.id}">${open.has(a.id) ? 'Hide the vendor\'s words' : 'See the vendor\'s words'}</button>
+    <div class="proof"><div><div class="slip"><span class="f">${a.file}</span>${a.q}</div><p class="calc">${a.calc}</p></div></div></div>`).join('');
+  $('state').classList.toggle('firm', !left);
+  $('pill').textContent = left ? 'Not firm yet' : 'Firm';
+  $('stateText').textContent = left ? `19 of 30 prices rest on ${left === 2 ? 'the 2 conversions' : 'a conversion'} you haven't confirmed.` : 'Every price in this award is confirmed against the vendor\'s file.';
+}
+$('askList').addEventListener('click', (e) => {
+  const ok = e.target.closest('[data-ok]'), op = e.target.closest('[data-open]');
+  if (ok) { done.has(ok.dataset.ok) ? done.delete(ok.dataset.ok) : done.add(ok.dataset.ok); draw(); }
+  if (op) { open.has(op.dataset.open) ? open.delete(op.dataset.open) : open.add(op.dataset.open); draw(); }
+});
+const q = new URLSearchParams(location.search);
+if (q.get('open')) open.add('usd'); if (q.get('firm')) asks.forEach((a) => done.add(a.id));
+draw();
+</script>
+</body>
+</html>

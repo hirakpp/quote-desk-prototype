@@ -1,0 +1,1251 @@
+{
+  "vendors": {
+    "A": {
+      "id": "A",
+      "name": "Shree Balaji Packaging Pvt Ltd",
+      "file": "vendor-a-shree-balaji-quote.xlsx",
+      "format": "Excel",
+      "hard": "Their own layout and item codes, in their own order. Units differ from row to row.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 403,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 4.03
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 623,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 6.23
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 704,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 7.04
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 898,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 8.98
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 898,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 8.98
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 11.14,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 11.14
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 11.09,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 11.09
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 14.21,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 14.21
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 13.98,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 13.98
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 17.16,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 17.16
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 17.93,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 17.93
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 21.12,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 21.12
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 18.36,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 18.36
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 24.44,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 24.44
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 28.4,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 28.4
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 29.07,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 29.07
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 33.48,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 33.48
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 36.95,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 36.95
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 42.79,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 42.79
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 44.74,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 44.74
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 50.13,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 50.13
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 53.01,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 53.01
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 73.45,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 73.45
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 88.64,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 88.64
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 103.32,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 103.32
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 137.22,
+          "rawUnit": "per No",
+          "rawCurrency": "INR",
+          "unitInr": 137.22
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 462,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 4.62
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 633,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 6.33
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 865,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 8.65
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 1194,
+          "rawUnit": "per 100 Nos",
+          "rawCurrency": "INR",
+          "unitInr": 11.94
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "12 months"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "Yes. ISO 9001:2015, certificate valid up to 14 Aug 2028 (TUV)."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes, in-house lab. BS, ECT and BCT tested per lot, COA sent with every dispatch."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "FSC Mix certified kraft. Chain of custody certificate available."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "10 days from PO"
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "1,800 MT per month"
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "Agreed, 60 days"
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "12 months, subject to kraft paper index review every 6 months"
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "0.6%"
+        }
+      }
+    },
+    "B": {
+      "id": "B",
+      "name": "Kraftline Industries",
+      "file": "vendor-b-kraftline-quotation.pdf",
+      "format": "PDF",
+      "hard": "A letterhead PDF. Read the footnote under the table, not just the table.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 3.94,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 3.94,
+          "unitInrAfterDiscount": 3.78
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 5.89,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 5.89,
+          "unitInrAfterDiscount": 5.65
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 6.58,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 6.58,
+          "unitInrAfterDiscount": 6.32
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 8.4,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 8.4,
+          "unitInrAfterDiscount": 8.06
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 8.22,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 8.22,
+          "unitInrAfterDiscount": 7.89
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 11.09,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 11.09,
+          "unitInrAfterDiscount": 10.65
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 11.38,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 11.38,
+          "unitInrAfterDiscount": 10.92
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 13.92,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 13.92,
+          "unitInrAfterDiscount": 13.36
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 13.63,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 13.63,
+          "unitInrAfterDiscount": 13.08
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 16.12,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 16.12,
+          "unitInrAfterDiscount": 15.48
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 16.91,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 16.91,
+          "unitInrAfterDiscount": 16.23
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 18.99,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 18.99,
+          "unitInrAfterDiscount": 18.23
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 17.56,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 17.56,
+          "unitInrAfterDiscount": 16.86
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 23.16,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 23.16,
+          "unitInrAfterDiscount": 22.23
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 26.13,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 26.13,
+          "unitInrAfterDiscount": 25.08
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 29.74,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 29.74,
+          "unitInrAfterDiscount": 28.55
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 33.28,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 33.28,
+          "unitInrAfterDiscount": 31.95
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 37.21,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 37.21,
+          "unitInrAfterDiscount": 35.72
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 43.09,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 43.09,
+          "unitInrAfterDiscount": 41.37
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 44.77,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 44.77,
+          "unitInrAfterDiscount": 42.98
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 49.16,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 49.16,
+          "unitInrAfterDiscount": 47.19
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 52.55,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 52.55,
+          "unitInrAfterDiscount": 50.45
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 71.25,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 71.25,
+          "unitInrAfterDiscount": 68.4
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 84.59,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 84.59,
+          "unitInrAfterDiscount": 81.21
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 97.42,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 97.42,
+          "unitInrAfterDiscount": 93.52
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 122.46,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 122.46,
+          "unitInrAfterDiscount": 117.56
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 4.34,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 4.34,
+          "unitInrAfterDiscount": 4.17
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 5.9,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 5.9,
+          "unitInrAfterDiscount": 5.66
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 8.39,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 8.39,
+          "unitInrAfterDiscount": 8.05
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 11.18,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 11.18,
+          "unitInrAfterDiscount": 10.73
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 4,
+        "discountCondition": "only if annual offtake value exceeds Rs 50 lakh, passed by credit note at quarter end",
+        "validity": "6 months"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "no",
+          "text": "Our ISO 9001:2015 certificate expired on 31 March 2026. Recertification audit is scheduled for November 2026."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes. BS, ECT and BCT are tested in our lab for every lot and the report travels with the consignment."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "We use 80% recycled kraft. Mill declarations can be shared."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "7 working days"
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "2,400 tonnes per month"
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "We request 45 days. 60 days can be discussed."
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "6 months"
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "0.9%"
+        }
+      }
+    },
+    "C": {
+      "id": "C",
+      "name": "PackGlobal Exports LLP",
+      "file": "vendor-c-packglobal-offer.docx",
+      "format": "Word",
+      "hard": "Prices sit inside paragraphs, not a table, and not in rupees.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 0.045,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 3.96
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 0.072,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 6.34
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 0.079,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 6.95
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 0.091,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 8.01
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 0.095,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 8.36
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 0.13,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 11.44
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 0.126,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 11.09
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 0.16,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 14.08
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 0.161,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 14.17
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 0.207,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 18.22
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 0.195,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 17.16
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 0.236,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 20.77
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 0.198,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 17.42
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 0.279,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 24.55
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 0.326,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 28.69
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 0.347,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 30.54
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 0.395,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 34.76
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 0.4,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 35.2
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 0.451,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 39.69
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 0.489,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 43.03
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 0.582,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 51.22
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 0.596,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 52.45
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 0.837,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 73.66
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 0.987,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 86.86
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 1.175,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 103.4
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 1.487,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 130.86
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 0.052,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 4.58
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 0.07,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 6.16
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 0.098,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 8.62
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 0.135,
+          "rawUnit": "each",
+          "rawCurrency": "USD",
+          "unitInr": 11.88
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "90 days"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "ISO 9001:2015 certified, valid until 30 June 2027."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Every lot is tested in our own laboratory for bursting strength, ECT and BCT. Reports accompany each dispatch."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "Kraft liner is FSC certified. Certificate copies are available on request."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "12 to 14 days"
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "about 3,000 tonnes a month"
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "60 days is acceptable"
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "90 days from the date of this offer"
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "below 0.5%"
+        }
+      }
+    },
+    "D": {
+      "id": "D",
+      "name": "Maruti Corrugators",
+      "file": "vendor-d-maruti-rate-card.jpg",
+      "format": "Photo",
+      "hard": "A phone photo of a printed card, taken at an angle. Not every line is on it, and one group is priced by the box.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 3.9,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 3.9
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 5.6,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 5.6
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 6.2,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 6.2
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 8.5,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 8.5
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 8.1,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 8.1
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 10.3,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 10.3
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 11,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 11
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 13,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 13
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 13,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 13
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 16.5,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 16.5
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 16.4,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 16.4
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 17.9,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 17.9
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 18.1,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 18.1
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 23,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 23
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 26.7,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 26.7
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 27,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 27
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 32.4,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 32.4
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 36,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 36
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 40.5,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 40.5
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 42.5,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 42.5
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 46.2,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 46.2
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 51.2,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 51.2
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 70.4,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 70.4
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 78.3,
+          "rawUnit": "per pc",
+          "rawCurrency": "INR",
+          "unitInr": 78.3
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 102,
+          "rawUnit": "per box of 25 pcs",
+          "rawCurrency": "INR",
+          "unitInr": 4.08
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 149,
+          "rawUnit": "per box of 25 pcs",
+          "rawCurrency": "INR",
+          "unitInr": 5.96
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 205,
+          "rawUnit": "per box of 25 pcs",
+          "rawCurrency": "INR",
+          "unitInr": 8.2
+        }
+      ],
+      "terms": {
+        "freight": "extra",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": null
+    },
+    "E": {
+      "id": "E",
+      "name": "Sai Cartons",
+      "file": "vendor-e-sai-cartons-email.txt",
+      "format": "Email",
+      "hard": "Three lines. It prices by weight and points at last year instead of writing most prices.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 3.61
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 5.7
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 6.46
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 8.36
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 8.17
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 10.45
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 11.4
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 13.87
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 13.68
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 16.72
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 17.86
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 38,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 19.76
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 16.8
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 21.84
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 25.62
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 28.56
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 33.18
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 35.7
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 41.58
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 44.1
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 47.46
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 42,
+          "rawUnit": "per kg",
+          "rawCurrency": "INR",
+          "unitInr": 54.18
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 71.04,
+          "fromLastYear": true
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 85.98,
+          "fromLastYear": true
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 102.46,
+          "fromLastYear": true
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 128.34,
+          "fromLastYear": true
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 4.34,
+          "fromLastYear": true
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 5.98,
+          "fromLastYear": true
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 8.7,
+          "fromLastYear": true
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": null,
+          "rawUnit": "same as last year",
+          "rawCurrency": "INR",
+          "unitInr": 11.51,
+          "fromLastYear": true
+        }
+      ],
+      "terms": {
+        "freight": "extra",
+        "gst": "not stated",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": null
+    }
+  }
+}

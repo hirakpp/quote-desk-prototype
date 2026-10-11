@@ -1,0 +1,37 @@
+[
+  {
+    "vendorId": "A",
+    "vendorName": "TransIndia Roadlines Pvt Ltd",
+    "file": "vendor-a-transindia-lane-rates.xlsx",
+    "format": "Excel",
+    "hard": "Clean rates, but read the other columns too. One of them limits how much of the work this carrier can take."
+  },
+  {
+    "vendorId": "B",
+    "vendorName": "Bharat Cargo Movers Ltd",
+    "file": "vendor-b-bharat-cargo-offer.pdf",
+    "format": "PDF",
+    "hard": "The rate column is not per trip. And a footnote lets the rate move with the price of diesel."
+  },
+  {
+    "vendorId": "C",
+    "vendorName": "Deccan Express Logistics",
+    "file": "vendor-c-deccan-express-proposal.docx",
+    "format": "Word",
+    "hard": "No table. Each region gets one rate in a sentence, and it is not a rate per trip. One cost is left outside the rate."
+  },
+  {
+    "vendorId": "D",
+    "vendorName": "Jai Ambe Transport",
+    "file": "vendor-d-jai-ambe-whatsapp.png",
+    "format": "Photo",
+    "hard": "A screenshot of a chat. Rates come in several messages, some lanes are left out, and the vehicle is not always named."
+  },
+  {
+    "vendorId": "E",
+    "vendorName": "Shakti Logistics",
+    "file": "vendor-e-shakti-email.txt",
+    "format": "Email",
+    "hard": "Two sentences from the current carrier. No rates are written, and part of the work is turned down."
+  }
+]

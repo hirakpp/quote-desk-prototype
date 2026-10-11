@@ -1,0 +1,618 @@
+{
+  "vendors": {
+    "A": {
+      "id": "A",
+      "name": "Prime Bearings and Transmission Pvt Ltd",
+      "file": "vendor-a-prime-price-list.xlsx",
+      "format": "Excel",
+      "hard": "A distributor price list under their own part codes. Read the minimum order column as well as the rate.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 315,
+          "unitInr": 315,
+          "moq": 20,
+          "moqUnits": 20,
+          "leadDays": 7
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 1180,
+          "unitInr": 1180,
+          "moq": 10,
+          "moqUnits": 10,
+          "leadDays": 7
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 6980,
+          "unitInr": 6980,
+          "moq": 30,
+          "moqUnits": 30,
+          "leadDays": 21
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 2510,
+          "unitInr": 2510,
+          "moq": 6,
+          "moqUnits": 6,
+          "leadDays": 7
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 3330,
+          "unitInr": 3330,
+          "moq": 6,
+          "moqUnits": 6,
+          "leadDays": 7
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 1940,
+          "unitInr": 1940,
+          "moq": 4,
+          "moqUnits": 4,
+          "leadDays": 7
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 775,
+          "unitInr": 775,
+          "moq": 10,
+          "moqUnits": 10,
+          "leadDays": 7
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 4390,
+          "unitInr": 4390,
+          "moq": 20,
+          "moqUnits": 20,
+          "leadDays": 21
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 430,
+          "unitInr": 430,
+          "moq": 10,
+          "moqUnits": 10,
+          "leadDays": 5
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 1370,
+          "unitInr": 1370,
+          "moq": 5,
+          "moqUnits": 5,
+          "leadDays": 5
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 2950,
+          "unitInr": 2950,
+          "moq": 25,
+          "moqUnits": 25,
+          "leadDays": 5
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 99,
+          "unitInr": 99,
+          "moq": 50,
+          "moqUnits": 50,
+          "leadDays": 5
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 485,
+          "unitInr": 485,
+          "moq": 20,
+          "moqUnits": 20,
+          "leadDays": 5
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 3710,
+          "unitInr": 3710,
+          "moq": 20,
+          "moqUnits": 20,
+          "leadDays": 28
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 1500,
+          "unitInr": 1500,
+          "moq": 6,
+          "moqUnits": 6,
+          "leadDays": 10
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 2100,
+          "unitInr": 2100,
+          "moq": 4,
+          "moqUnits": 4,
+          "leadDays": 10
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 3900,
+          "unitInr": 3900,
+          "moq": 2,
+          "moqUnits": 2,
+          "leadDays": 10
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 240,
+          "unitInr": 240,
+          "moq": 50,
+          "moqUnits": 50,
+          "leadDays": 10
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "31 March 2027"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "Yes. Authorised industrial distributor for SKF, and authorised stockist for Fenner, Gates, Eagle Burgmann, Fleetguard, Atlas Copco, Donaldson and Eaton filtration. Certificates enclosed."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes. Our Bhosari warehouse is 22 km from your plant. Fast-moving lines are delivered within 2 working days of a call-off."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "Yes. Manufacturer invoice copy and SKF Authenticate check on request, for every bearing and seal."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "Accepted, 45 days from delivery."
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "Prices held until 31 March 2027. After that, as per the manufacturer list price revision."
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "Yes, within 60 days, in original packing, 10% restocking charge."
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "Same-day breakdown supply from Bhosari stock at no extra charge during working hours."
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "14 plants in the Chakan and Ranjangaon belt."
+        }
+      }
+    },
+    "B": {
+      "id": "B",
+      "name": "Ashoka Industrial Supplies",
+      "file": "vendor-b-ashoka-quotation.pdf",
+      "format": "PDF",
+      "hard": "A quotation with a make column and a remarks column. The make offered is not always the make asked for, and the lead time is in the remarks.",
+      "quotes": [
+        {
+          "lineId": "L02",
+          "rawPrice": 1110,
+          "unitInr": 1110,
+          "substitute": null,
+          "leadDays": 70,
+          "leadText": "10 weeks, imported"
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 4870,
+          "unitInr": 4870,
+          "substitute": "ZKL 22212 EW33J, offered as equivalent to SKF 22212 E",
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 2310,
+          "unitInr": 2310,
+          "substitute": "ZKL 7208 BETNG, offered as equivalent to SKF 7208 BECBP",
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 3170,
+          "unitInr": 3170,
+          "substitute": "ZKL NU 2210, offered as equivalent to SKF NU 2210 ECP",
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 420,
+          "unitInr": 420,
+          "substitute": null,
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 1290,
+          "unitInr": 1290,
+          "substitute": null,
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 1400,
+          "unitInr": 1400,
+          "substitute": null,
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 1540,
+          "unitInr": 1540,
+          "substitute": "Filtrec A140C10 compressor oil filter, offered as equivalent to Atlas Copco 1613 6105 00",
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 3780,
+          "unitInr": 3780,
+          "substitute": null,
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 235,
+          "unitInr": 235,
+          "substitute": null,
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 2040,
+          "unitInr": 2040,
+          "substitute": "L&T MO 32 contactor, 220 V coil, offered as equivalent to Schneider LC1D32M7",
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 1640,
+          "unitInr": 1640,
+          "substitute": null,
+          "leadDays": 3,
+          "leadText": "Ex-stock, 3 days"
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 1250,
+          "unitInr": 1250,
+          "substitute": null,
+          "leadDays": 3,
+          "leadText": "Ex-stock, 3 days"
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 1280,
+          "unitInr": 1280,
+          "substitute": "Omron E2B-M18KS08-WP-B1 sensor, offered as equivalent to IFM IF5932",
+          "leadDays": 14,
+          "leadText": "2 weeks"
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 1090,
+          "unitInr": 1090,
+          "substitute": null,
+          "leadDays": 3,
+          "leadText": "Ex-stock, 3 days"
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 960,
+          "unitInr": 960,
+          "substitute": null,
+          "leadDays": 7,
+          "leadText": "1 week"
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 615,
+          "unitInr": 615,
+          "substitute": null,
+          "leadDays": 7,
+          "leadText": "1 week"
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "60 days"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "Yes. We are authorised stockists for Schneider Electric, Fenner, Fleetguard, Donaldson, Eaton, Gates and Parker, and an authorised SKF sub-distributor. Where we have offered ZKL, Filtrec, L&T or Omron we are authorised for those makes as well. Letters attached."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes. Stock is held at our Pimpri godown, 30 km from Chakan. Fast-moving lines are delivered within 3 working days."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "Yes, manufacturer invoice copies will be given for bearings and seals on request."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "We request 30 days. 45 days is acceptable for monthly billing above Rs 1 lakh."
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "Prices are firm for 60 days and then subject to manufacturer revisions."
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "Unused items are taken back within 30 days."
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "Same-day supply for electrical items in stock. Rs 500 per trip for breakdown delivery."
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "9 plants."
+        }
+      }
+    },
+    "C": {
+      "id": "C",
+      "name": "Hydroflex Engineering and Safety",
+      "file": "vendor-c-hydroflex-offer.docx",
+      "format": "Word",
+      "hard": "Prices sit inside paragraphs. Several are for a pack, a carton or a metre, not for one piece, and one has a minimum order.",
+      "quotes": [
+        {
+          "lineId": "L12",
+          "rawPrice": 971,
+          "pack": 10,
+          "unitText": "per pack of 10 seals",
+          "unitInr": 97.1,
+          "moq": null,
+          "moqUnits": null
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 470,
+          "unitInr": 470
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 3680,
+          "unitInr": 3680
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 1490,
+          "unitInr": 1490
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 235,
+          "unitInr": 235
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 655,
+          "measure": "metre",
+          "unitText": "per metre of assembled length",
+          "unitInr": 982.5
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 865,
+          "measure": "metre",
+          "unitText": "per metre of assembled length",
+          "unitInr": 1730
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 645,
+          "unitInr": 645
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 465,
+          "pack": 12,
+          "unitText": "per pack of 12 pairs",
+          "unitInr": 38.75,
+          "moq": null,
+          "moqUnits": null
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 2550,
+          "pack": 12,
+          "unitText": "per pack of 12 pairs",
+          "unitInr": 212.5,
+          "moq": null,
+          "moqUnits": null
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 4060,
+          "pack": 12,
+          "unitText": "per carton of 12 tins",
+          "unitInr": 338.33,
+          "moq": 20,
+          "moqUnits": 240
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 142,
+          "pack": 10,
+          "unitText": "per box of 10 rolls",
+          "unitInr": 14.2,
+          "moq": null,
+          "moqUnits": null
+        }
+      ],
+      "leadDaysAll": 10,
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "the contract year"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "we are authorised distributors for Gates hose and Parker couplings, and authorised stockists for SKF seals, Eagle Burgmann, Fleetguard, Eaton, Midas, Servo and Champion"
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "we hold stock at Talegaon, 18 km from your plant, and deliver call-offs of fast-moving lines within 3 working days"
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "manufacturer invoices for seals are shared whenever you ask"
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "45 days from delivery is fine"
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "the prices hold for the full contract year"
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "unopened packs are taken back, cut hose is not"
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "hose assemblies can be crimped and sent the same day at no extra charge"
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "six plants"
+        }
+      }
+    },
+    "D": {
+      "id": "D",
+      "name": "Laxmi Mill Stores",
+      "file": "vendor-d-laxmi-counter-quote.jpg",
+      "format": "Photo",
+      "hard": "A photo of a handwritten counter quote. Only some lines are on it, the items are written short, and two rates are for a box.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 2850,
+          "pack": 10,
+          "unitText": "per box of 10",
+          "unitInr": 285
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 1010,
+          "unitInr": 1010
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 2240,
+          "unitInr": 2240
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 1710,
+          "unitInr": 1710
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 705,
+          "unitInr": 705
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 380,
+          "unitInr": 380
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 1230,
+          "unitInr": 1230
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 83,
+          "unitInr": 83
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 34,
+          "unitInr": 34
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 195,
+          "unitInr": 195
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 305,
+          "unitInr": 305
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 127,
+          "pack": 10,
+          "unitText": "per box of 10",
+          "unitInr": 12.7
+        }
+      ],
+      "leadDaysAll": 1,
+      "terms": {
+        "freight": "extra",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": null
+    },
+    "E": {
+      "id": "E",
+      "name": "Deccan Bearing Agencies",
+      "file": "vendor-e-deccan-email.txt",
+      "format": "Email",
+      "hard": "Two sentences. No price is written. One points at a list price and the other at a quote sent last month.",
+      "quotes": [],
+      "gate": "unclear",
+      "terms": {
+        "freight": "not_stated",
+        "gst": "not stated",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "We are SKF authorised distributor since 1998."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "vendorId": "A",
+    "vendorName": "Prime Bearings and Transmission Pvt Ltd",
+    "file": "vendor-a-prime-price-list.xlsx",
+    "format": "Excel",
+    "hard": "A distributor price list under their own part codes. Read the minimum order column as well as the rate."
+  },
+  {
+    "vendorId": "B",
+    "vendorName": "Ashoka Industrial Supplies",
+    "file": "vendor-b-ashoka-quotation.pdf",
+    "format": "PDF",
+    "hard": "A quotation with a make column and a remarks column. The make offered is not always the make asked for, and the lead time is in the remarks."
+  },
+  {
+    "vendorId": "C",
+    "vendorName": "Hydroflex Engineering and Safety",
+    "file": "vendor-c-hydroflex-offer.docx",
+    "format": "Word",
+    "hard": "Prices sit inside paragraphs. Several are for a pack, a carton or a metre, not for one piece, and one has a minimum order."
+  },
+  {
+    "vendorId": "D",
+    "vendorName": "Laxmi Mill Stores",
+    "file": "vendor-d-laxmi-counter-quote.jpg",
+    "format": "Photo",
+    "hard": "A photo of a handwritten counter quote. Only some lines are on it, the items are written short, and two rates are for a box."
+  },
+  {
+    "vendorId": "E",
+    "vendorName": "Deccan Bearing Agencies",
+    "file": "vendor-e-deccan-email.txt",
+    "format": "Email",
+    "hard": "Two sentences. No price is written. One points at a list price and the other at a quote sent last month."
+  }
+]

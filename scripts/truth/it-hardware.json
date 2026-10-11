@@ -1,0 +1,1453 @@
+{
+  "vendors": {
+    "A": {
+      "id": "A",
+      "name": "Vertex Infosystems Pvt Ltd",
+      "file": "vendor-a-vertex-commercial-bid.xlsx",
+      "format": "Excel",
+      "hard": "A workbook with a sheet per category. Every item has three prices, and which one applies depends on how many you buy.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 46800
+            },
+            {
+              "min": 100,
+              "price": 45000
+            },
+            {
+              "min": 500,
+              "price": 43000
+            }
+          ],
+          "unitInr": 45000,
+          "leadDays": 18,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L02",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 103550
+            },
+            {
+              "min": 100,
+              "price": 99550
+            },
+            {
+              "min": 500,
+              "price": 95050
+            }
+          ],
+          "unitInr": 103550,
+          "leadDays": 18,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L03",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 172000
+            },
+            {
+              "min": 100,
+              "price": 165400
+            },
+            {
+              "min": 500,
+              "price": 157950
+            }
+          ],
+          "unitInr": 172000,
+          "leadDays": 18,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L04",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 54550
+            },
+            {
+              "min": 100,
+              "price": 52450
+            },
+            {
+              "min": 500,
+              "price": 50100
+            }
+          ],
+          "unitInr": 54550,
+          "leadDays": 21,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L05",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 165250
+            },
+            {
+              "min": 100,
+              "price": 158900
+            },
+            {
+              "min": 500,
+              "price": 151750
+            }
+          ],
+          "unitInr": 165250,
+          "leadDays": 21,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L06",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 40000
+            },
+            {
+              "min": 100,
+              "price": 38450
+            },
+            {
+              "min": 500,
+              "price": 36700
+            }
+          ],
+          "unitInr": 40000,
+          "leadDays": 21,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L07",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 12020
+            },
+            {
+              "min": 100,
+              "price": 11560
+            },
+            {
+              "min": 500,
+              "price": 11040
+            }
+          ],
+          "unitInr": 11560,
+          "leadDays": 14,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L08",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 25650
+            },
+            {
+              "min": 100,
+              "price": 24650
+            },
+            {
+              "min": 500,
+              "price": 23550
+            }
+          ],
+          "unitInr": 25650,
+          "leadDays": 14,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L09",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 42950
+            },
+            {
+              "min": 100,
+              "price": 41300
+            },
+            {
+              "min": 500,
+              "price": 39450
+            }
+          ],
+          "unitInr": 42950,
+          "leadDays": 14,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L10",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 36500
+            },
+            {
+              "min": 100,
+              "price": 35100
+            },
+            {
+              "min": 500,
+              "price": 33500
+            }
+          ],
+          "unitInr": 36500,
+          "leadDays": 14,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L11",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 9810
+            },
+            {
+              "min": 100,
+              "price": 9430
+            },
+            {
+              "min": 500,
+              "price": 9010
+            }
+          ],
+          "unitInr": 9430,
+          "leadDays": 14,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L12",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 20650
+            },
+            {
+              "min": 100,
+              "price": 19840
+            },
+            {
+              "min": 500,
+              "price": 18950
+            }
+          ],
+          "unitInr": 20650,
+          "leadDays": 14,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L13",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 670
+            },
+            {
+              "min": 100,
+              "price": 645
+            },
+            {
+              "min": 500,
+              "price": 615
+            }
+          ],
+          "unitInr": 645,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L14",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 745
+            },
+            {
+              "min": 100,
+              "price": 715
+            },
+            {
+              "min": 500,
+              "price": 685
+            }
+          ],
+          "unitInr": 715,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L15",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 1970
+            },
+            {
+              "min": 100,
+              "price": 1895
+            },
+            {
+              "min": 500,
+              "price": 1810
+            }
+          ],
+          "unitInr": 1970,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L16",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 2840
+            },
+            {
+              "min": 100,
+              "price": 2730
+            },
+            {
+              "min": 500,
+              "price": 2610
+            }
+          ],
+          "unitInr": 2730,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L17",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 3950
+            },
+            {
+              "min": 100,
+              "price": 3800
+            },
+            {
+              "min": 500,
+              "price": 3630
+            }
+          ],
+          "unitInr": 3950,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L18",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 1450
+            },
+            {
+              "min": 100,
+              "price": 1395
+            },
+            {
+              "min": 500,
+              "price": 1330
+            }
+          ],
+          "unitInr": 1395,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L19",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 910
+            },
+            {
+              "min": 100,
+              "price": 875
+            },
+            {
+              "min": 500,
+              "price": 835
+            }
+          ],
+          "unitInr": 910,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L20",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 1325
+            },
+            {
+              "min": 100,
+              "price": 1275
+            },
+            {
+              "min": 500,
+              "price": 1220
+            }
+          ],
+          "unitInr": 1275,
+          "leadDays": 7,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L21",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 153150
+            },
+            {
+              "min": 100,
+              "price": 147250
+            },
+            {
+              "min": 500,
+              "price": 140600
+            }
+          ],
+          "unitInr": 153150,
+          "leadDays": 35,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L22",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 63600
+            },
+            {
+              "min": 100,
+              "price": 61150
+            },
+            {
+              "min": 500,
+              "price": 58400
+            }
+          ],
+          "unitInr": 63600,
+          "leadDays": 35,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L23",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 21250
+            },
+            {
+              "min": 100,
+              "price": 20450
+            },
+            {
+              "min": 500,
+              "price": 19530
+            }
+          ],
+          "unitInr": 21250,
+          "leadDays": 35,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L24",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 325250
+            },
+            {
+              "min": 100,
+              "price": 312750
+            },
+            {
+              "min": 500,
+              "price": 298700
+            }
+          ],
+          "unitInr": 325250,
+          "leadDays": 35,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L25",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 4240
+            },
+            {
+              "min": 100,
+              "price": 4080
+            },
+            {
+              "min": 500,
+              "price": 3900
+            }
+          ],
+          "unitInr": 4240,
+          "leadDays": 35,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L26",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 250
+            },
+            {
+              "min": 100,
+              "price": 240
+            },
+            {
+              "min": 500,
+              "price": 230
+            }
+          ],
+          "unitInr": 230,
+          "leadDays": 35,
+          "warrantyYears": 3
+        },
+        {
+          "lineId": "L27",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 9920
+            },
+            {
+              "min": 100,
+              "price": 9540
+            },
+            {
+              "min": 500,
+              "price": 9110
+            }
+          ],
+          "unitInr": 9920,
+          "leadDays": 28,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L28",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 80800
+            },
+            {
+              "min": 100,
+              "price": 77700
+            },
+            {
+              "min": 500,
+              "price": 74200
+            }
+          ],
+          "unitInr": 80800,
+          "leadDays": 28,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L29",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 207150
+            },
+            {
+              "min": 100,
+              "price": 199200
+            },
+            {
+              "min": 500,
+              "price": 190250
+            }
+          ],
+          "unitInr": 207150,
+          "leadDays": 28,
+          "warrantyYears": 1
+        },
+        {
+          "lineId": "L30",
+          "tiers": [
+            {
+              "min": 1,
+              "price": 15020
+            },
+            {
+              "min": 100,
+              "price": 14440
+            },
+            {
+              "min": 500,
+              "price": 13790
+            }
+          ],
+          "unitInr": 15020,
+          "leadDays": 28,
+          "warrantyYears": 1
+        }
+      ],
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "45 days"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "Yes. We are an authorised Platinum partner for all brands quoted. Authorisation letters dated September 2026 are enclosed."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes, on-site next-business-day service in Bengaluru through our own service centre at Koramangala."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "Yes. E-waste take-back through our CPCB-registered recycler, with a certificate of recycling for every lot."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "Yes, imaging and asset tagging included at no charge for laptops and desktops."
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "Accepted, 45 days from delivery."
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "45 days from the bid date."
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "Replacement within 7 working days for any unit found dead on arrival within 15 days of delivery."
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "1,200 seats for a bank in Chennai."
+        }
+      }
+    },
+    "B": {
+      "id": "B",
+      "name": "Dataline Systems and Services",
+      "file": "vendor-b-dataline-quotation.pdf",
+      "format": "PDF",
+      "hard": "Two price columns per item. One is the price, the other is an optional extra, and they must not be added together by default.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 43850,
+          "unitInr": 43850,
+          "addon3y": 3070
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 98200,
+          "unitInr": 98200,
+          "addon3y": 6870
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 158150,
+          "unitInr": 158150,
+          "addon3y": 11070
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 50700,
+          "unitInr": 50700,
+          "addon3y": 3040
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 154750,
+          "unitInr": 154750,
+          "addon3y": 9290
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 36600,
+          "unitInr": 36600,
+          "addon3y": 2200
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 11200,
+          "unitInr": 11200,
+          "addon3y": 560
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 23200,
+          "unitInr": 23200,
+          "addon3y": 1160
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 40400,
+          "unitInr": 40400,
+          "addon3y": 2020
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 34250,
+          "unitInr": 34250,
+          "addon3y": 1715
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 9100,
+          "unitInr": 9100,
+          "addon3y": 455
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 19200,
+          "unitInr": 19200,
+          "addon3y": 960
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 640,
+          "unitInr": 640,
+          "addon3y": null
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 690,
+          "unitInr": 690,
+          "addon3y": null
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 1825,
+          "unitInr": 1825,
+          "addon3y": null
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 2730,
+          "unitInr": 2730,
+          "addon3y": null
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 3720,
+          "unitInr": 3720,
+          "addon3y": null
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 1400,
+          "unitInr": 1400,
+          "addon3y": null
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 870,
+          "unitInr": 870,
+          "addon3y": null
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 1245,
+          "unitInr": 1245,
+          "addon3y": null
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 143650,
+          "unitInr": 143650,
+          "addon3y": 11490
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 59000,
+          "unitInr": 59000,
+          "addon3y": 4720
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 20450,
+          "unitInr": 20450,
+          "addon3y": 1635
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 301400,
+          "unitInr": 301400,
+          "addon3y": 24100
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 4150,
+          "unitInr": 4150,
+          "addon3y": 330
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 230,
+          "unitInr": 230,
+          "addon3y": 20
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 9780,
+          "unitInr": 9780,
+          "addon3y": 585
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 77500,
+          "unitInr": 77500,
+          "addon3y": 4650
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 191750,
+          "unitInr": 191750,
+          "addon3y": 11510
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 14460,
+          "unitInr": 14460,
+          "addon3y": 870
+        }
+      ],
+      "leadDaysAll": 28,
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "30 days"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "Yes. Dataline is an OEM-authorised reseller for every brand in this quotation. Letters of authorisation are attached as Annexure B."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "Yes. Next-business-day on-site response in Bengaluru for laptops and desktops."
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "Yes. We will take back the replaced equipment and issue an e-waste recycling certificate."
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "Imaging is offered at Rs 350 per device. Asset tagging is free."
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "We request 30 days. 45 days can be agreed for this order size."
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "30 days."
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "Dead-on-arrival units are replaced in 5 working days if reported within 10 days."
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "800 seats."
+        }
+      }
+    },
+    "C": {
+      "id": "C",
+      "name": "Orbis Technologies FZ-LLC",
+      "file": "vendor-c-orbis-proposal.docx",
+      "format": "Word",
+      "hard": "Prices are inside paragraphs and not in rupees. Read what is being offered on each line, not just the price.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 428.38,
+          "rawCurrency": "USD",
+          "unitInr": 37697.44,
+          "substitute": "Orbis AeroBook 14, Intel Core Ultra 5, 8 GB RAM, 512 GB SSD (equivalent model, 8 GB in place of 16 GB)"
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 906.92,
+          "rawCurrency": "USD",
+          "unitInr": 79808.96,
+          "substitute": "Orbis AeroBook 14 Pro, Intel Core i7 13th generation, 32 GB RAM, 1 TB SSD (equivalent, previous generation processor)"
+        },
+        {
+          "lineId": "L03",
+          "rawPrice": 1776.93,
+          "rawCurrency": "USD",
+          "unitInr": 156369.84,
+          "substitute": null
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 474.3,
+          "rawCurrency": "USD",
+          "unitInr": 41738.4,
+          "substitute": "Orbis Cube SFF, Intel Core i5, 8 GB RAM, 512 GB SSD (equivalent, 8 GB in place of 16 GB)"
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 1724.01,
+          "rawCurrency": "USD",
+          "unitInr": 151712.88,
+          "substitute": null
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 415.6,
+          "rawCurrency": "USD",
+          "unitInr": 36572.8,
+          "substitute": null
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 103.88,
+          "rawCurrency": "USD",
+          "unitInr": 9141.44,
+          "substitute": "Orbis View 22, 21.5 inch Full HD, tilt only (equivalent, 21.5 inch in place of 24 inch)"
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 258.61,
+          "rawCurrency": "USD",
+          "unitInr": 22757.68,
+          "substitute": null
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 448.35,
+          "rawCurrency": "USD",
+          "unitInr": 39454.8,
+          "substitute": null
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 389.98,
+          "rawCurrency": "USD",
+          "unitInr": 34318.24,
+          "substitute": null
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 86.96,
+          "rawCurrency": "USD",
+          "unitInr": 7652.48,
+          "substitute": "Orbis Link dock, 65 W power delivery, dual display (equivalent, 65 W in place of 100 W)"
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 211.56,
+          "rawCurrency": "USD",
+          "unitInr": 18617.28,
+          "substitute": null
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 7.11,
+          "rawCurrency": "USD",
+          "unitInr": 625.68,
+          "substitute": null
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 7.59,
+          "rawCurrency": "USD",
+          "unitInr": 667.92,
+          "substitute": null
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 20.34,
+          "rawCurrency": "USD",
+          "unitInr": 1789.92,
+          "substitute": null
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 31.04,
+          "rawCurrency": "USD",
+          "unitInr": 2731.52,
+          "substitute": null
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 41.3,
+          "rawCurrency": "USD",
+          "unitInr": 3634.4,
+          "substitute": null
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 15.23,
+          "rawCurrency": "USD",
+          "unitInr": 1340.24,
+          "substitute": null
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 9.8,
+          "rawCurrency": "USD",
+          "unitInr": 862.4,
+          "substitute": null
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 14.08,
+          "rawCurrency": "USD",
+          "unitInr": 1239.04,
+          "substitute": null
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 1565.14,
+          "rawCurrency": "USD",
+          "unitInr": 137732.32,
+          "substitute": null
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 680.52,
+          "rawCurrency": "USD",
+          "unitInr": 59885.76,
+          "substitute": null
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 190.9,
+          "rawCurrency": "USD",
+          "unitInr": 16799.2,
+          "substitute": "Orbis Air AX access point, Wi-Fi 6 dual-band (equivalent, Wi-Fi 6 in place of Wi-Fi 6E)"
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 3440.62,
+          "rawCurrency": "USD",
+          "unitInr": 302774.56,
+          "substitute": null
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 45.04,
+          "rawCurrency": "USD",
+          "unitInr": 3963.52,
+          "substitute": null
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 2.58,
+          "rawCurrency": "USD",
+          "unitInr": 227.04,
+          "substitute": null
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 107.68,
+          "rawCurrency": "USD",
+          "unitInr": 9475.84,
+          "substitute": null
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 846.26,
+          "rawCurrency": "USD",
+          "unitInr": 74470.88,
+          "substitute": null
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 2068.38,
+          "rawCurrency": "USD",
+          "unitInr": 182017.44,
+          "substitute": null
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 153.8,
+          "rawCurrency": "USD",
+          "unitInr": 13534.4,
+          "substitute": null
+        }
+      ],
+      "leadDaysAll": 45,
+      "warrantyYearsAll": 1,
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "21 days"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "we are an authorised distributor for the Orbis range and hold reseller authorisation letters for the third-party network and power brands quoted"
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "on-site next-business-day warranty service is provided in Bengaluru through our service partner"
+        },
+        "Q3": {
+          "meets": "yes",
+          "text": "we take back replaced equipment for recycling and provide the e-waste certificate"
+        },
+        "Q4": {
+          "meets": "na",
+          "text": "imaging and asset tagging can be done at our Dubai hub before dispatch"
+        },
+        "Q5": {
+          "meets": "na",
+          "text": "45 days from delivery is acceptable against a bank guarantee"
+        },
+        "Q6": {
+          "meets": "na",
+          "text": "21 days, as the prices follow the dollar"
+        },
+        "Q7": {
+          "meets": "na",
+          "text": "dead-on-arrival units are replaced from the next shipment"
+        },
+        "Q8": {
+          "meets": "na",
+          "text": "around 2,000 seats for a customer in the Gulf"
+        }
+      }
+    },
+    "D": {
+      "id": "D",
+      "name": "Sri Venkateshwara Computers",
+      "file": "vendor-d-svc-price-list.jpg",
+      "format": "Photo",
+      "hard": "A phone photo of a printed price list. Some lines are missing, and two items are priced by the pack.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "rawPrice": 44000,
+          "unitInr": 44000
+        },
+        {
+          "lineId": "L02",
+          "rawPrice": 96800,
+          "unitInr": 96800
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 49150,
+          "unitInr": 49150
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 36950,
+          "unitInr": 36950
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 11250,
+          "unitInr": 11250
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 22950,
+          "unitInr": 22950
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 34300,
+          "unitInr": 34300
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 9420,
+          "unitInr": 9420
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 18270,
+          "unitInr": 18270
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 6400,
+          "pack": 10,
+          "unitInr": 640
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 6650,
+          "pack": 10,
+          "unitInr": 665
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 1825,
+          "unitInr": 1825
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 2750,
+          "unitInr": 2750
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 3820,
+          "unitInr": 3820
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 1355,
+          "unitInr": 1355
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 875,
+          "unitInr": 875
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 1275,
+          "unitInr": 1275
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 59700,
+          "unitInr": 59700
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 20350,
+          "unitInr": 20350
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 230,
+          "unitInr": 230
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 9680,
+          "unitInr": 9680
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 14250,
+          "unitInr": 14250
+        }
+      ],
+      "leadDaysAll": 5,
+      "terms": {
+        "freight": "extra",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": null
+    },
+    "E": {
+      "id": "E",
+      "name": "Nexa IT Solutions",
+      "file": "vendor-e-nexa-email.txt",
+      "format": "Email",
+      "hard": "A short email. The laptop prices are not written, they point at your last purchase order.",
+      "quotes": [
+        {
+          "lineId": "L01",
+          "fromLastPo": true,
+          "unitInr": 41400
+        },
+        {
+          "lineId": "L02",
+          "fromLastPo": true,
+          "unitInr": 88200
+        },
+        {
+          "lineId": "L03",
+          "fromLastPo": true,
+          "unitInr": 148500
+        },
+        {
+          "lineId": "L04",
+          "rawPrice": 51000,
+          "unitInr": 51000
+        },
+        {
+          "lineId": "L05",
+          "rawPrice": 164400,
+          "unitInr": 164400
+        },
+        {
+          "lineId": "L06",
+          "rawPrice": 37900,
+          "unitInr": 37900
+        },
+        {
+          "lineId": "L07",
+          "rawPrice": 11580,
+          "unitInr": 11580
+        },
+        {
+          "lineId": "L08",
+          "rawPrice": 23950,
+          "unitInr": 23950
+        },
+        {
+          "lineId": "L09",
+          "rawPrice": 42000,
+          "unitInr": 42000
+        },
+        {
+          "lineId": "L10",
+          "rawPrice": 36650,
+          "unitInr": 36650
+        },
+        {
+          "lineId": "L11",
+          "rawPrice": 9370,
+          "unitInr": 9370
+        },
+        {
+          "lineId": "L12",
+          "rawPrice": 19600,
+          "unitInr": 19600
+        },
+        {
+          "lineId": "L13",
+          "rawPrice": 665,
+          "unitInr": 665
+        },
+        {
+          "lineId": "L14",
+          "rawPrice": 725,
+          "unitInr": 725
+        },
+        {
+          "lineId": "L15",
+          "rawPrice": 1875,
+          "unitInr": 1875
+        },
+        {
+          "lineId": "L16",
+          "rawPrice": 2760,
+          "unitInr": 2760
+        },
+        {
+          "lineId": "L17",
+          "rawPrice": 3950,
+          "unitInr": 3950
+        },
+        {
+          "lineId": "L18",
+          "rawPrice": 1365,
+          "unitInr": 1365
+        },
+        {
+          "lineId": "L19",
+          "rawPrice": 925,
+          "unitInr": 925
+        },
+        {
+          "lineId": "L20",
+          "rawPrice": 1280,
+          "unitInr": 1280
+        },
+        {
+          "lineId": "L21",
+          "rawPrice": 143000,
+          "unitInr": 143000
+        },
+        {
+          "lineId": "L22",
+          "rawPrice": 63250,
+          "unitInr": 63250
+        },
+        {
+          "lineId": "L23",
+          "rawPrice": 20900,
+          "unitInr": 20900
+        },
+        {
+          "lineId": "L24",
+          "rawPrice": 309200,
+          "unitInr": 309200
+        },
+        {
+          "lineId": "L25",
+          "rawPrice": 4220,
+          "unitInr": 4220
+        },
+        {
+          "lineId": "L26",
+          "rawPrice": 240,
+          "unitInr": 240
+        },
+        {
+          "lineId": "L27",
+          "rawPrice": 9720,
+          "unitInr": 9720
+        },
+        {
+          "lineId": "L28",
+          "rawPrice": 78050,
+          "unitInr": 78050
+        },
+        {
+          "lineId": "L29",
+          "rawPrice": 196400,
+          "unitInr": 196400
+        },
+        {
+          "lineId": "L30",
+          "rawPrice": 14780,
+          "unitInr": 14780
+        }
+      ],
+      "leadDaysAll": 21,
+      "terms": {
+        "freight": "included",
+        "gst": "extra",
+        "discountPct": 0,
+        "validity": "not stated"
+      },
+      "answers": {
+        "Q1": {
+          "meets": "yes",
+          "text": "We are authorised partner for all brands, letters attached."
+        },
+        "Q2": {
+          "meets": "yes",
+          "text": "NBD onsite in Bengaluru, yes."
+        },
+        "Q3": {
+          "meets": "no",
+          "text": "We do not do e-waste take-back, you will need a separate recycler."
+        }
+      }
+    }
+  }
+}

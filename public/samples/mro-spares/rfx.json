@@ -1,0 +1,373 @@
+{
+  "id": "RFQ-2026-MRO-052",
+  "title": "Annual rate contract: maintenance spares, Chakan plant",
+  "buyer": "Trishul Forgings Ltd",
+  "scope": "Rate contract for maintenance, repair and operating spares for our forging plant at Chakan, Pune, for one year. Call-offs through the year against the quantities shown. Quote the brand and part number on each line. If you offer another make, say so against the line.",
+  "currency": "INR",
+  "period": "year",
+  "quantityLabel": "Quantity a year",
+  "refLabel": "last year",
+  "attributes": [
+    {
+      "key": "lead_time_days",
+      "label": "Lead time",
+      "unit": "days",
+      "better": "lower"
+    }
+  ],
+  "lineItems": [
+    {
+      "id": "L01",
+      "description": "Deep groove ball bearing, SKF 6205-2RS1",
+      "spec": "SKF 6205-2RS1",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 240,
+      "unit": "piece",
+      "refPrice": 310
+    },
+    {
+      "id": "L02",
+      "description": "Deep groove ball bearing, SKF 6308-2Z",
+      "spec": "SKF 6308-2Z",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 120,
+      "unit": "piece",
+      "refPrice": 1150
+    },
+    {
+      "id": "L03",
+      "description": "Spherical roller bearing, SKF 22212 E",
+      "spec": "SKF 22212 E",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 24,
+      "unit": "piece",
+      "refPrice": 6800
+    },
+    {
+      "id": "L04",
+      "description": "Taper roller bearing, SKF 32210",
+      "spec": "SKF 32210",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 36,
+      "unit": "piece",
+      "refPrice": 2450
+    },
+    {
+      "id": "L05",
+      "description": "Angular contact ball bearing, SKF 7208 BECBP",
+      "spec": "SKF 7208 BECBP",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 30,
+      "unit": "piece",
+      "refPrice": 3200
+    },
+    {
+      "id": "L06",
+      "description": "Pillow block bearing unit, SKF UCP 208",
+      "spec": "SKF UCP 208",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 40,
+      "unit": "piece",
+      "refPrice": 1900
+    },
+    {
+      "id": "L07",
+      "description": "Needle roller bearing, SKF NK 30/20",
+      "spec": "SKF NK 30/20",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 60,
+      "unit": "piece",
+      "refPrice": 780
+    },
+    {
+      "id": "L08",
+      "description": "Cylindrical roller bearing, SKF NU 2210 ECP",
+      "spec": "SKF NU 2210 ECP",
+      "category": "Bearings",
+      "measures": {},
+      "quantity": 18,
+      "unit": "piece",
+      "refPrice": 4300
+    },
+    {
+      "id": "L09",
+      "description": "Classical V-belt, Fenner B-68",
+      "spec": "Fenner B-68",
+      "category": "Belts and seals",
+      "measures": {},
+      "quantity": 150,
+      "unit": "piece",
+      "refPrice": 420
+    },
+    {
+      "id": "L10",
+      "description": "Wedge V-belt, Fenner SPB 2500",
+      "spec": "Fenner SPB 2500",
+      "category": "Belts and seals",
+      "measures": {},
+      "quantity": 60,
+      "unit": "piece",
+      "refPrice": 1350
+    },
+    {
+      "id": "L11",
+      "description": "Timing belt, Gates HTD 1200-8M-30",
+      "spec": "Gates HTD 1200-8M-30",
+      "category": "Belts and seals",
+      "measures": {},
+      "quantity": 20,
+      "unit": "piece",
+      "refPrice": 2900
+    },
+    {
+      "id": "L12",
+      "description": "Oil seal, NBR, SKF 45x62x8 HMSA10",
+      "spec": "SKF 45x62x8 HMSA10",
+      "category": "Belts and seals",
+      "measures": {},
+      "quantity": 200,
+      "unit": "piece",
+      "refPrice": 95
+    },
+    {
+      "id": "L13",
+      "description": "Oil seal, FKM, SKF 80x100x10 HMSA10 V",
+      "spec": "SKF 80x100x10 HMSA10 V",
+      "category": "Belts and seals",
+      "measures": {},
+      "quantity": 80,
+      "unit": "piece",
+      "refPrice": 480
+    },
+    {
+      "id": "L14",
+      "description": "Mechanical seal, 35 mm, Eagle Burgmann M21-35",
+      "spec": "Eagle Burgmann M21-35",
+      "category": "Belts and seals",
+      "measures": {},
+      "quantity": 12,
+      "unit": "piece",
+      "refPrice": 3600
+    },
+    {
+      "id": "L15",
+      "description": "Hydraulic return filter element, Fleetguard HF6553",
+      "spec": "Fleetguard HF6553",
+      "category": "Filters",
+      "measures": {},
+      "quantity": 48,
+      "unit": "piece",
+      "refPrice": 1450
+    },
+    {
+      "id": "L16",
+      "description": "Compressor oil filter, Atlas Copco 1613 6105 00",
+      "spec": "Atlas Copco 1613 6105 00",
+      "category": "Filters",
+      "measures": {},
+      "quantity": 24,
+      "unit": "piece",
+      "refPrice": 2100
+    },
+    {
+      "id": "L17",
+      "description": "Compressor air filter element, Donaldson P181099",
+      "spec": "Donaldson P181099",
+      "category": "Filters",
+      "measures": {},
+      "quantity": 30,
+      "unit": "piece",
+      "refPrice": 3900
+    },
+    {
+      "id": "L18",
+      "description": "Coolant filter bag, 25 micron, size 2, Eaton PO-25-P2P",
+      "spec": "Eaton PO-25-P2P",
+      "category": "Filters",
+      "measures": {},
+      "quantity": 300,
+      "unit": "piece",
+      "refPrice": 240
+    },
+    {
+      "id": "L19",
+      "description": "Power contactor, 32 A, 220 V coil, Schneider LC1D32M7",
+      "spec": "Schneider LC1D32M7",
+      "category": "Electrical",
+      "measures": {},
+      "quantity": 30,
+      "unit": "piece",
+      "refPrice": 2750
+    },
+    {
+      "id": "L20",
+      "description": "Thermal overload relay, 23 to 32 A, Schneider LRD32",
+      "spec": "Schneider LRD32",
+      "category": "Electrical",
+      "measures": {},
+      "quantity": 30,
+      "unit": "piece",
+      "refPrice": 1650
+    },
+    {
+      "id": "L21",
+      "description": "Limit switch, roller lever, Schneider XCKJ10511",
+      "spec": "Schneider XCKJ10511",
+      "category": "Electrical",
+      "measures": {},
+      "quantity": 40,
+      "unit": "piece",
+      "refPrice": 1250
+    },
+    {
+      "id": "L22",
+      "description": "Inductive proximity sensor, M18, PNP NO, IFM IF5932",
+      "spec": "IFM IF5932",
+      "category": "Electrical",
+      "measures": {},
+      "quantity": 50,
+      "unit": "piece",
+      "refPrice": 1800
+    },
+    {
+      "id": "L23",
+      "description": "Miniature circuit breaker, 32 A, 3 pole, C curve, Schneider A9F44332",
+      "spec": "Schneider A9F44332",
+      "category": "Electrical",
+      "measures": {},
+      "quantity": 60,
+      "unit": "piece",
+      "refPrice": 1100
+    },
+    {
+      "id": "L24",
+      "description": "Hydraulic hose assembly, 1/2 inch 2SN, 1.5 metre, BSP both ends, Gates M2T-08 1500",
+      "spec": "Gates M2T-08 1500",
+      "category": "Hydraulics",
+      "measures": {
+        "metre": 1.5
+      },
+      "quantity": 80,
+      "unit": "piece",
+      "refPrice": 980
+    },
+    {
+      "id": "L25",
+      "description": "Hydraulic hose assembly, 3/4 inch 2SN, 2 metre, BSP both ends, Gates M2T-12 2000",
+      "spec": "Gates M2T-12 2000",
+      "category": "Hydraulics",
+      "measures": {
+        "metre": 2
+      },
+      "quantity": 40,
+      "unit": "piece",
+      "refPrice": 1720
+    },
+    {
+      "id": "L26",
+      "description": "Quick release coupling, 1/2 inch BSP, ISO B, Parker 6601-8-10",
+      "spec": "Parker 6601-8-10",
+      "category": "Hydraulics",
+      "measures": {},
+      "quantity": 60,
+      "unit": "piece",
+      "refPrice": 640
+    },
+    {
+      "id": "L27",
+      "description": "Nitrile coated work gloves, size 9, per pair, Midas NFT-9",
+      "spec": "Midas NFT-9",
+      "category": "Consumables",
+      "measures": {},
+      "quantity": 6000,
+      "unit": "piece",
+      "refPrice": 38
+    },
+    {
+      "id": "L28",
+      "description": "Cut-resistant gloves, level 5, per pair, Midas CR5-9",
+      "spec": "Midas CR5-9",
+      "category": "Consumables",
+      "measures": {},
+      "quantity": 1200,
+      "unit": "piece",
+      "refPrice": 210
+    },
+    {
+      "id": "L29",
+      "description": "Lithium EP2 grease, 1 kg tin, Servo Gem EP2 1kg",
+      "spec": "Servo Gem EP2 1kg",
+      "category": "Consumables",
+      "measures": {},
+      "quantity": 180,
+      "unit": "piece",
+      "refPrice": 340
+    },
+    {
+      "id": "L30",
+      "description": "PTFE thread seal tape, 12 mm x 10 m roll, Champion PT-1210",
+      "spec": "Champion PT-1210",
+      "category": "Consumables",
+      "measures": {},
+      "quantity": 2400,
+      "unit": "piece",
+      "refPrice": 14
+    }
+  ],
+  "questionnaire": [
+    {
+      "id": "Q1",
+      "gate": true,
+      "text": "Are you an authorised distributor or stockist for every brand you quote as original? Name the brands and cite the authorisation."
+    },
+    {
+      "id": "Q2",
+      "gate": true,
+      "text": "Will you hold stock of the fast-moving lines within 100 km of Chakan and deliver a call-off for them inside 3 working days?"
+    },
+    {
+      "id": "Q3",
+      "gate": true,
+      "text": "Will you give the manufacturer invoice or a certificate of genuineness for bearings and seals when we ask?"
+    },
+    {
+      "id": "Q4",
+      "gate": false,
+      "text": "Do you accept payment 45 days from delivery?"
+    },
+    {
+      "id": "Q5",
+      "gate": false,
+      "text": "Will you hold the quoted prices for the full contract year?"
+    },
+    {
+      "id": "Q6",
+      "gate": false,
+      "text": "Will you take back unused items in original packing?"
+    },
+    {
+      "id": "Q7",
+      "gate": false,
+      "text": "Can you supply a breakdown item the same day, and at what charge?"
+    },
+    {
+      "id": "Q8",
+      "gate": false,
+      "text": "How many plants do you supply on an annual rate contract today?"
+    }
+  ],
+  "terms": {
+    "priceBasis": "Per piece (per pair for gloves), in INR, delivered to our stores at Chakan, GST shown separately",
+    "delivery": "Call-offs through the year. State the lead time and any minimum order quantity per line.",
+    "brand": "Quote the make asked for. An equivalent may be offered and must be marked as one.",
+    "payment": "45 days from delivery",
+    "responseDue": "2026-10-28"
+  }
+}

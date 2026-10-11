@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-world="rail">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quote desk: three directions</title>
+<!--
+  Design reference only. Never import from src/, never deploy.
+  One screen (Results, To confirm) drawn in three visual directions. Switch with the bar at the
+  top or keys 1, 2, 3. J/K move, A accepts, U undoes.
+  Numbers are the real computed packaging values from a perfect read. The quote text in the
+  evidence box is assembled from each cell's raw text, not copied from the vendor files.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,300..800&family=Archivo:wdth,wght@62..125,300..800&family=Schibsted+Grotesk:wght@400..800&family=Chivo+Mono:wght@400..600&family=Sometype+Mono:wght@400..600&display=swap">
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+
+/* ---------- 1. Line map ---------- */
+[data-world="rail"]{
+  --sans:"Anek Latin",system-ui,sans-serif; --mono:"Chivo Mono",ui-monospace,monospace;
+  --shell:#0b1838; --shell-2:#152654; --shell-line:rgba(255,255,255,.13); --on-shell:#f4f7fc; --on-shell-2:#a8b6d8;
+  --canvas:#edf0f7; --surface:#fff; --sunk:#e3e8f2; --ink:#0b1838; --ink-2:#3d4a74; --ink-3:#626d92; --line:#dbe1ee; --line-2:#c3ccdf;
+  --need:#ffb21a; --need-ink:#8f5600; --need-soft:#fff2d2; --need-line:#f1cf85;
+  --stop:#ff6a5c; --stop-ink:#c1271b; --stop-soft:#fdeceA;
+  --done:#0f8a5f; --trace-soft:#dfe9ff; --trace-line:#9db8f5;
+  --on-need:#0b1838; --sel:#e4ebfb; --primary:#0b1838; --on-primary:#fff;
+  --r:8px; --head-w:112; --head-wt:640;
+  --vA:#4a90ee; --vB:#9478ea; --vC:#14ad84; --vD:#dc5aa8; --vE:#8c981f;
+  --lA:#1f5fd6; --lB:#6b45d6; --lC:#0b8a6a; --lD:#c2338a; --lE:#667300;
+}
+/* ---------- 2. Security paper ---------- */
+[data-world="paper"]{
+  --sans:"Archivo",system-ui,sans-serif; --mono:"Chivo Mono",ui-monospace,monospace;
+  --shell:#0e4a3b; --shell-2:#16604d; --shell-line:rgba(255,255,255,.16); --on-shell:#f1f8f3; --on-shell-2:#a9cfc0;
+  --canvas:#dfece3; --surface:#f6faf6; --sunk:#d3e3d8; --ink:#0c2a23; --ink-2:#35554b; --ink-3:#54736a; --line:#c2d6c9; --line-2:#a5c0b0;
+  --need:#3a2bb5; --need-ink:#3a2bb5; --need-soft:#e6e3fa; --need-line:#b9b2ec;
+  --stop:#b3124a; --stop-ink:#b3124a; --stop-soft:#fae3eb;
+  --done:#0e4a3b; --trace-soft:#fff3a8; --trace-line:#e3cf55;
+  --on-need:#fff; --sel:#e4efe6; --primary:#0e4a3b; --on-primary:#fff;
+  --r:3px; --head-w:100; --head-wt:700;
+  --hatch:repeating-linear-gradient(-45deg,rgba(14,74,59,.2) 0 1px,transparent 1px 5px);
+}
+/* ---------- 3. Carbon copy ---------- */
+[data-world="carbon"]{
+  --sans:"Schibsted Grotesk",system-ui,sans-serif; --mono:"Sometype Mono",ui-monospace,monospace;
+  --shell:#22257c; --shell-2:#3034a0; --shell-line:rgba(255,255,255,.18); --on-shell:#fff; --on-shell-2:#bfc1ee;
+  --canvas:#f1f0f8; --surface:#fff; --sunk:#e6e5f3; --ink:#22257c; --ink-2:#44479a; --ink-3:#6165ad; --line:#d9d9ee; --line-2:#bcbde0;
+  --need:#d3212d; --need-ink:#c21824; --need-soft:#fde4ec; --need-line:#f2b6c8;
+  --stop:#d3212d; --stop-ink:#c21824; --stop-soft:#fde4ec;
+  --done:#0f8a55; --trace-soft:#ffe95c; --trace-line:#e0c81e;
+  --on-need:#fff; --sel:#fbd3df; --primary:#22257c; --on-primary:#fff;
+  --pink:#fde4ec; --pink-line:#f2b6c8; --yellow:#fff6bf; --yellow-line:#e7d56a;
+  --r:4px; --head-w:100; --head-wt:700;
+}
+
+body{font:400 14px/20px var(--sans);color:var(--ink);background:var(--canvas);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden;caret-color:var(--ink)}
+::selection{background:var(--shell);color:#fff}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.mono{font-family:var(--mono)}
+
+/* chooser (not part of the design) */
+.pick{flex:none;height:38px;background:#111;color:#bbb;font:500 12.5px/1 system-ui,sans-serif;display:flex;align-items:center;gap:6px;padding:0 14px}
+.pick b{color:#fff;font-weight:600;margin-right:10px}
+.pick button{padding:6px 11px;border-radius:5px;color:#bbb}
+.pick button[aria-pressed="true"]{background:#fff;color:#111}
+.pick span{margin-left:auto;color:#888}
+
+/* shell */
+.top{flex:none;height:54px;background:var(--shell);color:var(--on-shell);display:flex;align-items:center;padding:0 24px;gap:22px}
+.brand{font-weight:700;font-size:16px;letter-spacing:-.01em;font-stretch:110%}
+.event{color:var(--on-shell-2);padding-left:22px;border-left:1px solid var(--shell-line)}
+.event b{color:var(--on-shell);font-weight:600}
+.nav{display:flex;gap:2px;margin-left:8px}
+.nav a{padding:7px 12px;border-radius:var(--r);color:var(--on-shell-2);font-weight:500;text-decoration:none}
+.nav a[aria-current]{background:var(--shell-2);color:var(--on-shell)}
+.count{display:inline-block;min-width:18px;height:18px;padding:0 5px;margin-left:6px;border-radius:9px;background:var(--need);color:var(--on-need);font:700 11.5px/18px var(--sans);text-align:center;vertical-align:1px}
+.top .right{margin-left:auto;display:flex;align-items:center;gap:14px;color:var(--on-shell-2);font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:var(--r);font-weight:600;font-size:14px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);transition:transform 140ms cubic-bezier(.23,1,.32,1),background-color 120ms}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
+.btn.onshell{background:transparent;border-color:var(--shell-line);color:var(--on-shell);height:32px;font-size:13px}
+kbd{font:500 11px/16px var(--mono);border:1px solid currentColor;opacity:.6;border-radius:3px;padding:0 4px}
+
+/* verdict band */
+.verdict{flex:none;display:grid;grid-template-columns:372px 1fr;gap:44px;padding:22px 24px 16px}
+[data-world="rail"] .verdict{background:var(--shell);color:var(--on-shell)}
+[data-world="paper"] .verdict{background:var(--canvas);border-bottom:1px solid var(--line-2)}
+[data-world="carbon"] .verdict{background:var(--surface);border-bottom:1px solid var(--line-2)}
+.verdict h1{font-size:29px;line-height:33px;font-weight:var(--head-wt);font-stretch:calc(var(--head-w)*1%);letter-spacing:-.018em;text-wrap:balance}
+.verdict p{margin-top:12px;font-size:15px;line-height:22px;color:var(--ink-2);max-width:36ch}
+[data-world="rail"] .verdict p{color:var(--on-shell-2)}
+.verdict p b{font-weight:600;color:var(--need-ink)}
+[data-world="rail"] .verdict p b{color:var(--need)}
+.ref{margin-top:14px;font-size:13px;color:var(--ink-3)}
+[data-world="rail"] .ref{color:var(--on-shell-2)}
+.ref .mono{font-size:12.5px}
+
+/* route: where each vendor stops on the way to an award */
+.route{--cols:214px repeat(5,minmax(0,1fr)) 176px;align-self:start}
+.r{display:grid;grid-template-columns:var(--cols);align-items:stretch;height:48px}
+.r.h{height:26px;font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink-3)}
+[data-world="rail"] .r.h{color:var(--on-shell-2)}
+.r.h>span:not(:first-child):not(:last-child){padding-left:16px}
+.r.h>span:last-child{text-align:right}
+.who{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;white-space:nowrap}
+.rd{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font:700 11.5px/1 var(--sans)}
+.st{position:relative}
+.st .node{position:absolute;left:16px;top:13px;width:20px;height:20px;display:grid;place-items:center}
+.st .node svg{width:12px;height:12px;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.st .lab{position:absolute;left:44px;top:28px;font-size:12px;line-height:14px;white-space:nowrap;font-weight:500}
+.tot{display:flex;flex-direction:column;align-items:flex-end;justify-content:center}
+.money{font-weight:650;letter-spacing:-.01em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.money small{font-size:max(.62em,11.5px);font-weight:500;margin-left:.3em;letter-spacing:0}
+.tot .money{font-size:21px;line-height:24px;font-stretch:108%}
+.tot i{font-style:normal;font-size:11.5px;line-height:13px;font-weight:500;margin-top:5px}
+.money.open{text-decoration:underline dotted;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--need)}
+.money.inked{animation:ink 420ms cubic-bezier(.23,1,.32,1)}
+@keyframes ink{from{opacity:.35;filter:blur(2px)}to{opacity:1;filter:none}}
+
+/* rail skin: a line per vendor, stations where it has to stop */
+[data-world="rail"] .r+.r{border-top:1px solid var(--shell-line)}
+[data-world="rail"] .rd{background:var(--v);color:var(--shell)}
+[data-world="rail"] .st::before{content:"";position:absolute;left:0;right:0;top:21px;height:4px;background:var(--v);border-radius:2px}
+[data-world="rail"] .who+.st::before{left:8px}
+[data-world="rail"] .st .node{border-radius:50%;background:var(--on-shell);border:4px solid var(--v)}
+[data-world="rail"] .st .node svg{display:none}
+[data-world="rail"] .st.part .node{background:var(--shell)}
+[data-world="rail"] .st.wait::before,[data-world="rail"] .st.stop::before,[data-world="rail"] .st.end::before{right:auto;width:26px}
+[data-world="rail"] .st.wait::after,[data-world="rail"] .st.stop::after,[data-world="rail"] .st.off::after{content:"";position:absolute;left:40px;right:0;top:22px;border-top:2px dotted rgba(255,255,255,.22)}
+[data-world="rail"] .st.off::before{display:none}
+[data-world="rail"] .st.off::after{left:0}
+[data-world="rail"] .st.off.end::after{right:auto;width:16px}
+[data-world="rail"] .st.wait .node{background:var(--shell);border-color:var(--need)}
+[data-world="rail"] .st.stop .node{background:var(--stop);border-color:var(--stop);border-radius:5px}
+[data-world="rail"] .st.stop .node svg{display:block;stroke:var(--shell)}
+[data-world="rail"] .st.off .node{background:var(--shell);border:2px solid rgba(255,255,255,.26)}
+[data-world="rail"] .st.end.ok .node{width:26px;height:26px;top:10px;left:13px;border-width:5px;box-shadow:0 0 0 3px var(--shell),0 0 0 5px var(--v)}
+[data-world="rail"] .st.stop .lab{color:var(--stop)} [data-world="rail"] .st.wait .lab{color:var(--need)} [data-world="rail"] .st.part .lab{color:var(--on-shell-2)}
+[data-world="rail"] .tot i{color:var(--on-shell-2)}
+[data-world="rail"] .r.out .who,[data-world="rail"] .r.out .tot .money{color:var(--on-shell-2)}
+
+/* paper skin: a printed checklist, amounts in boxes, hatched until confirmed */
+[data-world="paper"] .r+.r{border-top:1px solid var(--line)}
+[data-world="paper"] .rd,[data-world="carbon"] .rd{border:1.5px solid var(--ink);border-radius:var(--r);color:var(--ink)}
+[data-world="paper"] .st .node{border:1.5px solid var(--ink);border-radius:2px;top:14px;background:var(--surface)}
+[data-world="paper"] .st .node svg{stroke:var(--ink)}
+[data-world="paper"] .st .lab{top:17px}
+[data-world="paper"] .st.stop .node{border-color:var(--stop);background:var(--stop)} [data-world="paper"] .st.stop .node svg{stroke:#fff}
+[data-world="paper"] .st.wait .node{border-color:var(--need);background:var(--hatch)}
+[data-world="paper"] .st.off .node{border:1.5px dashed var(--line-2);background:none}
+[data-world="paper"] .st.stop .lab{color:var(--stop)} [data-world="paper"] .st.wait .lab{color:var(--need)} [data-world="paper"] .st.part .lab{color:var(--ink-2)}
+[data-world="paper"] .tot{align-items:stretch;justify-content:center}
+[data-world="paper"] .tot .money{display:block;text-align:right;padding:5px 10px;border:1.5px solid var(--ink);border-radius:2px;background:var(--surface);font-size:20px;line-height:22px}
+[data-world="paper"] .tot i{display:none}
+[data-world="paper"] .money.open{text-decoration:none}
+[data-world="paper"] .item .money.open{background:var(--hatch);padding:2px 5px;border-radius:2px;outline:1px dashed var(--line-2)}
+[data-world="paper"] .st.part .node::after{content:"";width:9px;height:2.5px;background:var(--ink);border-radius:1px}
+[data-world="paper"] .tot .money.open,[data-world="paper"] .stake .money.open{background:var(--hatch),var(--surface);border-style:dashed}
+[data-world="paper"] .r.out .tot .money{border-color:var(--line-2);color:var(--ink-3)}
+[data-world="paper"] .r.out .who{color:var(--ink-2)}
+
+/* carbon skin: dotted leaders, ink dots, red serials */
+[data-world="carbon"] .r+.r{border-top:1px solid var(--line)}
+[data-world="carbon"] .st::before{content:"";position:absolute;left:0;right:0;top:23px;border-top:2px dotted var(--line-2)}
+[data-world="carbon"] .st .node{width:14px;height:14px;top:17px;left:19px;border-radius:50%;background:var(--ink)}
+[data-world="carbon"] .st .node svg{display:none}
+[data-world="carbon"] .st.part .node{background:var(--surface);border:3px solid var(--ink)}
+[data-world="carbon"] .st.wait .node{background:var(--surface);border:3px solid var(--need)}
+[data-world="carbon"] .st.stop .node{width:20px;height:20px;top:14px;left:16px;border-radius:3px;background:var(--stop)} [data-world="carbon"] .st.stop .node svg{display:block;stroke:#fff}
+[data-world="carbon"] .st.off .node{background:var(--surface);border:2px solid var(--line-2)}
+[data-world="carbon"] .st.stop .lab,[data-world="carbon"] .st.wait .lab{color:var(--need-ink)} [data-world="carbon"] .st.part .lab{color:var(--ink-2)}
+[data-world="carbon"] .tot i{color:var(--ink-3)}
+[data-world="carbon"] .r.out .tot .money{color:var(--ink-3)}
+
+[data-world="carbon"] .money,[data-world="carbon"] .calc .b{font-family:var(--mono);font-weight:600;letter-spacing:-.03em}
+[data-world="carbon"] .money small{font-family:var(--sans);letter-spacing:0}
+
+/* work area */
+.bar{flex:none;display:flex;align-items:center;gap:20px;padding:14px 24px 0}
+.tabs{display:flex;gap:22px}
+.tabs button{padding:8px 0 10px;font-weight:600;font-size:14.5px;color:var(--ink-3);border-bottom:3px solid transparent}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--ink)}
+.keys{margin-left:auto;display:flex;gap:14px;font-size:12.5px;color:var(--ink-3)}
+.work{flex:1;min-height:0;display:grid;grid-template-columns:440px 1fr;grid-template-rows:minmax(0,1fr);margin:0 24px 20px;border:1px solid var(--line-2);border-radius:calc(var(--r) + 2px);overflow:hidden;background:var(--surface)}
+.queue{overflow:auto;border-right:1px solid var(--line-2)}
+[data-world="carbon"] .queue{background:var(--pink);border-color:var(--pink-line)}
+[data-world="paper"] .queue{background:var(--canvas)}
+.queue h3{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink-3);padding:14px 18px 6px}
+[data-world="carbon"] .queue h3{color:var(--ink-2)}
+.item{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:center;width:100%;padding:11px 18px}
+.item .t{display:block;font-weight:600;font-size:14.5px;line-height:19px}
+.item .v{display:block;font-size:13px;color:var(--ink-3);line-height:18px}
+[data-world="carbon"] .item .v{color:var(--ink-2)}
+.item .amt{font-weight:650;font-size:15px}
+.item[aria-selected="true"]{background:var(--sel)}
+.item.cleared .t,.item.cleared .amt{color:var(--ink-3);font-weight:500}
+.item.cleared .rd{opacity:.45}
+.item .rd.stop{background:var(--stop-ink) !important;border-color:var(--stop-ink) !important;color:#fff !important;border-radius:5px}
+.item .rd svg{width:11px;height:11px;stroke:#fff;stroke-width:2.8;fill:none;stroke-linecap:round}
+[data-world="rail"] .item .rd{background:var(--l);color:#fff}
+
+.detail{display:flex;flex-direction:column;min-width:0;min-height:0}
+.body{flex:1;min-height:0;overflow:auto;padding:20px 28px 12px}
+.body .from{display:flex;align-items:center;gap:9px;color:var(--ink-2);font-weight:500;font-size:13.5px}
+.body h2{margin-top:8px;font-size:23px;line-height:28px;font-weight:var(--head-wt);font-stretch:calc(var(--head-w)*1%);letter-spacing:-.012em}
+.say{margin-top:6px;font-size:15px;line-height:22px;color:var(--ink-2);max-width:64ch}
+.stake{display:flex;gap:44px;margin-top:14px;align-items:flex-end}
+.stake span{display:block}
+.stake .k{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink-3);margin-bottom:4px}
+.stake .money{font-size:30px;line-height:34px;font-stretch:108%}
+[data-world="paper"] .stake .money{padding:4px 12px;border:1.5px solid var(--ink);border-radius:2px;background:var(--surface)}
+.stake .n{font-size:22px;line-height:34px;font-weight:600}
+.cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;margin-top:18px}
+.sect{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink-3);margin-bottom:8px}
+.slip{border:1px solid var(--line-2);border-radius:var(--r);background:var(--canvas);overflow:hidden}
+[data-world="carbon"] .slip{background:var(--yellow);border-color:var(--yellow-line)}
+[data-world="paper"] .slip{background:var(--surface);border:1.5px solid var(--ink)}
+.slip .f{display:flex;align-items:center;gap:9px;padding:8px 12px;border-bottom:1px solid var(--line-2);font-size:13px;font-weight:500;color:var(--ink-2)}
+[data-world="carbon"] .slip .f{border-color:var(--yellow-line)}
+.fmt{font:600 10.5px/16px var(--mono);letter-spacing:.04em;padding:0 5px;border-radius:2px;background:var(--ink);color:var(--surface)}
+.slip pre{font:400 13.5px/22px var(--mono);padding:12px;white-space:pre-wrap;color:var(--ink)}
+mark{background:var(--trace-soft);box-shadow:0 0 0 1px var(--trace-line);border-radius:2px;padding:1px 3px;color:inherit}
+.calc{display:grid;grid-template-columns:auto 1fr auto auto;column-gap:12px;row-gap:0;font-size:14px}
+.calc>*{padding:7px 0;border-bottom:1px solid var(--line)}
+.calc .l{font:500 12.5px/20px var(--mono);color:var(--ink-3)}
+[data-world="carbon"] .calc .l,[data-world="carbon"] .serial{color:var(--need-ink)}
+.calc .a{font:400 13px/20px var(--mono);color:var(--ink-2)}
+.calc .ar{color:var(--ink-3)} .calc .b{font-weight:650;text-align:right}
+.more{margin-top:8px;font-size:13px;color:var(--ink-3)}
+.acts{flex:none;display:flex;align-items:center;gap:10px;padding:14px 28px;border-top:1px solid var(--line-2)}
+.acts .ok{font-weight:600;color:var(--done)} .acts .note{color:var(--ink-3);font-size:13px}
+[data-world="paper"] .btn.primary kbd,[data-world="rail"] .btn.primary kbd,[data-world="carbon"] .btn.primary kbd{opacity:.7}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div class="pick" role="group" aria-label="Direction">
+  <b>Direction</b>
+  <button data-w="rail">1 · Line map</button>
+  <button data-w="paper">2 · Security paper</button>
+  <button data-w="carbon">3 · Carbon copy</button>
+  <span>Same screen, same numbers. Keys 1 2 3 switch. J K move, A accepts, U undoes.</span>
+</div>
+
+<header class="top">
+  <span class="brand">Quote desk</span>
+  <span class="event"><b>Corrugated packaging</b> · Nimbus Home Care</span>
+  <nav class="nav" aria-label="Steps"><a href="#">RFx</a><a href="#">Replies</a><a href="#" aria-current="page">Results<span class="count" data-count></span></a><a href="#">Ask</a></nav>
+  <div class="right"><span>No model connected</span><button class="btn onshell">Connect a model</button></div>
+</header>
+
+<section class="verdict">
+  <div>
+    <h1>The three lowest totals come from vendors you can't award yet.</h1>
+    <p id="sub"></p>
+    <div class="ref">Last year, same 27 lines: <span class="money">₹3.64<small>crore</small></span></div>
+  </div>
+  <div class="route" id="route"></div>
+</section>
+
+<div class="bar">
+  <div class="tabs" role="tablist"><button role="tab" aria-selected="true">To confirm<span class="count" data-count></span></button><button role="tab">Prices</button><button role="tab">Questionnaire and terms</button></div>
+  <div class="keys"><span><kbd>J</kbd> <kbd>K</kbd> move</span><span><kbd>A</kbd> accept</span><span><kbd>O</kbd> open the file</span><span><kbd>U</kbd> undo</span></div>
+</div>
+<main class="work">
+  <div class="queue" id="queue" role="listbox" aria-label="To confirm"></div>
+  <div class="detail" id="detail"></div>
+</main>
+
+<script>
+const X = '<svg viewBox="0 0 12 12"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg>';
+const TICK = '<svg viewBox="0 0 12 12"><path d="M2 6.5l2.8 2.8L10 3.2"/></svg>';
+const stations = ['Lines quoted', 'Questionnaire', 'Quality gate', 'Conversions', 'Can award'];
+// cheapest first. s: one state per station before the terminus.
+const vendors = [
+  { k: 'D', name: 'Maruti Corrugators', total: '3.47', s: [['part', '27 of 30'], ['stop', 'Not sent']] },
+  { k: 'E', name: 'Sai Cartons', total: '3.54', s: [['ok'], ['stop', 'Not sent']] },
+  { k: 'B', name: 'Kraftline Industries', total: '3.59', s: [['ok'], ['ok'], ['stop', 'Failed Q1']] },
+  { k: 'C', name: 'PackGlobal Exports', total: '3.65', s: [['ok'], ['ok'], ['ok'], ['wait']] },
+  { k: 'A', name: 'Shree Balaji Packaging', total: '3.69', s: [['ok'], ['ok'], ['ok'], ['wait']] },
+];
+const items = [
+  { id: 'C-usd', v: 'C', vendor: 'PackGlobal Exports LLP', group: 'rule', t: 'Quoted in USD, converted to INR', amt: '₹4.02 crore', say: 'Prices on all 30 lines are in USD. Code converted them at a fixed 1 USD = ₹88, which is not a live rate.', lines: '30 lines', fmt: 'DOCX', file: 'vendor-c-packglobal-offer.docx', quote: '200 x 150 x 100 mm carton ... <mark>USD 0.045 each</mark>', work: [['L01', '0.045 USD × 88', '₹3.96'], ['L02', '0.072 USD × 88', '₹6.34'], ['L03', '0.079 USD × 88', '₹6.95']], more: 'And 27 more lines the same way.' },
+  { id: 'E-kg', v: 'E', vendor: 'Sai Cartons', group: 'rule', t: 'Quoted per kg, converted to per piece', amt: '₹2.99 crore', say: 'Prices on 22 lines (L01 to L22) are per kg. Code multiplied each by that line\'s kg per piece from the RFx.', lines: '22 lines', fmt: 'EML', file: 'vendor-e-sai-cartons-email.txt', quote: '3 ply <mark>Rs 38 per kg</mark> ...', work: [['L01', '₹38 per kg × 0.095 kg', '₹3.61']], more: 'And 21 more lines the same way.' },
+  { id: 'E-ly', v: 'E', vendor: 'Sai Cartons', group: 'rule', t: 'Filled from last year\'s price', amt: '₹91.29 lakh', say: 'The vendor wrote no price for 8 lines (L23 to L30). Code used your last year price on file. These are not numbers the vendor wrote.', lines: '8 lines', fmt: 'EML', file: 'vendor-e-sai-cartons-email.txt', quote: '<mark>rest same as last year</mark>', work: [], more: '' },
+  { id: 'A-100', v: 'A', vendor: 'Shree Balaji Packaging Pvt Ltd', group: 'rule', t: 'Quoted per 100, converted to per piece', amt: '₹59.11 lakh', say: 'Prices on 9 lines (L01 to L05, L27 to L30) are written "per 100 Nos". Code divided each by 100.', lines: '9 lines', fmt: 'XLSX', file: 'vendor-a-shree-balaji-quote.xlsx', quote: 'L01   403   <mark>per 100 Nos</mark>', work: [['L01', '403 per 100 ÷ 100', '₹4.03']], more: 'And 8 more lines the same way.' },
+  { id: 'D-25', v: 'D', vendor: 'Maruti Corrugators', group: 'rule', t: 'Quoted per box of 25, converted to per piece', amt: '₹19.84 lakh', say: 'Prices on 3 lines (L27 to L29) are written "per box of 25 pcs". Code divided each by 25.', lines: '3 lines', fmt: 'JPG', file: 'vendor-d-maruti-rate-card.jpg', quote: 'L27   102   <mark>per box of 25 pcs</mark>', work: [['L27', '102 per box ÷ 25', '₹4.08']], more: 'And 2 more lines the same way.' },
+  { id: 'B-disc', v: 'B', vendor: 'Kraftline Industries', group: 'rule', t: '4% discount with a condition', amt: '₹15.75 lakh', say: 'The vendor offers 4% off, only if annual offtake value exceeds Rs 50 lakh, passed by credit note at quarter end. Prices show the list price until you choose.', lines: 'all lines', fmt: 'PDF', file: 'vendor-b-kraftline-quotation.pdf', quote: '<mark>4% discount</mark> ... annual offtake above Rs 50 lakh ... credit note at quarter end', work: [['List', 'all 30 lines', '₹3.94 crore'], ['With 4%', 'all 30 lines', '₹3.78 crore']], more: '' },
+  { id: 'B-gate', v: 'B', vendor: 'Kraftline Industries', group: 'block', t: 'Failed the quality gate', amt: '', say: 'Q1 asks for a currently valid ISO 9001:2015 certificate. The vendor\'s answer says it expired. This does not change a price. It changes whether the price can be used.', lines: 'Q1', fmt: 'PDF', file: 'vendor-b-kraftline-quotation.pdf', quote: 'ISO 9001:2015 ... <mark>expired 31 March 2026</mark>', work: [], more: '' },
+  { id: 'D-q', v: 'D', vendor: 'Maruti Corrugators', group: 'block', t: 'No questionnaire, freight extra, 27 of 30 lines', amt: '', say: 'The rate card photo has prices only. Nothing on the eight questions, freight is not in the price, and three lines have no price.', lines: '', fmt: 'JPG', file: 'vendor-d-maruti-rate-card.jpg', quote: '(no text on the questionnaire in this file)', work: [], more: '' },
+  { id: 'E-q', v: 'E', vendor: 'Sai Cartons', group: 'block', t: 'No questionnaire, freight extra', amt: '', say: 'The email has three lines. Nothing on the eight questions, and freight is not in the price.', lines: '', fmt: 'EML', file: 'vendor-e-sai-cartons-email.txt', quote: '(no text on the questionnaire in this file)', work: [], more: '' },
+];
+const cleared = new Set(); let sel = 0;
+const $ = (id) => document.getElementById(id);
+const money = (s, cls = '') => `<span class="money ${cls}">${s.replace(/ (crore|lakh)/, '<small>$1</small>')}</span>`;
+const short = (s) => s.replace(/ (Pvt Ltd|LLP)$/, '');
+const openFor = (k) => items.filter((it) => it.group === 'rule' && it.v === k && !cleared.has(it.id)).length;
+const vars = (k) => `--v:var(--v${k});--l:var(--l${k})`;
+
+function renderRoute() {
+  const head = `<div class="r h"><span>Cheapest first</span>${stations.map((s) => `<span>${s}</span>`).join('')}<span>27 shared lines, a year</span></div>`;
+  const rows = vendors.map((v) => {
+    const n = openFor(v.k), stopped = v.s.some((s) => s[0] === 'stop');
+    const cells = [];
+    for (let i = 0; i < 4; i++) {
+      let [state, lab] = v.s[i] || ['off'];
+      if (state === 'wait') { state = n ? 'wait' : 'ok'; lab = n ? `${n} to confirm` : ''; }
+      cells.push(`<span class="st ${state}"><span class="node">${state === 'stop' ? X : state === 'ok' ? TICK : ''}</span>${lab ? `<span class="lab">${lab}</span>` : ''}</span>`);
+    }
+    const can = !stopped && !n;
+    cells.push(`<span class="st end ${can ? 'ok' : 'off'}"><span class="node">${can ? TICK : ''}</span>${can ? '<span class="lab" style="top:17px;left:50px">Yes</span>' : ''}</span>`);
+    return `<div class="r ${stopped ? 'out' : ''}" style="${vars(v.k)}"><span class="who"><span class="rd">${v.k}</span>${v.name}</span>${cells.join('')}<span class="tot">${money('₹' + v.total + ' crore', n ? 'open' : '')}<i>${stopped ? 'cannot be awarded yet' : n ? 'not firm yet' : 'firm'}</i></span></div>`;
+  }).join('');
+  $('route').innerHTML = head + rows;
+}
+function renderQueue() {
+  const row = (it, i) => `<button class="item ${cleared.has(it.id) ? 'cleared' : ''}" role="option" aria-selected="${i === sel}" data-i="${i}" style="${vars(it.v)}"><span class="rd ${it.group === 'block' ? 'stop' : ''}">${it.group === 'block' ? X : it.v}</span><span><span class="t">${it.t}</span><span class="v">${short(it.vendor)}${it.lines ? ' · ' + it.lines : ''}</span></span><span class="amt">${it.amt ? money(it.amt, cleared.has(it.id) ? '' : 'open') : ''}</span></button>`;
+  $('queue').innerHTML = `<h3>Conversions to accept, largest first</h3>${items.map((it, i) => it.group === 'rule' ? row(it, i) : '').join('')}<h3>Stops an award, nothing to accept</h3>${items.map((it, i) => it.group === 'block' ? row(it, i) : '').join('')}`;
+}
+function renderDetail() {
+  const it = items[sel], done = cleared.has(it.id), choice = it.id === 'B-disc';
+  const calc = it.work.length ? `<div><div class="sect">${choice ? 'What it changes' : 'How code worked it out'}</div><div class="calc">${it.work.map((w) => `<span class="l">${w[0]}</span><span class="a">${w[1]}</span><span class="ar">→</span><span class="b">${w[2]}</span>`).join('')}</div>${it.more ? `<p class="more">${it.more}</p>` : ''}</div>` : '<div></div>';
+  const acts = it.group === 'block' ? `<button class="btn">Open the file <kbd>O</kbd></button><button class="btn">Draft a note to the vendor</button>`
+    : done ? `<span class="ok">Accepted</span><button class="btn" data-undo>Undo <kbd>U</kbd></button><span class="note">Totals that rested on this are now firm.</span>`
+    : choice ? `<button class="btn primary" data-accept>Keep the list price <kbd>A</kbd></button><button class="btn" data-accept>Apply the 4%</button><button class="btn">Open the file <kbd>O</kbd></button>`
+    : `<button class="btn primary" data-accept>Accept for ${it.lines} <kbd>A</kbd></button><button class="btn">Open the file <kbd>O</kbd></button><button class="btn">It's wrong</button>`;
+  $('detail').innerHTML = `<div class="body"><div class="from item" style="${vars(it.v)};display:flex;padding:0;width:auto"><span class="rd">${it.v}</span>${it.vendor}</div><h2>${it.t}</h2><p class="say">${it.say}</p>
+    ${it.amt ? `<div class="stake"><div><span class="k">${choice ? 'The difference, a year' : 'Rests on this, a year'}</span>${money(it.amt, done ? '' : 'open')}</div><div><span class="k">Covers</span><span class="n">${it.lines}</span></div></div>` : ''}
+    <div class="cols"><div><div class="sect">The vendor's own words</div><div class="slip"><div class="f"><span class="fmt">${it.fmt}</span>${it.file}</div><pre>${it.quote}</pre></div></div>${calc}</div></div>
+    <div class="acts">${acts}</div>`;
+}
+function sync() {
+  const open = items.filter((it) => it.group === 'rule' && !cleared.has(it.id)).length;
+  document.querySelectorAll('[data-count]').forEach((n) => { n.textContent = open; n.style.display = open ? '' : 'none'; });
+  $('sub').innerHTML = `Two of five cleared the quality gate. ${open ? `<b>${open} conversion${open > 1 ? 's' : ''}</b> still need${open > 1 ? '' : 's'} your yes before a total is firm.` : 'Every conversion is accepted, so the two totals you can award are firm.'}`;
+}
+function draw(ink) { renderRoute(); renderQueue(); renderDetail(); sync(); if (ink) document.querySelectorAll('.route .money:not(.open)').forEach((m) => m.classList.add('inked')); }
+function accept() { const it = items[sel]; if (it.group !== 'rule' || cleared.has(it.id)) return; cleared.add(it.id); draw(true); }
+function undo() { const it = items[sel]; if (cleared.delete(it.id)) draw(); }
+function move(n) { sel = Math.max(0, Math.min(items.length - 1, sel + n)); renderQueue(); renderDetail(); document.querySelector('.item[aria-selected="true"]').scrollIntoView({ block: 'nearest' }); }
+function world(w) { document.documentElement.dataset.world = w; document.querySelectorAll('.pick button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.w === w)); }
+$('queue').addEventListener('click', (e) => { const b = e.target.closest('.item'); if (b) { sel = +b.dataset.i; renderQueue(); renderDetail(); } });
+$('detail').addEventListener('click', (e) => { if (e.target.closest('[data-accept]')) accept(); if (e.target.closest('[data-undo]')) undo(); });
+document.querySelector('.pick').addEventListener('click', (e) => { const b = e.target.closest('[data-w]'); if (b) world(b.dataset.w); });
+addEventListener('keydown', (e) => { const k = e.key.toLowerCase(); if (k === 'j') move(1); if (k === 'k') move(-1); if (k === 'a') accept(); if (k === 'u') undo(); if (k === '1') world('rail'); if (k === '2') world('paper'); if (k === '3') world('carbon'); });
+world(new URLSearchParams(location.search).get('w') || 'rail'); draw();
+</script>
+</body>
+</html>

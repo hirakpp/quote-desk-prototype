@@ -1,0 +1,454 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+/* Tokens. Components use these names, never raw hex. The values are the ones in
+   design/vp-dark-colour.html. Colour has one job each:
+   ink = headline, money and vendors you can award. ink-2 and ink-3 = supporting text.
+   red glass = a tile or strip that needs the buyer now. green glass = the same thing, done.
+   stop and ok = red and green text, on neutral glass only. accent = links, focus, the split bar. */
+@theme {
+  --color-*: initial;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Geist Variable", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* One type scale, every page. Product name 40/46 and Decide's 46px headline are classes below.
+     Nothing under 13px except the 11px mono file tag. */
+  --text-*: initial;
+  --text-tag: 0.6875rem;
+  --text-tag--line-height: 1.125rem;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.1875rem;
+  --text-md: 0.875rem;
+  --text-md--line-height: 1.25rem;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.375rem;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5rem;
+  --text-lg: 1.0625rem;
+  --text-lg--line-height: 1.5rem;
+  --text-lede: 1.1875rem;
+  --text-lede--line-height: 1.75rem;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.875rem;
+  --text-2xl--line-height: 2.375rem;
+  --text-fig: 2.5rem;
+  --text-fig--line-height: 2.75rem;
+  --text-title: 2.5rem;
+  --text-title--line-height: 2.75rem;
+
+  --color-white: #ffffff;
+  --color-ink: #f5f6fa;
+  --color-ink-2: #b8c1d6;
+  --color-ink-3: #8791a8;
+  --color-dim: #9aa3b8;
+  --color-hair: rgba(255, 255, 255, 0.09);
+  --color-hair-2: rgba(255, 255, 255, 0.16);
+  --color-ground: #1c1d22;
+  --color-glass: rgba(58, 60, 68, 0.46);
+  --color-glass-solid: #2a2b31;
+  --color-sheet: rgba(40, 41, 48, 0.82);
+  --color-well: rgba(255, 255, 255, 0.07);
+  --color-lift: rgba(255, 255, 255, 0.16);
+  --color-slip: rgba(0, 0, 0, 0.24);
+  --color-mark: rgba(255, 204, 0, 0.3);
+  --color-pill-hover: #e9ebf2;
+
+  --color-accent: #3d9bff;
+  --color-accent-press: #63afff;
+  --color-accent-soft: rgba(61, 155, 255, 0.16);
+  --color-accent-2: rgba(61, 155, 255, 0.38);
+  --color-accent-ink: #a9d0ff;
+  --color-accent-ink-2: #8fb0d8;
+  --color-on-accent: #0b1420;
+  --color-focus: rgba(61, 155, 255, 0.6);
+
+  /* Three quiet text colours, one from each bloom. Sky: section headings, categories, the gate
+     tag. Gold: money that is not the hero. Lilac: codes and files. */
+  --color-sky: #9cc7ff;
+  --color-sky-soft: rgba(156, 199, 255, 0.14);
+  --color-gold: #e8d3a0;
+  --color-gold-dim: #b3a886;
+  --color-lilac: #c5b8f7;
+  --color-lilac-2: #9d93cc;
+  --color-lilac-soft: rgba(197, 184, 247, 0.14);
+  --color-sheet-2: rgba(44, 46, 54, 0.78);
+  --color-hover: rgba(255, 255, 255, 0.03);
+
+  --color-wait: #f0b45a;
+  --color-stop: #ff8279;
+  --color-stop-2: #e39a93;
+  --color-ok: #5fd08a;
+  --color-ok-2: #8fcfa8;
+  --color-red-glass: rgba(255, 80, 68, 0.2);
+  --color-red-line: rgba(255, 130, 121, 0.38);
+  --color-green-glass: rgba(52, 190, 110, 0.2);
+  --color-green-line: rgba(95, 208, 138, 0.38);
+  /* Text inside a red or green tile is white, with the supporting line at 82% white. */
+  --color-on-tile: #ffffff;
+  --color-on-tile-2: rgba(255, 255, 255, 0.82);
+
+  /* Radius: 22px on cards, 16px on tiles inside a card, 11px on fields, pills for buttons. */
+  --radius-card: 22px;
+  --radius-tile: 16px;
+  --radius-strip: 14px;
+  --radius-ctl: 11px;
+  --radius-tag: 4px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+  color-scheme: dark;
+}
+html,
+body,
+#root {
+  min-height: 100%;
+}
+body {
+  @apply text-ink antialiased text-base;
+  background: var(--color-ground);
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-variant-numeric: tabular-nums;
+  caret-color: var(--color-accent);
+}
+/* Soft light behind the glass. The blooms are what the glass blurs. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 640px at 10% -8%, rgba(86, 118, 178, 0.38), transparent 64%),
+    radial-gradient(780px 560px at 98% 6%, rgba(120, 98, 160, 0.3), transparent 62%),
+    radial-gradient(940px 700px at 60% 112%, rgba(70, 128, 118, 0.3), transparent 62%),
+    var(--color-ground);
+}
+::selection {
+  background: rgba(61, 155, 255, 0.35);
+}
+mark {
+  background: var(--color-mark);
+  border-radius: 4px;
+  padding: 1px 3px;
+  color: inherit;
+}
+
+/* One focus style everywhere. */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+.cell:focus-visible {
+  outline-offset: -3px;
+  border-radius: 0;
+}
+
+kbd {
+  font: 500 11px/16px var(--font-mono);
+  color: var(--color-ink-3);
+  border: 1px solid var(--color-hair-2);
+  border-radius: 5px;
+  padding: 0 4px;
+}
+.btn-primary kbd {
+  border-color: rgba(28, 29, 34, 0.3);
+  color: rgba(28, 29, 34, 0.6);
+}
+
+/* Glass: the one neutral surface. Never put one inside another. */
+.glass {
+  background: var(--color-glass);
+  -webkit-backdrop-filter: blur(40px) saturate(150%);
+  backdrop-filter: blur(40px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 30px 60px -28px rgba(0, 0, 0, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+/* A sheet floats over content (dialog, source sheet, menu), so it is denser than a card. */
+.glass.sheet {
+  background: var(--color-sheet);
+}
+.glass.side {
+  background: var(--color-sheet-2);
+}
+.card {
+  border-radius: var(--radius-card);
+}
+.page-w {
+  width: min(1240px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* The product name, in brushed silver: light catches the top of the letters and a darker band
+   sits just under the middle. The only gradient text in the product. */
+.brand {
+  display: inline-block;
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #ffffff 0%, #eef0f5 26%, #b9bfcc 50%, #8f96a6 58%, #d6dae3 78%, #f6f7fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.18)) drop-shadow(0 10px 22px rgba(0, 0, 0, 0.45));
+}
+@media (forced-colors: active) {
+  .brand {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+  }
+}
+
+/* The floating toolbar. Content scrolls under it. */
+.bar {
+  position: sticky;
+  top: 14px;
+  z-index: 20;
+  margin-top: 16px;
+  height: 58px;
+  border-radius: 18px;
+}
+
+.headline {
+  font-size: 46px;
+  line-height: 50px;
+  font-weight: 600;
+  letter-spacing: -0.026em;
+  text-wrap: balance;
+}
+.hero {
+  font-size: 68px;
+  line-height: 72px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+.hero-unit {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+@media (max-width: 1040px) {
+  .headline {
+    font-size: 34px;
+    line-height: 38px;
+  }
+  .page-title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .hero {
+    font-size: 52px;
+    line-height: 56px;
+  }
+}
+@media (max-width: 520px) {
+  .brand {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+/* Buttons are pills. A press is felt on the way down, not on release. */
+.btn {
+  transition:
+    transform 120ms var(--ease-out),
+    background-color 160ms var(--ease-out),
+    border-color 160ms var(--ease-out),
+    color 160ms var(--ease-out);
+}
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* One page title size on every page. Decide keeps .headline as the one exception. */
+.page-title {
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 600;
+  letter-spacing: -0.024em;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+/* Money: a figure and a quiet unit word. Gold unless it is the hero or an awardable total. */
+.money {
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-gold);
+}
+.money small {
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+.money.white {
+  color: var(--color-ink);
+}
+.money.white small {
+  color: var(--color-ink-3);
+}
+.money.dim {
+  color: var(--color-gold-dim);
+}
+.money.grey {
+  color: var(--color-ink-3);
+  font-weight: 400;
+}
+
+/* A tile inside a card: red while it needs the buyer, green once it is done. */
+.tile {
+  border-radius: var(--radius-tile);
+  background: var(--color-red-glass);
+  border: 1px solid var(--color-red-line);
+  color: var(--color-on-tile);
+  transition:
+    background-color 360ms var(--ease-out),
+    border-color 360ms var(--ease-out);
+}
+.tile.ok {
+  background: var(--color-green-glass);
+  border-color: var(--color-green-line);
+}
+.strip {
+  border-radius: var(--radius-strip);
+  background: var(--color-red-glass);
+  border: 1px solid var(--color-red-line);
+  color: var(--color-on-tile);
+  transition:
+    background-color 360ms var(--ease-out),
+    border-color 360ms var(--ease-out);
+}
+.strip.ok {
+  background: var(--color-green-glass);
+  border-color: var(--color-green-line);
+}
+.turn {
+  transition: color 360ms var(--ease-out);
+}
+/* The vendor's words open in place. */
+.proof {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms var(--ease-out);
+}
+.proof.open {
+  grid-template-rows: 1fr;
+}
+.proof > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* A sticky cell in a group row: the well tint over a solid base, so it matches the row beside it. */
+.solid-well {
+  background: linear-gradient(var(--color-well), var(--color-well)), var(--color-glass-solid);
+}
+
+/* An unconfirmed price in the grid. */
+.udot {
+  display: inline-block;
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-stop);
+}
+
+dialog::backdrop {
+  background: rgb(10 11 14 / 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.skeleton {
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.06));
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+/* A list whose rows are split by hairlines, never above the first. */
+.rows > * {
+  position: relative;
+}
+.rows > * + *::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--color-hair);
+}
+.flash {
+  animation: flash 700ms ease-out;
+}
+@keyframes flash {
+  from {
+    background-color: var(--color-lift);
+  }
+}
+
+[popover].menu {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+}
+
+/* Glass falls back to a solid surface when the reader asks for it. */
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .glass.side,
+  .glass.sheet {
+    background: var(--color-glass-solid);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+@media (prefers-contrast: more) {
+  .glass,
+  .glass.sheet {
+    background: #24252a;
+    border-color: var(--color-hair-2);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .flash,
+  .skeleton {
+    animation: none;
+  }
+}
+
+/* A vendor row in a panel. A hairline sits between rows, never above the first. */
+.vrow {
+  position: relative;
+}
+.vrow + .vrow::before {
+  content: "";
+  position: absolute;
+  left: 35px;
+  right: 18px;
+  top: 0;
+  height: 1px;
+  background: var(--color-hair);
+}

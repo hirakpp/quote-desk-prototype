@@ -1,0 +1,37 @@
+[
+  {
+    "vendorId": "A",
+    "vendorName": "Shree Balaji Packaging Pvt Ltd",
+    "file": "vendor-a-shree-balaji-quote.xlsx",
+    "format": "Excel",
+    "hard": "Their own layout and item codes, in their own order. Units differ from row to row."
+  },
+  {
+    "vendorId": "B",
+    "vendorName": "Kraftline Industries",
+    "file": "vendor-b-kraftline-quotation.pdf",
+    "format": "PDF",
+    "hard": "A letterhead PDF. Read the footnote under the table, not just the table."
+  },
+  {
+    "vendorId": "C",
+    "vendorName": "PackGlobal Exports LLP",
+    "file": "vendor-c-packglobal-offer.docx",
+    "format": "Word",
+    "hard": "Prices sit inside paragraphs, not a table, and not in rupees."
+  },
+  {
+    "vendorId": "D",
+    "vendorName": "Maruti Corrugators",
+    "file": "vendor-d-maruti-rate-card.jpg",
+    "format": "Photo",
+    "hard": "A phone photo of a printed card, taken at an angle. Not every line is on it, and one group is priced by the box."
+  },
+  {
+    "vendorId": "E",
+    "vendorName": "Sai Cartons",
+    "file": "vendor-e-sai-cartons-email.txt",
+    "format": "Email",
+    "hard": "Three lines. It prices by weight and points at last year instead of writing most prices."
+  }
+]
